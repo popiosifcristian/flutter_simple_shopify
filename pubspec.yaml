@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  graphql: ^4.0.1
-  shared_preferences: ^2.0.4
+  graphql: ^5.0.0
+  shared_preferences: ^2.0.6
   intl: ^0.17.0
 
 
