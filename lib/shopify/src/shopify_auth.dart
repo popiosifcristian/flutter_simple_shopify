@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_simple_shopify/mixins/src/shopfiy_error.dart';
+import 'package:flutter_simple_shopify/shopify/src/utils/shared_preference_services.dart';
 import 'package:graphql/client.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../graphql_operations/mutations/access_token_delete.dart';
 import '../../graphql_operations/mutations/customer_access_token_create.dart';
 import '../../graphql_operations/mutations/customer_create.dart';
@@ -28,7 +27,7 @@ class ShopifyAuth with ShopifyError {
   static Future<String> get currentCustomerAccessToken async {
     if (_currentCustomerAccessToken.containsKey(ShopifyConfig.storeUrl))
       return _currentCustomerAccessToken[ShopifyConfig.storeUrl];
-    final _prefs = await SharedPreferences.getInstance();
+    final _prefs = await SharedPrefServices.instance;
     if (_prefs.containsKey(ShopifyConfig.storeUrl))
       return _currentCustomerAccessToken[ShopifyConfig.storeUrl] =
           _prefs.getString(ShopifyConfig.storeUrl);
@@ -184,7 +183,7 @@ class ShopifyAuth with ShopifyError {
     String sharedPrefsToken,
     ShopifyUser shopifyUser,
   ) async {
-    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    var _prefs = await SharedPrefServices.instance;
     if (sharedPrefsToken == null) {
       _shopifyUser.remove(ShopifyConfig.storeUrl);
       _currentCustomerAccessToken.remove(ShopifyConfig.storeUrl);
