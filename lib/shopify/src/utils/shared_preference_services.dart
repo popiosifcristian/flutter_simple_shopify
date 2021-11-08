@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SharedPrefServices extends SharedPrefs {
+class SharedPrefServicesShopify extends SharedPrefs {
   // singleton object
-  static final SharedPrefServices _singleton = SharedPrefServices._();
+  static final SharedPrefServicesShopify _singleton = SharedPrefServicesShopify._();
 
   static SharedPrefs _prefs;
 
   // A private constructor. Allows us to create instances of SharedPreferenceHelper
   // only from within the SharedPreferenceHelper class itself.
-  SharedPrefServices._();
+  SharedPrefServicesShopify._();
 
   // factory method to return the same object each time its needed
-  factory SharedPrefServices() => _singleton;
+  factory SharedPrefServicesShopify() => _singleton;
 
   // Singleton accessor
   static Future<SharedPrefs> get instance async {

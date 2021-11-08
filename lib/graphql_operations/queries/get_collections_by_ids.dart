@@ -4,6 +4,7 @@ query getCollectionsByIds($ids: [ID!]!){
     ... on Collection {
       id
       handle
+      description
       descriptionHtml
       image {
         src

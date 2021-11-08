@@ -28,7 +28,7 @@ class ShopifyAuth with ShopifyError {
   static Future<String> get currentCustomerAccessToken async {
     if (_currentCustomerAccessToken.containsKey(ShopifyConfig.storeUrl))
       return _currentCustomerAccessToken[ShopifyConfig.storeUrl];
-    final _prefs = await SharedPrefServices.instance;
+    final _prefs = await SharedPrefServicesShopify.instance;
     if (_prefs.containsKey(ShopifyConfig.storeUrl))
       return _currentCustomerAccessToken[ShopifyConfig.storeUrl] =
           _prefs.getString(ShopifyConfig.storeUrl);
@@ -196,7 +196,7 @@ class ShopifyAuth with ShopifyError {
     String sharedPrefsToken,
     ShopifyUser shopifyUser,
   ) async {
-    var _prefs = await SharedPrefServices.instance;
+    var _prefs = await SharedPrefServicesShopify.instance;
     if (sharedPrefsToken == null) {
       _shopifyUser.remove(ShopifyConfig.storeUrl);
       _currentCustomerAccessToken.remove(ShopifyConfig.storeUrl);
