@@ -19,12 +19,10 @@ class SharedPrefServicesShopify extends SharedPrefs {
     if (_prefs == null) {
       try {
         var sp = await SharedPreferences.getInstance();
-        print('native sp');
         _prefs = SharedPrefsNative(sp);
       } catch (e) {
         if (e is Error) print(e.stackTrace);
         print(e);
-        print('in memory sp');
         _prefs = SharedPrefsInMemory();
       }
     }
