@@ -8,6 +8,7 @@ import 'search_tab.dart';
 void main() {
   ShopifyConfig.setConfig(
     "STOREFRONT-API-ACCESS-TOKEN",
+    "ACCESS-TOKEN",
     "YOUR-SHOPIFY-WEBSITE",
     "2020-04",
   );
@@ -56,10 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(Icons.category), label: "Collections"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
