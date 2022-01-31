@@ -1,34 +1,21 @@
 class Shop {
   final String description;
-  final String moneyFormat;
   final String name;
-  final PaymentSettings paymentSettings;
-  final PrimaryDomain primaryDomain;
-  final PrivacyPolicy privacyPolicy;
-  final RefundPolicy refundPolicy;
-  final List<String> shipsToCountries;
-  final TermsOfService termsOfService;
 
-  Shop({this.description, this.moneyFormat, this.name, this.paymentSettings, this.primaryDomain, this.privacyPolicy, this.refundPolicy, this.shipsToCountries, this.termsOfService});
+  final String customerAccounts;
 
-  static Shop fromJson(Map<String, dynamic> json){
+  Shop({
+    this.description,
+    this.name,
+    this.customerAccounts,
+  });
+
+  static Shop fromJson(Map<String, dynamic> json) {
     return Shop(
       description: (json['shop'] ?? const {})['description'],
-      moneyFormat: (json['shop'] ?? const {})['moneyFormat'],
       name: (json['shop'] ?? const {})['name'],
-      paymentSettings: PaymentSettings.fromJson((json['shop'] ?? const {})['paymentSettings'] ?? const {}),
-      primaryDomain: PrimaryDomain.fromJson((json['shop'] ?? const {})['primaryDomain'] ?? const {}),
-      privacyPolicy: PrivacyPolicy.fromJson((json['shop'] ?? const {})['privacyPolicy'] ?? const {}),
-      refundPolicy: RefundPolicy.fromJson((json['shop'] ?? const {})['refundPolicy'] ?? const {}),
-      shipsToCountries: _getShipsToCountryList(json['shop'] ?? const {} ),
-      termsOfService: TermsOfService.fromJson((json['shop'] ?? const {})['termsOfService'] ?? const {}),
+      customerAccounts: (json['shop'] ?? const {})['customerAccounts'],
     );
-  }
-
-  static _getShipsToCountryList(Map<String, dynamic> json) {
-    List<String> stringList = [];
-    json['shipsToCountries'].forEach((shipString) => stringList.add(shipString));
-    return stringList;
   }
 }
 
@@ -42,7 +29,13 @@ class PaymentSettings {
   final List<String> supportedDigitalWallets;
 
   PaymentSettings(
-      {this.acceptedCardBrands, this.cardVaultUrl, this.countryCode, this.currencyCode, this.enabledPresentmentCurrencies, this.shopifyPaymentAccountId, this.supportedDigitalWallets});
+      {this.acceptedCardBrands,
+      this.cardVaultUrl,
+      this.countryCode,
+      this.currencyCode,
+      this.enabledPresentmentCurrencies,
+      this.shopifyPaymentAccountId,
+      this.supportedDigitalWallets});
 
   static PaymentSettings fromJson(Map<String, dynamic> json) {
     return PaymentSettings(
@@ -52,8 +45,7 @@ class PaymentSettings {
         currencyCode: json['currencyCode'],
         enabledPresentmentCurrencies: _getEnabledPresentmentCurrencies(json),
         shopifyPaymentAccountId: json['shopifyPaymentAccountId'],
-        supportedDigitalWallets: _getSupportedDigitalWallets(json)
-    );
+        supportedDigitalWallets: _getSupportedDigitalWallets(json));
   }
 
   static _getAcceptedCardBrands(Map<String, dynamic> json) {
@@ -82,12 +74,11 @@ class PrimaryDomain {
 
   PrimaryDomain({this.host, this.sslEnabled, this.url});
 
-  static PrimaryDomain fromJson(Map<String, dynamic> json){
+  static PrimaryDomain fromJson(Map<String, dynamic> json) {
     return PrimaryDomain(
         host: json['host'] ?? const {},
         sslEnabled: json['sslEnabled'] ?? const {},
-        url: json['url'] ?? const {}
-    );
+        url: json['url'] ?? const {});
   }
 }
 
@@ -100,14 +91,13 @@ class PrivacyPolicy {
 
   PrivacyPolicy({this.body, this.handle, this.id, this.title, this.url});
 
-  static PrivacyPolicy fromJson(Map<String, dynamic> json){
+  static PrivacyPolicy fromJson(Map<String, dynamic> json) {
     return PrivacyPolicy(
         body: json['body'],
         handle: json['handle'],
         id: json['id'],
         title: json['title'],
-        url: json['url']
-    );
+        url: json['url']);
   }
 }
 
@@ -120,14 +110,13 @@ class RefundPolicy {
 
   RefundPolicy({this.body, this.handle, this.id, this.title, this.url});
 
-  static RefundPolicy fromJson(Map<String, dynamic> json){
+  static RefundPolicy fromJson(Map<String, dynamic> json) {
     return RefundPolicy(
         body: json['body'],
         handle: json['handle'],
         id: json['id'],
         title: json['title'],
-        url: json['url']
-    );
+        url: json['url']);
   }
 }
 
@@ -140,13 +129,12 @@ class TermsOfService {
 
   TermsOfService({this.body, this.handle, this.id, this.title, this.url});
 
-  static TermsOfService fromJson(Map<String, dynamic> json){
+  static TermsOfService fromJson(Map<String, dynamic> json) {
     return TermsOfService(
         body: json['body'],
         handle: json['handle'],
         id: json['id'],
         title: json['title'],
-        url: json['url']
-    );
+        url: json['url']);
   }
 }

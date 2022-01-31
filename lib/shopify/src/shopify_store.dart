@@ -33,6 +33,8 @@ class ShopifyStore with ShopifyError {
 
   GraphQLClient get _graphQLClient => ShopifyConfig.graphQLClient;
 
+  GraphQLClient get _adminGraphQLClient => ShopifyConfig.adminGraphQLClient;
+
   /// Returns a List of [Product].
   ///
   /// Simply returns all Products from your Store.
@@ -208,10 +210,10 @@ class ShopifyStore with ShopifyError {
     final WatchQueryOptions _options = WatchQueryOptions(
       document: gql(getShopQuery),
     );
-    final QueryResult result = await _graphQLClient.query(_options);
+    final QueryResult result = await _adminGraphQLClient.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
-      _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+      _adminGraphQLClient.cache.writeQuery(_options.asRequest, data: null);
     }
     return Shop.fromJson(result?.data);
   }
