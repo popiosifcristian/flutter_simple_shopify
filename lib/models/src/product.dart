@@ -169,7 +169,7 @@ class ShopifyImage {
   static ShopifyImage fromJson(Map<String, dynamic> json) {
     return ShopifyImage(
         altText: json['altText'],
-        originalSource: json['originalSrc'],
+        originalSource: json['url'],
         id: json['id']);
   }
 }

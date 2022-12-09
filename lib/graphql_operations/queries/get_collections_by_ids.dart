@@ -8,7 +8,7 @@ query getCollectionsByIds($ids: [ID!]!){
       descriptionHtml
       image {
         src
-        originalSrc
+        url
         id
         altText
       }

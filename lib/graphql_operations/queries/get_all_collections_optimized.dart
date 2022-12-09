@@ -16,7 +16,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean){
         image {
           altText
           id
-          originalSrc
+          url
         }
       }
     }

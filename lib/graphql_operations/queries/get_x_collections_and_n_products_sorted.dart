@@ -16,7 +16,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $sortKeyProduct: ProductCol
         image {
           altText
           id
-          originalSrc
+          url
         }
         products(first: $n, sortKey: $sortKeyProduct) {
           edges {
@@ -28,7 +28,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $sortKeyProduct: ProductCol
                     image {
                       altText
                       id
-                      originalSrc
+                      url
                     }
                     priceV2 {
                       amount
@@ -62,7 +62,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $sortKeyProduct: ProductCol
                   node {
                     altText
                     id
-                    originalSrc
+                    url
                   }
                 }
               }

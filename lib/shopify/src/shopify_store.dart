@@ -205,18 +205,18 @@ class ShopifyStore with ShopifyError {
     return [Collection.fromJson({})];
   }
 
-  /// Returns the Shop.
-  Future<Shop> getShop({bool deleteThisPartOfCache = false}) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
-      document: gql(getShopQuery),
-    );
-    final QueryResult result = await _adminGraphQLClient.query(_options);
-    checkForError(result);
-    if (deleteThisPartOfCache) {
-      _adminGraphQLClient.cache.writeQuery(_options.asRequest, data: null);
-    }
-    return Shop.fromJson(result?.data);
-  }
+  // /// Returns the Shop.
+  // Future<Shop> getShop({bool deleteThisPartOfCache = false}) async {
+  //   final WatchQueryOptions _options = WatchQueryOptions(
+  //     document: gql(getShopQuery),
+  //   );
+  //   final QueryResult result = await _adminGraphQLClient.query(_options);
+  //   checkForError(result);
+  //   if (deleteThisPartOfCache) {
+  //     _adminGraphQLClient.cache.writeQuery(_options.asRequest, data: null);
+  //   }
+  //   return Shop.fromJson(result?.data);
+  // }
 
   /// Returns a collection by handle.
   Future<Collection> getCollectionByHandle(String collectionName,

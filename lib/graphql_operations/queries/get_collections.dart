@@ -16,7 +16,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean){
         image {
           altText
           id
-          originalSrc
+          url
         }
         products(first: 250) {
           edges {
@@ -28,7 +28,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean){
                     image {
                       altText
                       id
-                      originalSrc
+                      url
                     }
                     priceV2 {
                       amount
@@ -74,7 +74,7 @@ query($cursor: String, $sortKey: CollectionSortKeys, $reverse: Boolean){
                   node {
                     altText
                     id
-                    originalSrc
+                    url
                   }
                 }
               }

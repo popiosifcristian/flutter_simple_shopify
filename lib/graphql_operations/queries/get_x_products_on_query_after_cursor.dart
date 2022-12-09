@@ -26,7 +26,7 @@ query( $cursor: String, $limit : Int, $sortKey : ProductSortKeys, $query: String
             node {
               altText
               id
-              originalSrc
+              url
             }
           }
         }
@@ -37,7 +37,7 @@ query( $cursor: String, $limit : Int, $sortKey : ProductSortKeys, $query: String
               image {
                 altText
                 id
-                originalSrc
+                url
               }
               priceV2 {
                 amount
