@@ -13,8 +13,8 @@ class ShopifyConfig {
 
   /// The version of the Storefront API.
   ///
-  /// Default is set to 2020-04.
-  static String _storefrontApiVersion = '2022-01';
+  /// Default is set to 2022-04.
+  static String _storefrontApiVersion = '2022-04';
 
   /// Where to store the cache.
   ///
