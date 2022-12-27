@@ -12,9 +12,9 @@ class Shop {
 
   static Shop fromJson(Map<String, dynamic> json) {
     return Shop(
-      description: (json['shop'] ?? const {})['description'],
-      name: (json['shop'] ?? const {})['name'],
-      customerAccounts: (json['shop'] ?? const {})['customerAccounts'],
+      description: (json['data']['shop'] ?? const {})['description'],
+      name: (json['data']['shop'] ?? const {})['name'],
+      customerAccounts: (json['data']['shop'] ?? const {})['customerAccounts'],
     );
   }
 }

@@ -37,7 +37,7 @@ customer(customerAccessToken: $accessToken) {
                   image {
                     altText
                     id
-                    originalSrc
+                    url
                   }
                   compareAtPriceV2 {
                     amount

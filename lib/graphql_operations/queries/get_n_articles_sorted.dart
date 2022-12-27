@@ -32,7 +32,7 @@ query($x : Int, $sortKey : ArticleSortKeys, $reverse: Boolean){
         image {
           altText
           id
-          originalSrc
+          url
         }
         publishedAt
         tags

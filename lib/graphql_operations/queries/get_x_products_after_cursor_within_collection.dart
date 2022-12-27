@@ -11,7 +11,7 @@ query($id : ID!, $cursor : String, $limit : Int, $sortKey : ProductCollectionSor
       image {
         altText
         id
-        originalSrc
+        url
       }
       products(first: $limit, sortKey: $sortKey, after: $cursor, reverse: $reverse) {
         edges {
@@ -45,7 +45,7 @@ query($id : ID!, $cursor : String, $limit : Int, $sortKey : ProductCollectionSor
                 node {
                   altText
                   id
-                  originalSrc
+                  url
                 }
               }
             }
@@ -63,7 +63,7 @@ query($id : ID!, $cursor : String, $limit : Int, $sortKey : ProductCollectionSor
                   image {
                     altText
                     id
-                    originalSrc
+                    url
                   }
                   priceV2 {
                     amount

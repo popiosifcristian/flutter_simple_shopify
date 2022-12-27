@@ -12,7 +12,7 @@ query getProductRecommentationsQuery($id: ID!){
         node {
           altText
           id
-          originalSrc
+          url
         }
       }
     }
@@ -36,7 +36,7 @@ query getProductRecommentationsQuery($id: ID!){
           image {
             altText
             id
-            originalSrc
+            url
           }
           priceV2 {
             amount

@@ -20,7 +20,7 @@ query($cursor : String, $x : Int, $reverse: Boolean, $sortKey: ProductSortKeys){
               image {
                 altText
                 id
-                originalSrc
+                url
               }
               priceV2 {
                 amount
@@ -76,7 +76,7 @@ query($cursor : String, $x : Int, $reverse: Boolean, $sortKey: ProductSortKeys){
             node {
               altText
               id
-              originalSrc
+              url
             }
           }
         }

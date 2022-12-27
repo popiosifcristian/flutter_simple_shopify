@@ -6,7 +6,7 @@ query getProductByHandle($handle : String!){
     images(first: 250) {
       edges {
         node {
-          originalSrc
+          url
         }
       }
     }

@@ -11,7 +11,7 @@ query($id : ID!, $cursor : String, $sortKey: ProductCollectionSortKeys){
       image {
         altText
         id
-        originalSrc
+        url
       }
       products(first: 10, sortKey: $sortKey, after: $cursor) {
         edges {
@@ -45,7 +45,7 @@ query($id : ID!, $cursor : String, $sortKey: ProductCollectionSortKeys){
                 node {
                   altText
                   id
-                  originalSrc
+                  url
                 }
               }
             }
@@ -63,7 +63,7 @@ query($id : ID!, $cursor : String, $sortKey: ProductCollectionSortKeys){
                   image {
                     altText
                     id
-                    originalSrc
+                    url
                   }
                   priceV2 {
                     amount

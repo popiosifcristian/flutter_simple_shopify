@@ -33,7 +33,7 @@ query($handle : String!, $sortKey: ArticleSortKeys, $reverseArticles: Boolean){
           image {
             altText
             id
-            originalSrc
+            url
           }
           publishedAt
           tags

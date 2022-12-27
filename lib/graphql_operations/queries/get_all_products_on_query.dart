@@ -26,7 +26,7 @@ query( $cursor: String, $sortKey : ProductSortKeys, $query: String, $reverse: Bo
             node {
               altText
               id
-              originalSrc
+              url
             }
           }
         }
@@ -37,7 +37,7 @@ query( $cursor: String, $sortKey : ProductSortKeys, $query: String, $reverse: Bo
               image {
                 altText
                 id
-                originalSrc
+                url
               }
               priceV2 {
                 amount
