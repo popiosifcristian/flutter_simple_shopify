@@ -9,6 +9,7 @@ import 'package:flutter_simple_shopify/graphql_operations/queries/get_product_re
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_products_by_ids.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_shop.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_x_collections_and_n_products_sorted.dart';
+import 'package:flutter_simple_shopify/graphql_operations/queries/get_x_collections_on_querry_after_cursor.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_x_products_after_cursor.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_x_products_after_cursor_within_collection.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_x_products_on_query_after_cursor.dart';
@@ -200,6 +201,35 @@ class ShopifyStore with ShopifyError {
       print(e);
     }
     return [Collection.fromJson({})];
+  }
+
+  /// Returns a List of [Collection].
+  ///
+  /// Returns the first [limit] Products after the given [startCursor].
+  /// [limit] has to be in the range of 0 and 250.
+  Future<List<Collection>> getXCollectionOnQueryAfterCursor(
+    String query,
+    int limit,
+    String cursor, {
+    bool deleteThisPartOfCache = false,
+    bool reverse = false,
+  }) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+        document: gql(getXCollectionsOnQueryAfterCursorQuery),
+        variables: {
+          'cursor': cursor,
+          'limit': limit,
+          'query': query,
+          'reverse': reverse
+        });
+    final QueryResult result =
+        await ShopifyConfig.graphQLClient!.query(_options);
+    checkForError(result);
+    if (deleteThisPartOfCache) {
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
+    }
+    return Collections.fromJson((result.data ?? const {})['collections'])
+        .collectionList;
   }
 
   /// Returns the Shop.

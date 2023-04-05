@@ -10,6 +10,7 @@ _$_Shop _$$_ShopFromJson(Map<String, dynamic> json) => _$_Shop(
       description: json['description'] as String?,
       moneyFormat: json['moneyFormat'] as String?,
       name: json['name'] as String?,
+      customerAccounts: json['customerAccounts'] as String?,
       paymentSettings: json['paymentSettings'] == null
           ? null
           : PaymentSettings.fromJson(
@@ -38,6 +39,7 @@ Map<String, dynamic> _$$_ShopToJson(_$_Shop instance) => <String, dynamic>{
       'description': instance.description,
       'moneyFormat': instance.moneyFormat,
       'name': instance.name,
+      'customerAccounts': instance.customerAccounts,
       'paymentSettings': instance.paymentSettings,
       'primaryDomain': instance.primaryDomain,
       'privacyPolicy': instance.privacyPolicy,

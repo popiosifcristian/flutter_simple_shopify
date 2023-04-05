@@ -15,6 +15,7 @@ class Shop with _$Shop {
     String? description,
     String? moneyFormat,
     String? name,
+    String? customerAccounts,
     PaymentSettings? paymentSettings,
     PrimaryDomain? primaryDomain,
     PrivacyPolicy? privacyPolicy,

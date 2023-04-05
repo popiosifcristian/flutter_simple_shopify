@@ -3,6 +3,7 @@ query getCollectionsByIds($ids: [ID!]!){
   nodes(ids: $ids) {
     ... on Collection {
       id
+      description
       handle
       descriptionHtml
       image {

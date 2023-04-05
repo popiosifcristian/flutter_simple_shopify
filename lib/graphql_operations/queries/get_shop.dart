@@ -4,6 +4,7 @@ query getShop {
     description
     moneyFormat
     name
+    customerAccounts
     paymentSettings {
       acceptedCardBrands
       cardVaultUrl
