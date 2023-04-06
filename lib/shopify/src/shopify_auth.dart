@@ -15,6 +15,7 @@ import '../../shopify_config.dart';
 /// ShopifyAuth class handles the authentication.
 class ShopifyAuth with ShopifyError {
   ShopifyAuth._();
+
   GraphQLClient? get _graphQLClient => ShopifyConfig.graphQLClient;
 
   static final ShopifyAuth instance = ShopifyAuth._();
@@ -214,10 +215,12 @@ class ShopifyAuth with ShopifyError {
   }
 
   /// Returns the currently signed-in [ShopifyUser] or [null] if there is none.
-  Future<ShopifyUser?> currentUser({bool deleteThisPartOfCache = false}) async {
+  Future<ShopifyUser?> currentUser(
+      {bool deleteThisPartOfCache = false, FetchPolicy? fetchPolicy}) async {
     final WatchQueryOptions _getCustomer = WatchQueryOptions(
         document: gql(getCustomerQuery),
-        variables: {'customerAccessToken': await currentCustomerAccessToken});
+        variables: {'customerAccessToken': await currentCustomerAccessToken},
+        fetchPolicy: fetchPolicy);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_getCustomer.asRequest, data: {});
     }
