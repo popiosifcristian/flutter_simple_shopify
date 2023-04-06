@@ -25,6 +25,7 @@ class Article with _$Article {
     final List<String>? tags,
     final String? title,
     final String? url,
+    final String? cursor,
   }) = _Article;
 
   factory Article.fromJson(Map<String, dynamic> json) =>
@@ -48,6 +49,7 @@ class Article with _$Article {
       tags: _getTagsList(json),
       title: (json['node'] ?? const {})['title'],
       url: (json['node'] ?? const {})['url'],
+      cursor: (json['node'] ?? const {})['cursor'],
     );
   }
 
@@ -63,4 +65,6 @@ class Article with _$Article {
     (json['node'] ?? const {})['tags']?.forEach((tag) => tagsList.add(tag));
     return tagsList;
   }
+
+  DateTime get publishedAtDate => DateTime.parse(publishedAt);
 }
