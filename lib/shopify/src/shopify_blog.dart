@@ -74,11 +74,13 @@ class ShopifyBlog with ShopifyError {
   /// Returns a the first [articleAmount] of [Article] sorted by [sortKeyArticle].
   Future<List<Article>?> getXArticlesSorted(int articleAmount,
       {SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
+      bool reverse = false,
       bool deleteThisPartOfCache = false}) async {
     final QueryOptions _options =
         WatchQueryOptions(document: gql(getNArticlesSortedQuery), variables: {
       'x': articleAmount,
       'sortKey': sortKeyArticle.parseToString(),
+      'reverse': reverse,
     });
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
