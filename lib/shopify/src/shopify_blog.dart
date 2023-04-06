@@ -95,12 +95,12 @@ class ShopifyBlog with ShopifyError {
   /// Returns a the first [articleAmount] of [Article] sorted by [sortKeyArticle].
   /// [articleAmount] has to be in the range of 0 and 250.
   Future<List<Article>> getXArticlesSortedAfterCursor(
-      int articleAmount,
-      String startCursor, {
-        bool reverse = false,
-        SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
-        bool deleteThisPartOfCache = false,
-      }) async {
+    int articleAmount,
+    String startCursor, {
+    bool reverse = false,
+    SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
+    bool deleteThisPartOfCache = false,
+  }) async {
     final QueryOptions _options = WatchQueryOptions(
         document: gql(getNArticlesSortedAfterCursorQuery),
         variables: {
@@ -109,13 +109,13 @@ class ShopifyBlog with ShopifyError {
           'reverse': reverse,
           'sortKey': sortKeyArticle.parseToString(),
         });
-    final QueryResult result = await _graphQLClient.query(_options);
+    final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
-      _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
     return (Articles.fromJson(
-        ((result?.data ?? const {}))['articles'] ?? const {}))
+            ((result.data ?? const {}))['articles'] ?? const {}))
         .articleList;
   }
 
@@ -123,12 +123,12 @@ class ShopifyBlog with ShopifyError {
   ///
   /// Returns the List of [Article] for a given [tag].
   Future<List<Article>> getXArticlesByTagSorted(
-      String tag,
-      int articleAmount, {
-        bool reverse = false,
-        SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
-        bool deleteThisPartOfCache = false,
-      }) async {
+    String tag,
+    int articleAmount, {
+    bool reverse = false,
+    SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
+    bool deleteThisPartOfCache = false,
+  }) async {
     final QueryOptions _options = WatchQueryOptions(
         document: gql(getNArticlesWithQuerySortedQuery),
         variables: {
@@ -137,13 +137,13 @@ class ShopifyBlog with ShopifyError {
           'sortKey': sortKeyArticle.parseToString(),
           'query': 'tag:"$tag"',
         });
-    final QueryResult result = await _graphQLClient.query(_options);
+    final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
-      _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
     return (Articles.fromJson(
-        ((result?.data ?? const {}))['articles'] ?? const {}))
+            ((result.data ?? const {}))['articles'] ?? const {}))
         .articleList;
   }
 
@@ -151,13 +151,13 @@ class ShopifyBlog with ShopifyError {
   ///
   /// Returns the List of [Article] for a given [tag].
   Future<List<Article>> getXArticlesByTagSortedAfterCursor(
-      String tag,
-      int articleAmount,
-      String startCursor, {
-        bool reverse = false,
-        SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
-        bool deleteThisPartOfCache = false,
-      }) async {
+    String tag,
+    int articleAmount,
+    String startCursor, {
+    bool reverse = false,
+    SortKeyArticle sortKeyArticle = SortKeyArticle.RELEVANCE,
+    bool deleteThisPartOfCache = false,
+  }) async {
     final QueryOptions _options = WatchQueryOptions(
         document: gql(getNArticlesWithQuerySortedQuery),
         variables: {
@@ -167,13 +167,13 @@ class ShopifyBlog with ShopifyError {
           'sortKey': sortKeyArticle.parseToString(),
           'query': 'tag:"$tag"',
         });
-    final QueryResult result = await _graphQLClient.query(_options);
+    final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
-      _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
     return (Articles.fromJson(
-        ((result?.data ?? const {}))['articles'] ?? const {}))
+            ((result.data ?? const {}))['articles'] ?? const {}))
         .articleList;
   }
 
@@ -194,19 +194,20 @@ class ShopifyBlog with ShopifyError {
           'reverse': reverse,
           'sortKey': sortKeyArticle.parseToString(),
         });
-    final QueryResult result = await _graphQLClient.query(_options);
+    final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
-      _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
 
-    var articles = (Articles.fromJson(
-        ((result?.data ?? const {}))['articles'] ?? const {}))
-        .articleList;
+    var articles =
+        (Articles.fromJson(((result.data ?? const {}))['articles'] ?? const {}))
+            .articleList;
 
-    final allTags = articles.expand((e) => e.tags).toSet().toList();
+    List<String> allTags =
+        articles.expand((e) => e.tags ?? <String>[]).toSet().toList();
 
-    while (articles?.length == articleAmount ?? false) {
+    while (articles.length == articleAmount) {
       final QueryOptions _options = WatchQueryOptions(
           document: gql(getNArticleTagsSortedAfterCursorQuery),
           variables: {
@@ -215,17 +216,18 @@ class ShopifyBlog with ShopifyError {
             'reverse': reverse,
             'sortKey': sortKeyArticle.parseToString(),
           });
-      final QueryResult result = await _graphQLClient.query(_options);
+      final QueryResult result = await _graphQLClient!.query(_options);
       checkForError(result);
       if (deleteThisPartOfCache) {
-        _graphQLClient.cache.writeQuery(_options.asRequest, data: null);
+        _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
       }
 
-      final newArticles = (Articles.fromJson(
-          ((result?.data ?? const {}))['articles'] ?? const {}))
+      List<Article> newArticles = (Articles.fromJson(
+              ((result.data ?? const {}))['articles'] ?? const {}))
           .articleList;
 
-      allTags.addAll(newArticles.expand((e) => e.tags).toSet().toList());
+      allTags.addAll(
+          newArticles.expand((e) => e.tags ?? <String>[]).toSet().toList());
 
       articles.addAll(newArticles);
     }

@@ -26,6 +26,7 @@ _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       title: json['title'] as String?,
       url: json['url'] as String?,
+      cursor: json['cursor'] as String?,
     );
 
 Map<String, dynamic> _$$_ArticleToJson(_$_Article instance) =>
@@ -43,4 +44,5 @@ Map<String, dynamic> _$$_ArticleToJson(_$_Article instance) =>
       'tags': instance.tags,
       'title': instance.title,
       'url': instance.url,
+      'cursor': instance.cursor,
     };

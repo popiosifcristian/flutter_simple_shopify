@@ -5,6 +5,7 @@ import 'author_v_2/author_v_2.dart';
 import 'comment/comment.dart';
 
 part 'article.freezed.dart';
+
 part 'article.g.dart';
 
 @freezed
@@ -55,8 +56,8 @@ class Article with _$Article {
 
   static _getCommentList(Map<String, dynamic> json) {
     List<Comment> commentList = [];
-    json['edges']?.forEach(
-        (comment) => commentList.add(Comment.fromGraphJson(comment ?? const {})));
+    json['edges']?.forEach((comment) =>
+        commentList.add(Comment.fromGraphJson(comment ?? const {})));
     return commentList;
   }
 
@@ -66,5 +67,6 @@ class Article with _$Article {
     return tagsList;
   }
 
-  DateTime get publishedAtDate => DateTime.parse(publishedAt);
+  DateTime? get publishedAtDate =>
+      publishedAt != null ? DateTime.parse(publishedAt!) : null;
 }
