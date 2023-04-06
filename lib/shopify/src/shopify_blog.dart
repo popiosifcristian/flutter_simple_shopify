@@ -87,7 +87,7 @@ class ShopifyBlog with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return (Articles.fromJson(
+    return (Articles.fromGraphJson(
             (result.data ?? const {})['articles'] ?? const {}))
         .articleList;
   }
@@ -116,8 +116,8 @@ class ShopifyBlog with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return (Articles.fromJson(
-            ((result.data ?? const {}))['articles'] ?? const {}))
+    return (Articles.fromGraphJson(
+            (result.data ?? const {})['articles'] ?? const {}))
         .articleList;
   }
 
@@ -144,8 +144,8 @@ class ShopifyBlog with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return (Articles.fromJson(
-            ((result.data ?? const {}))['articles'] ?? const {}))
+    return (Articles.fromGraphJson(
+            (result.data ?? const {})['articles'] ?? const {}))
         .articleList;
   }
 
@@ -174,8 +174,8 @@ class ShopifyBlog with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return (Articles.fromJson(
-            ((result.data ?? const {}))['articles'] ?? const {}))
+    return (Articles.fromGraphJson(
+            (result.data ?? const {})['articles'] ?? const {}))
         .articleList;
   }
 
@@ -203,7 +203,7 @@ class ShopifyBlog with ShopifyError {
     }
 
     var articles =
-        (Articles.fromJson(((result.data ?? const {}))['articles'] ?? const {}))
+        (Articles.fromGraphJson((result.data ?? const {})['articles'] ?? const {}))
             .articleList;
 
     List<String> allTags =
@@ -224,8 +224,8 @@ class ShopifyBlog with ShopifyError {
         _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
       }
 
-      List<Article> newArticles = (Articles.fromJson(
-              ((result.data ?? const {}))['articles'] ?? const {}))
+      List<Article> newArticles = (Articles.fromGraphJson(
+              (result.data ?? const {})['articles'] ?? const {}))
           .articleList;
 
       allTags.addAll(
