@@ -228,7 +228,7 @@ class ShopifyStore with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return Collections.fromJson((result.data ?? const {})['collections'])
+    return Collections.fromGraphJson((result.data ?? const {})['collections'])
         .collectionList;
   }
 
