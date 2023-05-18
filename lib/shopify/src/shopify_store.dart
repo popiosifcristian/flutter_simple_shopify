@@ -395,38 +395,6 @@ class ShopifyStore with ShopifyError {
 
   /// Returns a List of [Product].
   ///
-  /// Returns the first [limit] Products after the given [startCursor].
-  /// [limit] has to be in the range of 0 and 250.
-  Future<List<Product>?> getXProductsOnQueryAfterCursorWithinCollection(
-    String query,
-    String id,
-    int limit, {
-    String? startCursor = null,
-    SortKeyProductCollection sortKey = SortKeyProductCollection.BEST_SELLING,
-    bool deleteThisPartOfCache = false,
-    bool reverse = false,
-  }) async {
-    String? cursor = startCursor;
-    final WatchQueryOptions _options = WatchQueryOptions(
-        document: gql(getXProductsAfterCursorWithinCollectionQuery),
-        variables: {
-          'id': id,
-          'cursor': cursor,
-          'limit': limit,
-          'query': query,
-          'sortKey': sortKey.parseToString(),
-          'reverse': reverse,
-        });
-    final QueryResult result = await _graphQLClient!.query(_options);
-    checkForError(result);
-    if (deleteThisPartOfCache) {
-      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
-    }
-    return (Collection.fromGraphJson(result.data!)).products.productList;
-  }
-
-  /// Returns a List of [Product].
-  ///
   /// Gets all [Product] from a [query] search sorted by [sortKey].
   Future<List<Product>> getAllProductsOnQuery(String cursor, String query,
       {SortKeyProduct? sortKey,
