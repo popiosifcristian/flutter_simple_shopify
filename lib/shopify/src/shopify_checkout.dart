@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_simple_shopify/enums/src/payment_token_type.dart';
 import 'package:flutter_simple_shopify/enums/src/sort_key_order.dart';
 import 'package:flutter_simple_shopify/graphql_operations/mutations/checkout_complete_free.dart';
@@ -13,6 +15,7 @@ import 'package:flutter_simple_shopify/graphql_operations/mutations/create_check
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_checkout_info_requires_shipping.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_checkout_info_with_payment_id.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_checkout_info_with_payment_id_without_shipping_rates.dart';
+import 'package:flutter_simple_shopify/graphql_operations/queries/get_checkout_order_id.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_checkout_without_shipping_rates.dart';
 import 'package:flutter_simple_shopify/mixins/src/shopfiy_error.dart';
 import 'package:flutter_simple_shopify/models/src/checkout/line_item/line_item.dart';
@@ -37,6 +40,7 @@ import '../../shopify_config.dart';
 /// ShopifyCheckout provides various method in order to work with checkouts.
 class ShopifyCheckout with ShopifyError {
   ShopifyCheckout._();
+
   static final ShopifyCheckout instance = ShopifyCheckout._();
 
   GraphQLClient? get _graphQLClient => ShopifyConfig.graphQLClient;
@@ -71,8 +75,32 @@ class ShopifyCheckout with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-
+    log('getCheckoutInfoQuery: $checkoutId');
     return Checkout.fromJson(_queryResult.data!['node']);
+  }
+
+  Future<String?> getCheckoutOrderIdQuery(
+    String checkoutId, {
+    bool deleteThisPartOfCache = false,
+  }) async {
+    final WatchQueryOptions _options = WatchQueryOptions(
+      document: gql(getCheckoutOrderId),
+      variables: {
+        'id': checkoutId,
+      },
+      fetchResults: true,
+      eagerlyFetchResults: true,
+      fetchPolicy: FetchPolicy.noCache,
+      cacheRereadPolicy: CacheRereadPolicy.ignoreAll,
+    );
+    final QueryResult _queryResult = await _graphQLClient!.query(_options);
+    checkForError(_queryResult);
+    if (deleteThisPartOfCache) {
+      _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
+    }
+    final String? orderId = _queryResult.data!['node']?['order']?['id'];
+    log('ShopifyCheckout#getCheckoutOrderIdQuery: checkout=$checkoutId, source=${_queryResult.source.toString()}, orderId=$orderId');
+    return orderId;
   }
 
   bool? _requiresShipping(QueryResult result) {

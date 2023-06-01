@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:graphql/client.dart';
 
 class ShopifyConfig {
@@ -14,7 +16,7 @@ class ShopifyConfig {
   /// The version of the Storefront API.
   ///
   /// Default is set to 2020-04.
-  static String _storefrontApiVersion = '2020-04';
+  static String _storefrontApiVersion = '2023-04';
 
   /// Where to store the cache.
   ///
@@ -36,9 +38,11 @@ class ShopifyConfig {
     _storeUrl = storeUrl;
     _storefrontApiVersion = storefrontApiVersion;
     _cacheStore = cacheStore;
+    final uri = 'https://$_storeUrl/api/$_storefrontApiVersion/graphql.json';
+    log('ShopifyConfig#setConfig: $uri');
     _graphQLClient = GraphQLClient(
       link: HttpLink(
-        'https://$_storeUrl/api/$_storefrontApiVersion/graphql.json',
+        uri,
         defaultHeaders: {
           'X-Shopify-Storefront-Access-Token': _storefrontAccessToken!,
         },
