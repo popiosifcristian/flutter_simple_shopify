@@ -9,10 +9,10 @@ part of 'line_item_order.dart';
 _$_LineItemOrder _$$_LineItemOrderFromJson(Map<String, dynamic> json) =>
     _$_LineItemOrder(
       currentQuantity: json['currentQuantity'] as int,
-      discountedTotalPrice: PriceV2.fromJson(
-          json['discountedTotalPrice'] as Map<String, dynamic>),
+      discountedTotalPrice:
+          Price.fromJson(json['discountedTotalPrice'] as Map<String, dynamic>),
       originalTotalPrice:
-          PriceV2.fromJson(json['originalTotalPrice'] as Map<String, dynamic>),
+          Price.fromJson(json['originalTotalPrice'] as Map<String, dynamic>),
       quantity: json['quantity'] as int,
       title: json['title'] as String,
       discountAllocations: (json['discountAllocations'] as List<dynamic>?)

@@ -34,11 +34,11 @@ query($cursor : String, $metafieldsNamespace : String){
                 id
                 originalSrc
               }
-              priceV2 {
+              price {
                 amount
                 currencyCode
               }
-              compareAtPriceV2 {
+              compareAtPrice {
                 amount
                 currencyCode
               }

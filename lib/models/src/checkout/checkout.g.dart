@@ -15,13 +15,12 @@ _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
               json['availableShippingRates'] as Map<String, dynamic>),
       createdAt: json['createdAt'] as String,
       currencyCode: json['currencyCode'] as String,
-      totalTaxV2: PriceV2.fromJson(json['totalTaxV2'] as Map<String, dynamic>),
-      totalPriceV2:
-          PriceV2.fromJson(json['totalPriceV2'] as Map<String, dynamic>),
+      totalTax: Price.fromJson(json['totalTax'] as Map<String, dynamic>),
+      totalPrice: Price.fromJson(json['totalPrice'] as Map<String, dynamic>),
       taxesIncluded: json['taxesIncluded'] as bool,
       taxExempt: json['taxExempt'] as bool,
-      subtotalPriceV2:
-          PriceV2.fromJson(json['subtotalPriceV2'] as Map<String, dynamic>),
+      subtotalPrice:
+          Price.fromJson(json['subtotalPrice'] as Map<String, dynamic>),
       requiresShipping: json['requiresShipping'] as bool,
       appliedGiftCards: (json['appliedGiftCards'] as List<dynamic>)
           .map((e) => AppliedGiftCards.fromJson(e as Map<String, dynamic>))
@@ -54,11 +53,11 @@ Map<String, dynamic> _$$_CheckoutToJson(_$_Checkout instance) =>
       'availableShippingRates': instance.availableShippingRates,
       'createdAt': instance.createdAt,
       'currencyCode': instance.currencyCode,
-      'totalTaxV2': instance.totalTaxV2,
-      'totalPriceV2': instance.totalPriceV2,
+      'totalTax': instance.totalTax,
+      'totalPrice': instance.totalPrice,
       'taxesIncluded': instance.taxesIncluded,
       'taxExempt': instance.taxExempt,
-      'subtotalPriceV2': instance.subtotalPriceV2,
+      'subtotalPrice': instance.subtotalPrice,
       'requiresShipping': instance.requiresShipping,
       'appliedGiftCards': instance.appliedGiftCards,
       'lineItems': instance.lineItems,

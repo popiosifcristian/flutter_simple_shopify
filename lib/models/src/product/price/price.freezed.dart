@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'price_v_2.dart';
+part of 'price.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,25 +14,25 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PriceV2 _$PriceV2FromJson(Map<String, dynamic> json) {
-  return _PriceV2.fromJson(json);
+Price _$PriceFromJson(Map<String, dynamic> json) {
+  return _Price.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PriceV2 {
+mixin _$Price {
   @JsonKey(fromJson: JsonHelper.amountFromJson)
   double get amount => throw _privateConstructorUsedError;
   String get currencyCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PriceV2CopyWith<PriceV2> get copyWith => throw _privateConstructorUsedError;
+  $PriceCopyWith<Price> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PriceV2CopyWith<$Res> {
-  factory $PriceV2CopyWith(PriceV2 value, $Res Function(PriceV2) then) =
-      _$PriceV2CopyWithImpl<$Res, PriceV2>;
+abstract class $PriceCopyWith<$Res> {
+  factory $PriceCopyWith(Price value, $Res Function(Price) then) =
+      _$PriceCopyWithImpl<$Res, Price>;
   @useResult
   $Res call(
       {@JsonKey(fromJson: JsonHelper.amountFromJson) double amount,
@@ -40,9 +40,9 @@ abstract class $PriceV2CopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PriceV2CopyWithImpl<$Res, $Val extends PriceV2>
-    implements $PriceV2CopyWith<$Res> {
-  _$PriceV2CopyWithImpl(this._value, this._then);
+class _$PriceCopyWithImpl<$Res, $Val extends Price>
+    implements $PriceCopyWith<$Res> {
+  _$PriceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -69,10 +69,9 @@ class _$PriceV2CopyWithImpl<$Res, $Val extends PriceV2>
 }
 
 /// @nodoc
-abstract class _$$_PriceV2CopyWith<$Res> implements $PriceV2CopyWith<$Res> {
-  factory _$$_PriceV2CopyWith(
-          _$_PriceV2 value, $Res Function(_$_PriceV2) then) =
-      __$$_PriceV2CopyWithImpl<$Res>;
+abstract class _$$_PriceCopyWith<$Res> implements $PriceCopyWith<$Res> {
+  factory _$$_PriceCopyWith(_$_Price value, $Res Function(_$_Price) then) =
+      __$$_PriceCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -81,10 +80,9 @@ abstract class _$$_PriceV2CopyWith<$Res> implements $PriceV2CopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PriceV2CopyWithImpl<$Res>
-    extends _$PriceV2CopyWithImpl<$Res, _$_PriceV2>
-    implements _$$_PriceV2CopyWith<$Res> {
-  __$$_PriceV2CopyWithImpl(_$_PriceV2 _value, $Res Function(_$_PriceV2) _then)
+class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
+    implements _$$_PriceCopyWith<$Res> {
+  __$$_PriceCopyWithImpl(_$_Price _value, $Res Function(_$_Price) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +91,7 @@ class __$$_PriceV2CopyWithImpl<$Res>
     Object? amount = null,
     Object? currencyCode = null,
   }) {
-    return _then(_$_PriceV2(
+    return _then(_$_Price(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -108,14 +106,14 @@ class __$$_PriceV2CopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PriceV2 extends _PriceV2 {
-  _$_PriceV2(
+class _$_Price extends _Price {
+  _$_Price(
       {@JsonKey(fromJson: JsonHelper.amountFromJson) required this.amount,
       required this.currencyCode})
       : super._();
 
-  factory _$_PriceV2.fromJson(Map<String, dynamic> json) =>
-      _$$_PriceV2FromJson(json);
+  factory _$_Price.fromJson(Map<String, dynamic> json) =>
+      _$$_PriceFromJson(json);
 
   @override
   @JsonKey(fromJson: JsonHelper.amountFromJson)
@@ -125,14 +123,14 @@ class _$_PriceV2 extends _PriceV2 {
 
   @override
   String toString() {
-    return 'PriceV2(amount: $amount, currencyCode: $currencyCode)';
+    return 'Price(amount: $amount, currencyCode: $currencyCode)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PriceV2 &&
+            other is _$_Price &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode));
@@ -145,25 +143,25 @@ class _$_PriceV2 extends _PriceV2 {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PriceV2CopyWith<_$_PriceV2> get copyWith =>
-      __$$_PriceV2CopyWithImpl<_$_PriceV2>(this, _$identity);
+  _$$_PriceCopyWith<_$_Price> get copyWith =>
+      __$$_PriceCopyWithImpl<_$_Price>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceV2ToJson(
+    return _$$_PriceToJson(
       this,
     );
   }
 }
 
-abstract class _PriceV2 extends PriceV2 {
-  factory _PriceV2(
+abstract class _Price extends Price {
+  factory _Price(
       {@JsonKey(fromJson: JsonHelper.amountFromJson)
           required final double amount,
-      required final String currencyCode}) = _$_PriceV2;
-  _PriceV2._() : super._();
+      required final String currencyCode}) = _$_Price;
+  _Price._() : super._();
 
-  factory _PriceV2.fromJson(Map<String, dynamic> json) = _$_PriceV2.fromJson;
+  factory _Price.fromJson(Map<String, dynamic> json) = _$_Price.fromJson;
 
   @override
   @JsonKey(fromJson: JsonHelper.amountFromJson)
@@ -172,6 +170,6 @@ abstract class _PriceV2 extends PriceV2 {
   String get currencyCode;
   @override
   @JsonKey(ignore: true)
-  _$$_PriceV2CopyWith<_$_PriceV2> get copyWith =>
+  _$$_PriceCopyWith<_$_Price> get copyWith =>
       throw _privateConstructorUsedError;
 }

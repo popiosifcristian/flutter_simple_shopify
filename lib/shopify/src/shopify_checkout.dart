@@ -21,7 +21,7 @@ import 'package:flutter_simple_shopify/mixins/src/shopfiy_error.dart';
 import 'package:flutter_simple_shopify/models/src/checkout/line_item/line_item.dart';
 import 'package:flutter_simple_shopify/models/src/order/order.dart';
 import 'package:flutter_simple_shopify/models/src/order/orders/orders.dart';
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:flutter_simple_shopify/models/src/product/price/price.dart';
 import 'package:flutter_simple_shopify/models/src/shopify_user/address/address.dart';
 import 'package:graphql/client.dart';
 
@@ -228,7 +228,7 @@ class ShopifyCheckout with ShopifyError {
   /// Updates the shipping address on given [checkoutId]
   Future<String?> completeCheckoutWithTokenizedPaymentV2({
     required String checkoutId,
-    required PriceV2 price,
+    required Price price,
     required Address billingAddress,
     required String impotencyKey,
     required String tokenizedPayment,

@@ -20,8 +20,8 @@ AppliedGiftCards _$AppliedGiftCardsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppliedGiftCards {
-  PriceV2 get amountUsedV2 => throw _privateConstructorUsedError;
-  PriceV2 get balanceV2 => throw _privateConstructorUsedError;
+  Price get amountUsed => throw _privateConstructorUsedError;
+  Price get balance => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,10 +36,10 @@ abstract class $AppliedGiftCardsCopyWith<$Res> {
           AppliedGiftCards value, $Res Function(AppliedGiftCards) then) =
       _$AppliedGiftCardsCopyWithImpl<$Res, AppliedGiftCards>;
   @useResult
-  $Res call({PriceV2 amountUsedV2, PriceV2 balanceV2, String id});
+  $Res call({Price amountUsed, Price balance, String id});
 
-  $PriceV2CopyWith<$Res> get amountUsedV2;
-  $PriceV2CopyWith<$Res> get balanceV2;
+  $PriceCopyWith<$Res> get amountUsed;
+  $PriceCopyWith<$Res> get balance;
 }
 
 /// @nodoc
@@ -55,19 +55,19 @@ class _$AppliedGiftCardsCopyWithImpl<$Res, $Val extends AppliedGiftCards>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amountUsedV2 = null,
-    Object? balanceV2 = null,
+    Object? amountUsed = null,
+    Object? balance = null,
     Object? id = null,
   }) {
     return _then(_value.copyWith(
-      amountUsedV2: null == amountUsedV2
-          ? _value.amountUsedV2
-          : amountUsedV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-      balanceV2: null == balanceV2
-          ? _value.balanceV2
-          : balanceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
+      amountUsed: null == amountUsed
+          ? _value.amountUsed
+          : amountUsed // ignore: cast_nullable_to_non_nullable
+              as Price,
+      balance: null == balance
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as Price,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -77,17 +77,17 @@ class _$AppliedGiftCardsCopyWithImpl<$Res, $Val extends AppliedGiftCards>
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res> get amountUsedV2 {
-    return $PriceV2CopyWith<$Res>(_value.amountUsedV2, (value) {
-      return _then(_value.copyWith(amountUsedV2: value) as $Val);
+  $PriceCopyWith<$Res> get amountUsed {
+    return $PriceCopyWith<$Res>(_value.amountUsed, (value) {
+      return _then(_value.copyWith(amountUsed: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res> get balanceV2 {
-    return $PriceV2CopyWith<$Res>(_value.balanceV2, (value) {
-      return _then(_value.copyWith(balanceV2: value) as $Val);
+  $PriceCopyWith<$Res> get balance {
+    return $PriceCopyWith<$Res>(_value.balance, (value) {
+      return _then(_value.copyWith(balance: value) as $Val);
     });
   }
 }
@@ -100,12 +100,12 @@ abstract class _$$_AppliedGiftCardsCopyWith<$Res>
       __$$_AppliedGiftCardsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({PriceV2 amountUsedV2, PriceV2 balanceV2, String id});
+  $Res call({Price amountUsed, Price balance, String id});
 
   @override
-  $PriceV2CopyWith<$Res> get amountUsedV2;
+  $PriceCopyWith<$Res> get amountUsed;
   @override
-  $PriceV2CopyWith<$Res> get balanceV2;
+  $PriceCopyWith<$Res> get balance;
 }
 
 /// @nodoc
@@ -119,19 +119,19 @@ class __$$_AppliedGiftCardsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amountUsedV2 = null,
-    Object? balanceV2 = null,
+    Object? amountUsed = null,
+    Object? balance = null,
     Object? id = null,
   }) {
     return _then(_$_AppliedGiftCards(
-      amountUsedV2: null == amountUsedV2
-          ? _value.amountUsedV2
-          : amountUsedV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
-      balanceV2: null == balanceV2
-          ? _value.balanceV2
-          : balanceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
+      amountUsed: null == amountUsed
+          ? _value.amountUsed
+          : amountUsed // ignore: cast_nullable_to_non_nullable
+              as Price,
+      balance: null == balance
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as Price,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -144,22 +144,22 @@ class __$$_AppliedGiftCardsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AppliedGiftCards extends _AppliedGiftCards {
   _$_AppliedGiftCards(
-      {required this.amountUsedV2, required this.balanceV2, required this.id})
+      {required this.amountUsed, required this.balance, required this.id})
       : super._();
 
   factory _$_AppliedGiftCards.fromJson(Map<String, dynamic> json) =>
       _$$_AppliedGiftCardsFromJson(json);
 
   @override
-  final PriceV2 amountUsedV2;
+  final Price amountUsed;
   @override
-  final PriceV2 balanceV2;
+  final Price balance;
   @override
   final String id;
 
   @override
   String toString() {
-    return 'AppliedGiftCards(amountUsedV2: $amountUsedV2, balanceV2: $balanceV2, id: $id)';
+    return 'AppliedGiftCards(amountUsed: $amountUsed, balance: $balance, id: $id)';
   }
 
   @override
@@ -167,16 +167,15 @@ class _$_AppliedGiftCards extends _AppliedGiftCards {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppliedGiftCards &&
-            (identical(other.amountUsedV2, amountUsedV2) ||
-                other.amountUsedV2 == amountUsedV2) &&
-            (identical(other.balanceV2, balanceV2) ||
-                other.balanceV2 == balanceV2) &&
+            (identical(other.amountUsed, amountUsed) ||
+                other.amountUsed == amountUsed) &&
+            (identical(other.balance, balance) || other.balance == balance) &&
             (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, amountUsedV2, balanceV2, id);
+  int get hashCode => Object.hash(runtimeType, amountUsed, balance, id);
 
   @JsonKey(ignore: true)
   @override
@@ -194,8 +193,8 @@ class _$_AppliedGiftCards extends _AppliedGiftCards {
 
 abstract class _AppliedGiftCards extends AppliedGiftCards {
   factory _AppliedGiftCards(
-      {required final PriceV2 amountUsedV2,
-      required final PriceV2 balanceV2,
+      {required final Price amountUsed,
+      required final Price balance,
       required final String id}) = _$_AppliedGiftCards;
   _AppliedGiftCards._() : super._();
 
@@ -203,9 +202,9 @@ abstract class _AppliedGiftCards extends AppliedGiftCards {
       _$_AppliedGiftCards.fromJson;
 
   @override
-  PriceV2 get amountUsedV2;
+  Price get amountUsed;
   @override
-  PriceV2 get balanceV2;
+  Price get balance;
   @override
   String get id;
   @override

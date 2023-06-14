@@ -56,7 +56,7 @@ query($customerAccessToken : String!){
         email
         id
         webUrl
-        totalPriceV2 {
+        totalPrice {
           amount
           currencyCode
         }
@@ -77,7 +77,7 @@ query($customerAccessToken : String!){
                 }
               }
               variant {
-                priceV2 {
+                price {
                   amount
                   currencyCode
                 }
@@ -87,7 +87,7 @@ query($customerAccessToken : String!){
                   id
                   originalSrc
                 }
-                compareAtPriceV2 {
+                compareAtPrice {
                   amount
                   currencyCode
                 }

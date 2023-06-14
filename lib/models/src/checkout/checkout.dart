@@ -1,5 +1,5 @@
 import 'package:flutter_simple_shopify/models/src/order/order.dart';
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:flutter_simple_shopify/models/src/product/price/price.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../json_helper.dart';
@@ -22,11 +22,11 @@ class Checkout with _$Checkout {
     required AvailableShippingRates? availableShippingRates,
     required String createdAt,
     required String currencyCode,
-    required PriceV2 totalTaxV2,
-    required PriceV2 totalPriceV2,
+    required Price totalTax,
+    required Price totalPrice,
     required bool taxesIncluded,
     required bool taxExempt,
-    required PriceV2 subtotalPriceV2,
+    required Price subtotalPrice,
     required bool requiresShipping,
     required List<AppliedGiftCards> appliedGiftCards,
     @JsonKey(fromJson: JsonHelper.lineItems) required List<LineItem> lineItems,

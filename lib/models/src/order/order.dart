@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:flutter_simple_shopify/models/src/product/price/price.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'line_items_order/line_items_order.dart';
@@ -22,11 +22,11 @@ class Order with _$Order {
     required String processedAt,
     required ShippingAddress shippingAddress,
     required String statusUrl,
-    required PriceV2 subtotalPriceV2,
-    required PriceV2 totalPriceV2,
-    required PriceV2 totalShippingPriceV2,
-    required PriceV2 totalTaxV2,
-    PriceV2? totalRefundedV2,
+    required Price subtotalPrice,
+    required Price totalPrice,
+    required Price totalShippingPrice,
+    required Price totalTax,
+    Price? totalRefunded,
     String? phone,
     String? cursor,
   }) = _Order;
@@ -46,16 +46,16 @@ class Order with _$Order {
         shippingAddress: ShippingAddress.fromJson(
             (json['node'] ?? const {})['shippingAddress'] ?? const {}),
         statusUrl: (json['node'] ?? const {})['statusUrl'],
-        subtotalPriceV2: PriceV2.fromJson(
-            (json['node'] ?? const {})['subtotalPriceV2'] ?? const {}),
-        totalPriceV2: PriceV2.fromJson(
-            (json['node'] ?? const {})['totalPriceV2'] ?? const {}),
-        totalRefundedV2: PriceV2.fromJson(
-            (json['node'] ?? const {})['totalRefundedV2'] ?? const {}),
-        totalShippingPriceV2: PriceV2.fromJson(
-            (json['node'] ?? const {})['totalShippingPriceV2'] ?? const {}),
-        totalTaxV2: PriceV2.fromJson(
-            (json['node'] ?? const {})['totalTaxV2'] ?? const {}),
+        subtotalPrice: Price.fromJson(
+            (json['node'] ?? const {})['subtotalPrice'] ?? const {}),
+        totalPrice: Price.fromJson(
+            (json['node'] ?? const {})['totalPrice'] ?? const {}),
+        totalRefunded: Price.fromJson(
+            (json['node'] ?? const {})['totalRefunded'] ?? const {}),
+        totalShippingPrice: Price.fromJson(
+            (json['node'] ?? const {})['totalShippingPrice'] ?? const {}),
+        totalTax: Price.fromJson(
+            (json['node'] ?? const {})['totalTax'] ?? const {}),
         cursor: json['cursor']);
   }
 

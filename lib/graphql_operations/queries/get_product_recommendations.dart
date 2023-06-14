@@ -38,11 +38,11 @@ query getProductRecommentationsQuery($id: ID!){
             id
             originalSrc
           }
-          priceV2 {
+          price {
             amount
             currencyCode
           }
-          compareAtPriceV2 {
+          compareAtPrice {
             amount
             currencyCode
           }

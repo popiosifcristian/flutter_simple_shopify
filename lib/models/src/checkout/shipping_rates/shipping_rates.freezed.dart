@@ -22,7 +22,7 @@ ShippingRates _$ShippingRatesFromJson(Map<String, dynamic> json) {
 mixin _$ShippingRates {
   String get handle => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  PriceV2 get priceV2 => throw _privateConstructorUsedError;
+  Price get price => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,9 +36,9 @@ abstract class $ShippingRatesCopyWith<$Res> {
           ShippingRates value, $Res Function(ShippingRates) then) =
       _$ShippingRatesCopyWithImpl<$Res, ShippingRates>;
   @useResult
-  $Res call({String handle, String title, PriceV2 priceV2});
+  $Res call({String handle, String title, Price price});
 
-  $PriceV2CopyWith<$Res> get priceV2;
+  $PriceCopyWith<$Res> get price;
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$ShippingRatesCopyWithImpl<$Res, $Val extends ShippingRates>
   $Res call({
     Object? handle = null,
     Object? title = null,
-    Object? priceV2 = null,
+    Object? price = null,
   }) {
     return _then(_value.copyWith(
       handle: null == handle
@@ -67,18 +67,18 @@ class _$ShippingRatesCopyWithImpl<$Res, $Val extends ShippingRates>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      priceV2: null == priceV2
-          ? _value.priceV2
-          : priceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Price,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res> get priceV2 {
-    return $PriceV2CopyWith<$Res>(_value.priceV2, (value) {
-      return _then(_value.copyWith(priceV2: value) as $Val);
+  $PriceCopyWith<$Res> get price {
+    return $PriceCopyWith<$Res>(_value.price, (value) {
+      return _then(_value.copyWith(price: value) as $Val);
     });
   }
 }
@@ -91,10 +91,10 @@ abstract class _$$_ShippingRatesCopyWith<$Res>
       __$$_ShippingRatesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String handle, String title, PriceV2 priceV2});
+  $Res call({String handle, String title, Price price});
 
   @override
-  $PriceV2CopyWith<$Res> get priceV2;
+  $PriceCopyWith<$Res> get price;
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class __$$_ShippingRatesCopyWithImpl<$Res>
   $Res call({
     Object? handle = null,
     Object? title = null,
-    Object? priceV2 = null,
+    Object? price = null,
   }) {
     return _then(_$_ShippingRates(
       handle: null == handle
@@ -121,10 +121,10 @@ class __$$_ShippingRatesCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      priceV2: null == priceV2
-          ? _value.priceV2
-          : priceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Price,
     ));
   }
 }
@@ -133,7 +133,7 @@ class __$$_ShippingRatesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ShippingRates extends _ShippingRates {
   _$_ShippingRates(
-      {required this.handle, required this.title, required this.priceV2})
+      {required this.handle, required this.title, required this.price})
       : super._();
 
   factory _$_ShippingRates.fromJson(Map<String, dynamic> json) =>
@@ -144,11 +144,11 @@ class _$_ShippingRates extends _ShippingRates {
   @override
   final String title;
   @override
-  final PriceV2 priceV2;
+  final Price price;
 
   @override
   String toString() {
-    return 'ShippingRates(handle: $handle, title: $title, priceV2: $priceV2)';
+    return 'ShippingRates(handle: $handle, title: $title, price: $price)';
   }
 
   @override
@@ -158,12 +158,12 @@ class _$_ShippingRates extends _ShippingRates {
             other is _$_ShippingRates &&
             (identical(other.handle, handle) || other.handle == handle) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.priceV2, priceV2) || other.priceV2 == priceV2));
+            (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, handle, title, priceV2);
+  int get hashCode => Object.hash(runtimeType, handle, title, price);
 
   @JsonKey(ignore: true)
   @override
@@ -183,7 +183,7 @@ abstract class _ShippingRates extends ShippingRates {
   factory _ShippingRates(
       {required final String handle,
       required final String title,
-      required final PriceV2 priceV2}) = _$_ShippingRates;
+      required final Price price}) = _$_ShippingRates;
   _ShippingRates._() : super._();
 
   factory _ShippingRates.fromJson(Map<String, dynamic> json) =
@@ -194,7 +194,7 @@ abstract class _ShippingRates extends ShippingRates {
   @override
   String get title;
   @override
-  PriceV2 get priceV2;
+  Price get price;
   @override
   @JsonKey(ignore: true)
   _$$_ShippingRatesCopyWith<_$_ShippingRates> get copyWith =>

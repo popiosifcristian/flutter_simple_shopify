@@ -8,7 +8,7 @@ part of 'product_variant.dart';
 
 _$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
     _$_ProductVariant(
-      price: PriceV2.fromJson(json['price'] as Map<String, dynamic>),
+      price: Price.fromJson(json['price'] as Map<String, dynamic>),
       title: json['title'] as String,
       weight: (json['weight'] as num).toDouble(),
       weightUnit: json['weightUnit'] as String,
@@ -19,7 +19,7 @@ _$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
       quantityAvailable: json['quantityAvailable'] as int,
       unitPrice: json['unitPrice'] == null
           ? null
-          : PriceV2.fromJson(json['unitPrice'] as Map<String, dynamic>),
+          : Price.fromJson(json['unitPrice'] as Map<String, dynamic>),
       unitPriceMeasurement: json['unitPriceMeasurement'] == null
           ? null
           : UnitPriceMeasurement.fromJson(
@@ -29,7 +29,7 @@ _$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
           .toList(),
       compareAtPrice: json['compareAtPrice'] == null
           ? null
-          : PriceV2.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
+          : Price.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
       image: json['image'] == null
           ? null
           : ShopifyImage.fromJson(json['image'] as Map<String, dynamic>),

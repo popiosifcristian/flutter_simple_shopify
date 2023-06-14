@@ -12,7 +12,7 @@ mutation checkoutCompleteWithTokenizedPaymentV3($checkoutId: ID!, $payment: Toke
       message
     }
     payment {
-      amountV2 {
+      amount {
         amount
         currencyCode
       }

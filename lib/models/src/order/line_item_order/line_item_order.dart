@@ -1,9 +1,10 @@
 import 'package:flutter_simple_shopify/models/src/checkout/product_variant_checkout/product_variant_checkout.dart';
 import 'package:flutter_simple_shopify/models/src/order/discount_allocations/discount_allocations.dart';
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:flutter_simple_shopify/models/src/product/price/price.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'line_item_order.freezed.dart';
+
 part 'line_item_order.g.dart';
 
 @freezed
@@ -12,8 +13,8 @@ class LineItemOrder with _$LineItemOrder {
 
   factory LineItemOrder({
     required int currentQuantity,
-    required PriceV2 discountedTotalPrice,
-    required PriceV2 originalTotalPrice,
+    required Price discountedTotalPrice,
+    required Price originalTotalPrice,
     required int quantity,
     required String title,
     @Default([]) List<DiscountAllocations> discountAllocations,
@@ -27,14 +28,15 @@ class LineItemOrder with _$LineItemOrder {
     return LineItemOrder(
         currentQuantity: (json['node'] ?? const {})['currentQuantity'],
         discountAllocations: _getDiscountAllocationsList(json),
-        discountedTotalPrice: PriceV2.fromJson(
-            (json['node'] ?? const {})['discountedTotalPrice']),
+        discountedTotalPrice:
+            Price.fromJson((json['node'] ?? const {})['discountedTotalPrice']),
         originalTotalPrice:
-            PriceV2.fromJson((json['node'] ?? const {})['originalTotalPrice']),
+            Price.fromJson((json['node'] ?? const {})['originalTotalPrice']),
         quantity: (json['node'] ?? const {})['quantity'],
         title: (json['node'] ?? const {})['title'],
-        variant: ProductVariantCheckout.fromJson(
-            (json['node'] ?? const {})['variant'] ?? const {}));
+        variant: json['node']?['variant'] != null
+            ? ProductVariantCheckout.fromJson(json['node']['variant'])
+            : null);
   }
 
   static _getDiscountAllocationsList(Map<String, dynamic> json) {

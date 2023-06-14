@@ -13,7 +13,7 @@ query getProductByHandle($handle : String!){
     variants(first: 250) {
       edges {
         node {
-          priceV2 {
+          price {
             amount
             currencyCode
           }

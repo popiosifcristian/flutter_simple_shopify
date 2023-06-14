@@ -19,16 +19,15 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       shippingAddress: ShippingAddress.fromJson(
           json['shippingAddress'] as Map<String, dynamic>),
       statusUrl: json['statusUrl'] as String,
-      subtotalPriceV2:
-          PriceV2.fromJson(json['subtotalPriceV2'] as Map<String, dynamic>),
-      totalPriceV2:
-          PriceV2.fromJson(json['totalPriceV2'] as Map<String, dynamic>),
-      totalShippingPriceV2: PriceV2.fromJson(
-          json['totalShippingPriceV2'] as Map<String, dynamic>),
-      totalTaxV2: PriceV2.fromJson(json['totalTaxV2'] as Map<String, dynamic>),
-      totalRefundedV2: json['totalRefundedV2'] == null
+      subtotalPrice:
+          Price.fromJson(json['subtotalPrice'] as Map<String, dynamic>),
+      totalPrice: Price.fromJson(json['totalPrice'] as Map<String, dynamic>),
+      totalShippingPrice:
+          Price.fromJson(json['totalShippingPrice'] as Map<String, dynamic>),
+      totalTax: Price.fromJson(json['totalTax'] as Map<String, dynamic>),
+      totalRefunded: json['totalRefunded'] == null
           ? null
-          : PriceV2.fromJson(json['totalRefundedV2'] as Map<String, dynamic>),
+          : Price.fromJson(json['totalRefunded'] as Map<String, dynamic>),
       phone: json['phone'] as String?,
       cursor: json['cursor'] as String?,
     );
@@ -44,11 +43,11 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'processedAt': instance.processedAt,
       'shippingAddress': instance.shippingAddress,
       'statusUrl': instance.statusUrl,
-      'subtotalPriceV2': instance.subtotalPriceV2,
-      'totalPriceV2': instance.totalPriceV2,
-      'totalShippingPriceV2': instance.totalShippingPriceV2,
-      'totalTaxV2': instance.totalTaxV2,
-      'totalRefundedV2': instance.totalRefundedV2,
+      'subtotalPrice': instance.subtotalPrice,
+      'totalPrice': instance.totalPrice,
+      'totalShippingPrice': instance.totalShippingPrice,
+      'totalTax': instance.totalTax,
+      'totalRefunded': instance.totalRefunded,
       'phone': instance.phone,
       'cursor': instance.cursor,
     };

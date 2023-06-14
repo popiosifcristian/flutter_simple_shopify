@@ -39,11 +39,11 @@ query( $cursor: String, $limit : Int, $sortKey : ProductSortKeys, $query: String
                 id
                 originalSrc
               }
-              priceV2 {
+              price {
                 amount
                 currencyCode
               }
-              compareAtPriceV2 {
+              compareAtPrice {
                 amount
                 currencyCode
               }

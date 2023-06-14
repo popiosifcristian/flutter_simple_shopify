@@ -6,11 +6,11 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
       ready
       email
       appliedGiftCards {
-        amountUsedV2 {
+        amountUsed {
           amount
           currencyCode
         }
-        balanceV2 {
+        balance {
           amount
           currencyCode
         }
@@ -19,7 +19,7 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
       requiresShipping
       shippingLine {
         handle
-        priceV2 {
+        price {
           amount
           currencyCode
         }
@@ -30,7 +30,7 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
         shippingRates {
           handle
           title
-          priceV2 {
+          price {
             amount
             currencyCode
           }
@@ -76,7 +76,7 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
             }
             variant {
               id
-              priceV2 {
+              price {
                 amount
                 currencyCode
               }
@@ -86,7 +86,7 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
                 originalSrc
                 id
               }
-              compareAtPriceV2 {
+              compareAtPrice {
                 amount
                 currencyCode
               }
@@ -102,17 +102,17 @@ mutation checkoutShippingLineUpdate($checkoutId: ID!, $shippingRateHandle: Strin
       note
       webUrl
       updatedAt
-      totalTaxV2 {
+      totalTax {
         amount
         currencyCode
       }
-      totalPriceV2 {
+      totalPrice {
         amount
         currencyCode
       }
       taxesIncluded
       taxExempt
-      subtotalPriceV2 {
+      subtotalPrice {
         amount
         currencyCode
       }

@@ -27,8 +27,8 @@ mixin _$LastIncompleteCheckout {
   String? get id => throw _privateConstructorUsedError;
   String? get currencyCode => throw _privateConstructorUsedError;
   String? get webUrl => throw _privateConstructorUsedError;
-  PriceV2? get totalPriceV2 => throw _privateConstructorUsedError;
-  PriceV2? get lineItemsSubtotalPrice => throw _privateConstructorUsedError;
+  Price? get totalPrice => throw _privateConstructorUsedError;
+  Price? get lineItemsSubtotalPrice => throw _privateConstructorUsedError;
   @JsonKey(fromJson: JsonHelper.lineItems)
   List<LineItem>? get lineItems => throw _privateConstructorUsedError;
 
@@ -51,12 +51,12 @@ abstract class $LastIncompleteCheckoutCopyWith<$Res> {
       String? id,
       String? currencyCode,
       String? webUrl,
-      PriceV2? totalPriceV2,
-      PriceV2? lineItemsSubtotalPrice,
+      Price? totalPrice,
+      Price? lineItemsSubtotalPrice,
       @JsonKey(fromJson: JsonHelper.lineItems) List<LineItem>? lineItems});
 
-  $PriceV2CopyWith<$Res>? get totalPriceV2;
-  $PriceV2CopyWith<$Res>? get lineItemsSubtotalPrice;
+  $PriceCopyWith<$Res>? get totalPrice;
+  $PriceCopyWith<$Res>? get lineItemsSubtotalPrice;
 }
 
 /// @nodoc
@@ -79,7 +79,7 @@ class _$LastIncompleteCheckoutCopyWithImpl<$Res,
     Object? id = freezed,
     Object? currencyCode = freezed,
     Object? webUrl = freezed,
-    Object? totalPriceV2 = freezed,
+    Object? totalPrice = freezed,
     Object? lineItemsSubtotalPrice = freezed,
     Object? lineItems = freezed,
   }) {
@@ -108,14 +108,14 @@ class _$LastIncompleteCheckoutCopyWithImpl<$Res,
           ? _value.webUrl
           : webUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      totalPriceV2: freezed == totalPriceV2
-          ? _value.totalPriceV2
-          : totalPriceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2?,
+      totalPrice: freezed == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as Price?,
       lineItemsSubtotalPrice: freezed == lineItemsSubtotalPrice
           ? _value.lineItemsSubtotalPrice
           : lineItemsSubtotalPrice // ignore: cast_nullable_to_non_nullable
-              as PriceV2?,
+              as Price?,
       lineItems: freezed == lineItems
           ? _value.lineItems
           : lineItems // ignore: cast_nullable_to_non_nullable
@@ -125,24 +125,24 @@ class _$LastIncompleteCheckoutCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res>? get totalPriceV2 {
-    if (_value.totalPriceV2 == null) {
+  $PriceCopyWith<$Res>? get totalPrice {
+    if (_value.totalPrice == null) {
       return null;
     }
 
-    return $PriceV2CopyWith<$Res>(_value.totalPriceV2!, (value) {
-      return _then(_value.copyWith(totalPriceV2: value) as $Val);
+    return $PriceCopyWith<$Res>(_value.totalPrice!, (value) {
+      return _then(_value.copyWith(totalPrice: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $PriceV2CopyWith<$Res>? get lineItemsSubtotalPrice {
+  $PriceCopyWith<$Res>? get lineItemsSubtotalPrice {
     if (_value.lineItemsSubtotalPrice == null) {
       return null;
     }
 
-    return $PriceV2CopyWith<$Res>(_value.lineItemsSubtotalPrice!, (value) {
+    return $PriceCopyWith<$Res>(_value.lineItemsSubtotalPrice!, (value) {
       return _then(_value.copyWith(lineItemsSubtotalPrice: value) as $Val);
     });
   }
@@ -163,14 +163,14 @@ abstract class _$$_LastIncompleteCheckoutCopyWith<$Res>
       String? id,
       String? currencyCode,
       String? webUrl,
-      PriceV2? totalPriceV2,
-      PriceV2? lineItemsSubtotalPrice,
+      Price? totalPrice,
+      Price? lineItemsSubtotalPrice,
       @JsonKey(fromJson: JsonHelper.lineItems) List<LineItem>? lineItems});
 
   @override
-  $PriceV2CopyWith<$Res>? get totalPriceV2;
+  $PriceCopyWith<$Res>? get totalPrice;
   @override
-  $PriceV2CopyWith<$Res>? get lineItemsSubtotalPrice;
+  $PriceCopyWith<$Res>? get lineItemsSubtotalPrice;
 }
 
 /// @nodoc
@@ -191,7 +191,7 @@ class __$$_LastIncompleteCheckoutCopyWithImpl<$Res>
     Object? id = freezed,
     Object? currencyCode = freezed,
     Object? webUrl = freezed,
-    Object? totalPriceV2 = freezed,
+    Object? totalPrice = freezed,
     Object? lineItemsSubtotalPrice = freezed,
     Object? lineItems = freezed,
   }) {
@@ -220,14 +220,14 @@ class __$$_LastIncompleteCheckoutCopyWithImpl<$Res>
           ? _value.webUrl
           : webUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      totalPriceV2: freezed == totalPriceV2
-          ? _value.totalPriceV2
-          : totalPriceV2 // ignore: cast_nullable_to_non_nullable
-              as PriceV2?,
+      totalPrice: freezed == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as Price?,
       lineItemsSubtotalPrice: freezed == lineItemsSubtotalPrice
           ? _value.lineItemsSubtotalPrice
           : lineItemsSubtotalPrice // ignore: cast_nullable_to_non_nullable
-              as PriceV2?,
+              as Price?,
       lineItems: freezed == lineItems
           ? _value._lineItems
           : lineItems // ignore: cast_nullable_to_non_nullable
@@ -246,7 +246,7 @@ class _$_LastIncompleteCheckout implements _LastIncompleteCheckout {
       this.id,
       this.currencyCode,
       this.webUrl,
-      this.totalPriceV2,
+      this.totalPrice,
       this.lineItemsSubtotalPrice,
       @JsonKey(fromJson: JsonHelper.lineItems) final List<LineItem>? lineItems})
       : _lineItems = lineItems;
@@ -267,9 +267,9 @@ class _$_LastIncompleteCheckout implements _LastIncompleteCheckout {
   @override
   final String? webUrl;
   @override
-  final PriceV2? totalPriceV2;
+  final Price? totalPrice;
   @override
-  final PriceV2? lineItemsSubtotalPrice;
+  final Price? lineItemsSubtotalPrice;
   final List<LineItem>? _lineItems;
   @override
   @JsonKey(fromJson: JsonHelper.lineItems)
@@ -282,7 +282,7 @@ class _$_LastIncompleteCheckout implements _LastIncompleteCheckout {
 
   @override
   String toString() {
-    return 'LastIncompleteCheckout(completedAt: $completedAt, createdAt: $createdAt, email: $email, id: $id, currencyCode: $currencyCode, webUrl: $webUrl, totalPriceV2: $totalPriceV2, lineItemsSubtotalPrice: $lineItemsSubtotalPrice, lineItems: $lineItems)';
+    return 'LastIncompleteCheckout(completedAt: $completedAt, createdAt: $createdAt, email: $email, id: $id, currencyCode: $currencyCode, webUrl: $webUrl, totalPrice: $totalPrice, lineItemsSubtotalPrice: $lineItemsSubtotalPrice, lineItems: $lineItems)';
   }
 
   @override
@@ -299,8 +299,8 @@ class _$_LastIncompleteCheckout implements _LastIncompleteCheckout {
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode) &&
             (identical(other.webUrl, webUrl) || other.webUrl == webUrl) &&
-            (identical(other.totalPriceV2, totalPriceV2) ||
-                other.totalPriceV2 == totalPriceV2) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice) &&
             (identical(other.lineItemsSubtotalPrice, lineItemsSubtotalPrice) ||
                 other.lineItemsSubtotalPrice == lineItemsSubtotalPrice) &&
             const DeepCollectionEquality()
@@ -317,7 +317,7 @@ class _$_LastIncompleteCheckout implements _LastIncompleteCheckout {
       id,
       currencyCode,
       webUrl,
-      totalPriceV2,
+      totalPrice,
       lineItemsSubtotalPrice,
       const DeepCollectionEquality().hash(_lineItems));
 
@@ -344,8 +344,8 @@ abstract class _LastIncompleteCheckout implements LastIncompleteCheckout {
       final String? id,
       final String? currencyCode,
       final String? webUrl,
-      final PriceV2? totalPriceV2,
-      final PriceV2? lineItemsSubtotalPrice,
+      final Price? totalPrice,
+      final Price? lineItemsSubtotalPrice,
       @JsonKey(fromJson: JsonHelper.lineItems)
           final List<LineItem>? lineItems}) = _$_LastIncompleteCheckout;
 
@@ -365,9 +365,9 @@ abstract class _LastIncompleteCheckout implements LastIncompleteCheckout {
   @override
   String? get webUrl;
   @override
-  PriceV2? get totalPriceV2;
+  Price? get totalPrice;
   @override
-  PriceV2? get lineItemsSubtotalPrice;
+  Price? get lineItemsSubtotalPrice;
   @override
   @JsonKey(fromJson: JsonHelper.lineItems)
   List<LineItem>? get lineItems;

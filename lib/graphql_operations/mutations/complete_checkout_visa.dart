@@ -12,7 +12,7 @@ mutation MyMutation {
       message
     }
     payment {
-      amountV2 {
+      amount {
         amount
         currencyCode
       }

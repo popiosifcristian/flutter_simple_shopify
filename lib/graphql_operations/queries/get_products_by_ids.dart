@@ -38,7 +38,7 @@ query($ids : [ID!]!){
       variants(first: 250) {
         edges {
           node {
-            priceV2 {
+            price {
               amount
               currencyCode
             }
@@ -48,7 +48,7 @@ query($ids : [ID!]!){
               originalSrc
               id
             }
-            compareAtPriceV2 {
+            compareAtPrice {
               amount
               currencyCode
             }

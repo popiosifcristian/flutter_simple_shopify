@@ -65,11 +65,11 @@ query($id : ID!, $cursor : String, $sortKey: ProductCollectionSortKeys){
                     id
                     originalSrc
                   }
-                  priceV2 {
+                  price {
                     amount
                     currencyCode
                   }
-                  compareAtPriceV2 {
+                  compareAtPrice {
                     amount
                     currencyCode
                   }

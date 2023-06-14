@@ -15,12 +15,12 @@ _$_LastIncompleteCheckout _$$_LastIncompleteCheckoutFromJson(
       id: json['id'] as String?,
       currencyCode: json['currencyCode'] as String?,
       webUrl: json['webUrl'] as String?,
-      totalPriceV2: json['totalPriceV2'] == null
+      totalPrice: json['totalPrice'] == null
           ? null
-          : PriceV2.fromJson(json['totalPriceV2'] as Map<String, dynamic>),
+          : Price.fromJson(json['totalPrice'] as Map<String, dynamic>),
       lineItemsSubtotalPrice: json['lineItemsSubtotalPrice'] == null
           ? null
-          : PriceV2.fromJson(
+          : Price.fromJson(
               json['lineItemsSubtotalPrice'] as Map<String, dynamic>),
       lineItems: JsonHelper.lineItems(json['lineItems']),
     );
@@ -34,7 +34,7 @@ Map<String, dynamic> _$$_LastIncompleteCheckoutToJson(
       'id': instance.id,
       'currencyCode': instance.currencyCode,
       'webUrl': instance.webUrl,
-      'totalPriceV2': instance.totalPriceV2,
+      'totalPrice': instance.totalPrice,
       'lineItemsSubtotalPrice': instance.lineItemsSubtotalPrice,
       'lineItems': instance.lineItems,
     };

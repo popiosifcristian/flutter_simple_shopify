@@ -3,22 +3,22 @@ import 'package:intl/intl.dart';
 
 import '../../../json_helper.dart';
 
-part 'price_v_2.freezed.dart';
-part 'price_v_2.g.dart';
+part 'price.freezed.dart';
+part 'price.g.dart';
 
 @freezed
-class PriceV2 with _$PriceV2 {
+class Price with _$Price {
   static NumberFormat? priceFormat;
 
-  PriceV2._();
+  Price._();
 
-  factory PriceV2({
+  factory Price({
     @JsonKey(fromJson: JsonHelper.amountFromJson) required double amount,
     required String currencyCode,
-  }) = _PriceV2;
+  }) = _Price;
 
-  factory PriceV2.fromJson(Map<String, dynamic> json) =>
-      _$PriceV2FromJson(json);
+  factory Price.fromJson(Map<String, dynamic> json) =>
+      _$PriceFromJson(json);
 
   String get formattedPrice => JsonHelper.chooseRightOrderOnCurrencySymbol(
         this.amount,

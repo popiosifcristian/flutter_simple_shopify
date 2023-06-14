@@ -11,7 +11,7 @@ _$_DiscountAllocations _$$_DiscountAllocationsFromJson(
     _$_DiscountAllocations(
       allocatedAmount: json['allocatedAmount'] == null
           ? null
-          : PriceV2.fromJson(json['allocatedAmount'] as Map<String, dynamic>),
+          : Price.fromJson(json['allocatedAmount'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_DiscountAllocationsToJson(

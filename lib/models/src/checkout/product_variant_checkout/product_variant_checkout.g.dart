@@ -9,7 +9,7 @@ part of 'product_variant_checkout.dart';
 _$_ProductVariantCheckout _$$_ProductVariantCheckoutFromJson(
         Map<String, dynamic> json) =>
     _$_ProductVariantCheckout(
-      priceV2: PriceV2.fromJson(json['priceV2'] as Map<String, dynamic>),
+      price: Price.fromJson(json['price'] as Map<String, dynamic>),
       title: json['title'] as String,
       availableForSale: json['availableForSale'] as bool,
       sku: json['sku'] as String,
@@ -20,7 +20,7 @@ _$_ProductVariantCheckout _$$_ProductVariantCheckoutFromJson(
           : ShopifyImage.fromJson(json['image'] as Map<String, dynamic>),
       compareAtPrice: json['compareAtPrice'] == null
           ? null
-          : PriceV2.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
+          : Price.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
       weight: (json['weight'] as num?)?.toDouble(),
       weightUnit: json['weightUnit'] as String?,
     );
@@ -28,7 +28,7 @@ _$_ProductVariantCheckout _$$_ProductVariantCheckoutFromJson(
 Map<String, dynamic> _$$_ProductVariantCheckoutToJson(
         _$_ProductVariantCheckout instance) =>
     <String, dynamic>{
-      'priceV2': instance.priceV2,
+      'price': instance.price,
       'title': instance.title,
       'availableForSale': instance.availableForSale,
       'sku': instance.sku,
