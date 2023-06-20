@@ -50,7 +50,7 @@ class Article with _$Article {
       tags: _getTagsList(json),
       title: (json['node'] ?? const {})['title'],
       url: (json['node'] ?? const {})['url'],
-      cursor: (json['node'] ?? const {})['cursor'],
+      cursor: json['cursor'],
     );
   }
 
