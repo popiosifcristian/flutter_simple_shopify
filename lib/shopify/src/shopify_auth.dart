@@ -149,8 +149,11 @@ class ShopifyAuth with ShopifyError {
   Future<String?> _createAccessToken(String email, String password,
       {bool deleteThisPartOfCache = false}) async {
     final MutationOptions _options = MutationOptions(
-        document: gql(customerAccessTokenCreate),
-        variables: {'email': email, 'password': password});
+      document: gql(customerAccessTokenCreate),
+      variables: {'email': email, 'password': password},
+      fetchPolicy: FetchPolicy.noCache,
+      cacheRereadPolicy: CacheRereadPolicy.ignoreAll,
+    );
     final QueryResult result = await _graphQLClient!.mutate(_options);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
