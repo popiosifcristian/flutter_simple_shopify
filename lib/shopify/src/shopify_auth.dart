@@ -101,6 +101,15 @@ class ShopifyAuth with ShopifyError {
       email,
       password,
     );
+    if (customerAccessToken == null) {
+      throw ShopifyException(
+        'ShopifyAuth',
+        'signInWithEmailAndPassword',
+        errors: [
+          'Credentials invalid, please check your email or password then try again.',
+        ],
+      );
+    }
     final WatchQueryOptions _getCustomer = WatchQueryOptions(
         document: gql(getCustomerQuery),
         variables: {'customerAccessToken': customerAccessToken});
