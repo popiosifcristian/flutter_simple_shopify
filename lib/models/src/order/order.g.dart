@@ -9,8 +9,10 @@ part of 'order.dart';
 _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       id: json['id'] as String,
       email: json['email'] as String,
+      canceledAt: json['canceledAt'] as String,
       currencyCode: json['currencyCode'] as String,
       customerUrl: json['customerUrl'] as String,
+      fulfillmentStatus: json['fulfillmentStatus'] as String,
       lineItems:
           LineItemsOrder.fromJson(json['lineItems'] as Map<String, dynamic>),
       name: json['name'] as String,
@@ -35,8 +37,10 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
 Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
+      'canceledAt': instance.canceledAt,
       'currencyCode': instance.currencyCode,
       'customerUrl': instance.customerUrl,
+      'fulfillmentStatus': instance.fulfillmentStatus,
       'lineItems': instance.lineItems,
       'name': instance.name,
       'orderNumber': instance.orderNumber,

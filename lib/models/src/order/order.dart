@@ -14,8 +14,10 @@ class Order with _$Order {
   factory Order({
     required String id,
     required String email,
+    required String canceledAt,
     required String currencyCode,
     required String customerUrl,
+    required String fulfillmentStatus,
     required LineItemsOrder lineItems,
     required String name,
     required int orderNumber,
@@ -35,8 +37,10 @@ class Order with _$Order {
     return Order(
         id: (json['node'] ?? const {})['id'],
         email: (json['node'] ?? const {})['email'],
+        canceledAt: (json['node'] ?? const {})['canceledAt'],
         currencyCode: (json['node'] ?? const {})['currencyCode'],
         customerUrl: (json['node'] ?? const {})['customerUrl'],
+        fulfillmentStatus: (json['node'] ?? const {})['fulfillmentStatus'],
         lineItems: LineItemsOrder.fromGraphJson(
             (json['node'] ?? const {})['lineItems'] ?? const {}),
         name: (json['node'] ?? const {})['name'],

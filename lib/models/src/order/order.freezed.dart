@@ -22,8 +22,10 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
 mixin _$Order {
   String get id => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get canceledAt => throw _privateConstructorUsedError;
   String get currencyCode => throw _privateConstructorUsedError;
   String get customerUrl => throw _privateConstructorUsedError;
+  String get fulfillmentStatus => throw _privateConstructorUsedError;
   LineItemsOrder get lineItems => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get orderNumber => throw _privateConstructorUsedError;
@@ -51,8 +53,10 @@ abstract class $OrderCopyWith<$Res> {
   $Res call(
       {String id,
       String email,
+      String canceledAt,
       String currencyCode,
       String customerUrl,
+      String fulfillmentStatus,
       LineItemsOrder lineItems,
       String name,
       int orderNumber,
@@ -91,8 +95,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   $Res call({
     Object? id = null,
     Object? email = null,
+    Object? canceledAt = null,
     Object? currencyCode = null,
     Object? customerUrl = null,
+    Object? fulfillmentStatus = null,
     Object? lineItems = null,
     Object? name = null,
     Object? orderNumber = null,
@@ -116,6 +122,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      canceledAt: null == canceledAt
+          ? _value.canceledAt
+          : canceledAt // ignore: cast_nullable_to_non_nullable
+              as String,
       currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
@@ -123,6 +133,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
       customerUrl: null == customerUrl
           ? _value.customerUrl
           : customerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      fulfillmentStatus: null == fulfillmentStatus
+          ? _value.fulfillmentStatus
+          : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value.lineItems
@@ -249,8 +263,10 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
   $Res call(
       {String id,
       String email,
+      String canceledAt,
       String currencyCode,
       String customerUrl,
+      String fulfillmentStatus,
       LineItemsOrder lineItems,
       String name,
       int orderNumber,
@@ -292,8 +308,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
   $Res call({
     Object? id = null,
     Object? email = null,
+    Object? canceledAt = null,
     Object? currencyCode = null,
     Object? customerUrl = null,
+    Object? fulfillmentStatus = null,
     Object? lineItems = null,
     Object? name = null,
     Object? orderNumber = null,
@@ -317,6 +335,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      canceledAt: null == canceledAt
+          ? _value.canceledAt
+          : canceledAt // ignore: cast_nullable_to_non_nullable
+              as String,
       currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
@@ -324,6 +346,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
       customerUrl: null == customerUrl
           ? _value.customerUrl
           : customerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      fulfillmentStatus: null == fulfillmentStatus
+          ? _value.fulfillmentStatus
+          : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value.lineItems
@@ -387,8 +413,10 @@ class _$_Order extends _Order {
   _$_Order(
       {required this.id,
       required this.email,
+      required this.canceledAt,
       required this.currencyCode,
       required this.customerUrl,
+      required this.fulfillmentStatus,
       required this.lineItems,
       required this.name,
       required this.orderNumber,
@@ -412,9 +440,13 @@ class _$_Order extends _Order {
   @override
   final String email;
   @override
+  final String canceledAt;
+  @override
   final String currencyCode;
   @override
   final String customerUrl;
+  @override
+  final String fulfillmentStatus;
   @override
   final LineItemsOrder lineItems;
   @override
@@ -444,7 +476,7 @@ class _$_Order extends _Order {
 
   @override
   String toString() {
-    return 'Order(id: $id, email: $email, currencyCode: $currencyCode, customerUrl: $customerUrl, lineItems: $lineItems, name: $name, orderNumber: $orderNumber, processedAt: $processedAt, shippingAddress: $shippingAddress, statusUrl: $statusUrl, subtotalPrice: $subtotalPrice, totalPrice: $totalPrice, totalShippingPrice: $totalShippingPrice, totalTax: $totalTax, totalRefunded: $totalRefunded, phone: $phone, cursor: $cursor)';
+    return 'Order(id: $id, email: $email, canceledAt: $canceledAt, currencyCode: $currencyCode, customerUrl: $customerUrl, fulfillmentStatus: $fulfillmentStatus, lineItems: $lineItems, name: $name, orderNumber: $orderNumber, processedAt: $processedAt, shippingAddress: $shippingAddress, statusUrl: $statusUrl, subtotalPrice: $subtotalPrice, totalPrice: $totalPrice, totalShippingPrice: $totalShippingPrice, totalTax: $totalTax, totalRefunded: $totalRefunded, phone: $phone, cursor: $cursor)';
   }
 
   @override
@@ -454,10 +486,14 @@ class _$_Order extends _Order {
             other is _$_Order &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.canceledAt, canceledAt) ||
+                other.canceledAt == canceledAt) &&
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode) &&
             (identical(other.customerUrl, customerUrl) ||
                 other.customerUrl == customerUrl) &&
+            (identical(other.fulfillmentStatus, fulfillmentStatus) ||
+                other.fulfillmentStatus == fulfillmentStatus) &&
             (identical(other.lineItems, lineItems) ||
                 other.lineItems == lineItems) &&
             (identical(other.name, name) || other.name == name) &&
@@ -485,25 +521,28 @@ class _$_Order extends _Order {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      email,
-      currencyCode,
-      customerUrl,
-      lineItems,
-      name,
-      orderNumber,
-      processedAt,
-      shippingAddress,
-      statusUrl,
-      subtotalPrice,
-      totalPrice,
-      totalShippingPrice,
-      totalTax,
-      totalRefunded,
-      phone,
-      cursor);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        email,
+        canceledAt,
+        currencyCode,
+        customerUrl,
+        fulfillmentStatus,
+        lineItems,
+        name,
+        orderNumber,
+        processedAt,
+        shippingAddress,
+        statusUrl,
+        subtotalPrice,
+        totalPrice,
+        totalShippingPrice,
+        totalTax,
+        totalRefunded,
+        phone,
+        cursor
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -523,8 +562,10 @@ abstract class _Order extends Order {
   factory _Order(
       {required final String id,
       required final String email,
+      required final String canceledAt,
       required final String currencyCode,
       required final String customerUrl,
+      required final String fulfillmentStatus,
       required final LineItemsOrder lineItems,
       required final String name,
       required final int orderNumber,
@@ -547,9 +588,13 @@ abstract class _Order extends Order {
   @override
   String get email;
   @override
+  String get canceledAt;
+  @override
   String get currencyCode;
   @override
   String get customerUrl;
+  @override
+  String get fulfillmentStatus;
   @override
   LineItemsOrder get lineItems;
   @override

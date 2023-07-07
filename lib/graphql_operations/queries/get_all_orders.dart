@@ -6,8 +6,10 @@ customer(customerAccessToken: $accessToken) {
         node {
           id
           email
+          canceledAt
           currencyCode
           customerUrl
+          fulfillmentStatus
           lineItems(first: 250) {
             edges {
               node {
