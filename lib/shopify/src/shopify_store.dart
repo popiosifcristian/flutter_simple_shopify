@@ -208,9 +208,9 @@ class ShopifyStore with ShopifyError {
   /// Returns the first [limit] Products after the given [startCursor].
   /// [limit] has to be in the range of 0 and 250.
   Future<List<Collection>> getXCollectionOnQueryAfterCursor(
-    String query,
+    String? query,
     int limit,
-    String cursor, {
+    String? cursor, {
     bool deleteThisPartOfCache = false,
     bool reverse = false,
   }) async {
@@ -219,7 +219,7 @@ class ShopifyStore with ShopifyError {
         variables: {
           'cursor': cursor,
           'limit': limit,
-          'query': query,
+          'query': query ?? '',
           'reverse': reverse
         });
     final QueryResult result =

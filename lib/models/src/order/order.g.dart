@@ -9,7 +9,6 @@ part of 'order.dart';
 _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       id: json['id'] as String,
       email: json['email'] as String,
-      canceledAt: json['canceledAt'] as String,
       currencyCode: json['currencyCode'] as String,
       customerUrl: json['customerUrl'] as String,
       fulfillmentStatus: json['fulfillmentStatus'] as String,
@@ -32,12 +31,12 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
           : Price.fromJson(json['totalRefunded'] as Map<String, dynamic>),
       phone: json['phone'] as String?,
       cursor: json['cursor'] as String?,
+      canceledAt: json['canceledAt'] as String?,
     );
 
 Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
-      'canceledAt': instance.canceledAt,
       'currencyCode': instance.currencyCode,
       'customerUrl': instance.customerUrl,
       'fulfillmentStatus': instance.fulfillmentStatus,
@@ -54,4 +53,5 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'totalRefunded': instance.totalRefunded,
       'phone': instance.phone,
       'cursor': instance.cursor,
+      'canceledAt': instance.canceledAt,
     };
