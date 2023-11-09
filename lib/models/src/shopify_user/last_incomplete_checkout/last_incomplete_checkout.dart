@@ -17,6 +17,7 @@ class LastIncompleteCheckout with _$LastIncompleteCheckout {
           String? webUrl,
           Price? totalPrice,
           Price? lineItemsSubtotalPrice,
+          // ignore: invalid_annotation_target
           @JsonKey(fromJson: JsonHelper.lineItems) List<LineItem>? lineItems}) =
       _LastIncompleteCheckout;
 

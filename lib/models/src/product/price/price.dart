@@ -13,12 +13,12 @@ class Price with _$Price {
   Price._();
 
   factory Price({
+    // ignore: invalid_annotation_target
     @JsonKey(fromJson: JsonHelper.amountFromJson) required double amount,
     required String currencyCode,
   }) = _Price;
 
-  factory Price.fromJson(Map<String, dynamic> json) =>
-      _$PriceFromJson(json);
+  factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
 
   String get formattedPrice => JsonHelper.chooseRightOrderOnCurrencySymbol(
         this.amount,

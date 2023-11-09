@@ -29,6 +29,7 @@ class Checkout with _$Checkout {
     required Price subtotalPrice,
     required bool requiresShipping,
     required List<AppliedGiftCards> appliedGiftCards,
+    // ignore: invalid_annotation_target
     @JsonKey(fromJson: JsonHelper.lineItems) required List<LineItem> lineItems,
     Order? order,
     String? orderStatusUrl,
