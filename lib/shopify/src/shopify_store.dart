@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_simple_shopify/enums/enums.dart';
 import 'package:flutter_simple_shopify/enums/src/sort_key_collection.dart';
 import 'package:flutter_simple_shopify/graphql_operations/queries/get_all_collections_optimized.dart';
@@ -176,7 +178,11 @@ class ShopifyStore with ShopifyError {
       var tempProducts = {"edges": newResponse};
       return Products.fromGraphJson(tempProducts).productList;
     } catch (e) {
-      print(e);
+      log(
+        'ShopifyStore#getProductRecommendations Caught error: ',
+        error: e,
+        stackTrace: e is Error ? e.stackTrace : null,
+      );
     }
     return [Product.fromGraphJson({})];
   }
@@ -198,9 +204,13 @@ class ShopifyStore with ShopifyError {
       var tempCollection = {"edges": newResponse};
       return Collections.fromGraphJson(tempCollection).collectionList;
     } catch (e) {
-      print(e);
+      log(
+        'ShopifyStore#getCollectionsByIds Caught error: ',
+        error: e,
+        stackTrace: e is Error ? e.stackTrace : null,
+      );
     }
-    return [Collection.fromJson({})];
+    return [];
   }
 
   /// Returns a List of [Collection].
@@ -260,7 +270,11 @@ class ShopifyStore with ShopifyError {
       return Collections.fromGraphJson(result.data!['collections'])
           .collectionList[0];
     } catch (e) {
-      print(e);
+      log(
+        'ShopifyStore#getCollectionByHandle Caught error: ',
+        error: e,
+        stackTrace: e is Error ? e.stackTrace : null,
+      );
     }
     return Collection.fromGraphJson({});
   }

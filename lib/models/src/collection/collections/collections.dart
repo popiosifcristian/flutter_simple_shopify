@@ -17,7 +17,7 @@ class Collections with _$Collections {
   static Collections fromGraphJson(Map<String, dynamic> json) {
     return Collections(
         collectionList: _getCollectionList(json),
-        hasNextPage: (json['pageInfo'] ?? const {})['hasNextPage']);
+        hasNextPage: (json['pageInfo'] ?? const {})['hasNextPage'] ?? false);
   }
 
   static List<Collection> _getCollectionList(Map<String, dynamic> json) {
