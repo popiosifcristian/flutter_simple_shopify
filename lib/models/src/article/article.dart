@@ -5,7 +5,6 @@ import 'author_v_2/author_v_2.dart';
 import 'comment/comment.dart';
 
 part 'article.freezed.dart';
-
 part 'article.g.dart';
 
 @freezed
@@ -44,8 +43,10 @@ class Article with _$Article {
       excerptHtml: (json['node'] ?? const {})['excerptHtml'],
       handle: (json['node'] ?? const {})['handle'],
       id: (json['node'] ?? const {})['id'],
-      image: ShopifyImage.fromJson(
-          (json['node'] ?? const {})['image'] ?? const {}),
+      image: (json['node'] ?? const {})['image'] != null
+          ? ShopifyImage.fromJson(
+              (json['node'] ?? const {})['image'] ?? const {})
+          : null,
       publishedAt: (json['node'] ?? const {})['publishedAt'],
       tags: _getTagsList(json),
       title: (json['node'] ?? const {})['title'],
