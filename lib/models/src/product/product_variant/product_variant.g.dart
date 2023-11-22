@@ -6,8 +6,8 @@ part of 'product_variant.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
-    _$_ProductVariant(
+_$ProductVariantImpl _$$ProductVariantImplFromJson(Map<String, dynamic> json) =>
+    _$ProductVariantImpl(
       price: Price.fromJson(json['price'] as Map<String, dynamic>),
       title: json['title'] as String,
       weight: (json['weight'] as num).toDouble(),
@@ -35,9 +35,10 @@ _$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
           : ShopifyImage.fromJson(json['image'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ProductVariantToJson(_$_ProductVariant instance) =>
+Map<String, dynamic> _$$ProductVariantImplToJson(
+        _$ProductVariantImpl instance) =>
     <String, dynamic>{
-      'price': instance.price.toJson(),
+      'price': instance.price,
       'title': instance.title,
       'weight': instance.weight,
       'weightUnit': instance.weightUnit,
@@ -46,9 +47,9 @@ Map<String, dynamic> _$$_ProductVariantToJson(_$_ProductVariant instance) =>
       'requiresShipping': instance.requiresShipping,
       'id': instance.id,
       'quantityAvailable': instance.quantityAvailable,
-      'unitPrice': instance.unitPrice?.toJson(),
-      'unitPriceMeasurement': instance.unitPriceMeasurement?.toJson(),
-      'selectedOptions': instance.selectedOptions?.map((e) => e.toJson()).toList(),
-      'compareAtPrice': instance.compareAtPrice?.toJson(),
-      'image': instance.image?.toJson(),
+      'unitPrice': instance.unitPrice,
+      'unitPriceMeasurement': instance.unitPriceMeasurement,
+      'selectedOptions': instance.selectedOptions,
+      'compareAtPrice': instance.compareAtPrice,
+      'image': instance.image,
     };

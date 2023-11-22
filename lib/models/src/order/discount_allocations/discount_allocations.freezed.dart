@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'discount_allocations.dart';
 
@@ -76,11 +76,11 @@ class _$DiscountAllocationsCopyWithImpl<$Res, $Val extends DiscountAllocations>
 }
 
 /// @nodoc
-abstract class _$$_DiscountAllocationsCopyWith<$Res>
+abstract class _$$DiscountAllocationsImplCopyWith<$Res>
     implements $DiscountAllocationsCopyWith<$Res> {
-  factory _$$_DiscountAllocationsCopyWith(_$_DiscountAllocations value,
-          $Res Function(_$_DiscountAllocations) then) =
-      __$$_DiscountAllocationsCopyWithImpl<$Res>;
+  factory _$$DiscountAllocationsImplCopyWith(_$DiscountAllocationsImpl value,
+          $Res Function(_$DiscountAllocationsImpl) then) =
+      __$$DiscountAllocationsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Price? allocatedAmount});
@@ -90,11 +90,11 @@ abstract class _$$_DiscountAllocationsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DiscountAllocationsCopyWithImpl<$Res>
-    extends _$DiscountAllocationsCopyWithImpl<$Res, _$_DiscountAllocations>
-    implements _$$_DiscountAllocationsCopyWith<$Res> {
-  __$$_DiscountAllocationsCopyWithImpl(_$_DiscountAllocations _value,
-      $Res Function(_$_DiscountAllocations) _then)
+class __$$DiscountAllocationsImplCopyWithImpl<$Res>
+    extends _$DiscountAllocationsCopyWithImpl<$Res, _$DiscountAllocationsImpl>
+    implements _$$DiscountAllocationsImplCopyWith<$Res> {
+  __$$DiscountAllocationsImplCopyWithImpl(_$DiscountAllocationsImpl _value,
+      $Res Function(_$DiscountAllocationsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_DiscountAllocationsCopyWithImpl<$Res>
   $Res call({
     Object? allocatedAmount = freezed,
   }) {
-    return _then(_$_DiscountAllocations(
+    return _then(_$DiscountAllocationsImpl(
       allocatedAmount: freezed == allocatedAmount
           ? _value.allocatedAmount
           : allocatedAmount // ignore: cast_nullable_to_non_nullable
@@ -113,11 +113,11 @@ class __$$_DiscountAllocationsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DiscountAllocations extends _DiscountAllocations {
-  _$_DiscountAllocations({required this.allocatedAmount}) : super._();
+class _$DiscountAllocationsImpl extends _DiscountAllocations {
+  _$DiscountAllocationsImpl({required this.allocatedAmount}) : super._();
 
-  factory _$_DiscountAllocations.fromJson(Map<String, dynamic> json) =>
-      _$$_DiscountAllocationsFromJson(json);
+  factory _$DiscountAllocationsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DiscountAllocationsImplFromJson(json);
 
   @override
   final Price? allocatedAmount;
@@ -131,7 +131,7 @@ class _$_DiscountAllocations extends _DiscountAllocations {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DiscountAllocations &&
+            other is _$DiscountAllocationsImpl &&
             (identical(other.allocatedAmount, allocatedAmount) ||
                 other.allocatedAmount == allocatedAmount));
   }
@@ -143,13 +143,13 @@ class _$_DiscountAllocations extends _DiscountAllocations {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DiscountAllocationsCopyWith<_$_DiscountAllocations> get copyWith =>
-      __$$_DiscountAllocationsCopyWithImpl<_$_DiscountAllocations>(
+  _$$DiscountAllocationsImplCopyWith<_$DiscountAllocationsImpl> get copyWith =>
+      __$$DiscountAllocationsImplCopyWithImpl<_$DiscountAllocationsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DiscountAllocationsToJson(
+    return _$$DiscountAllocationsImplToJson(
       this,
     );
   }
@@ -157,16 +157,16 @@ class _$_DiscountAllocations extends _DiscountAllocations {
 
 abstract class _DiscountAllocations extends DiscountAllocations {
   factory _DiscountAllocations({required final Price? allocatedAmount}) =
-      _$_DiscountAllocations;
+      _$DiscountAllocationsImpl;
   _DiscountAllocations._() : super._();
 
   factory _DiscountAllocations.fromJson(Map<String, dynamic> json) =
-      _$_DiscountAllocations.fromJson;
+      _$DiscountAllocationsImpl.fromJson;
 
   @override
   Price? get allocatedAmount;
   @override
   @JsonKey(ignore: true)
-  _$$_DiscountAllocationsCopyWith<_$_DiscountAllocations> get copyWith =>
+  _$$DiscountAllocationsImplCopyWith<_$DiscountAllocationsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

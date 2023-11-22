@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'price.dart';
 
@@ -20,6 +20,7 @@ Price _$PriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Price {
+// ignore: invalid_annotation_target
   @JsonKey(fromJson: JsonHelper.amountFromJson)
   double get amount => throw _privateConstructorUsedError;
   String get currencyCode => throw _privateConstructorUsedError;
@@ -69,9 +70,10 @@ class _$PriceCopyWithImpl<$Res, $Val extends Price>
 }
 
 /// @nodoc
-abstract class _$$_PriceCopyWith<$Res> implements $PriceCopyWith<$Res> {
-  factory _$$_PriceCopyWith(_$_Price value, $Res Function(_$_Price) then) =
-      __$$_PriceCopyWithImpl<$Res>;
+abstract class _$$PriceImplCopyWith<$Res> implements $PriceCopyWith<$Res> {
+  factory _$$PriceImplCopyWith(
+          _$PriceImpl value, $Res Function(_$PriceImpl) then) =
+      __$$PriceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -80,9 +82,11 @@ abstract class _$$_PriceCopyWith<$Res> implements $PriceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
-    implements _$$_PriceCopyWith<$Res> {
-  __$$_PriceCopyWithImpl(_$_Price _value, $Res Function(_$_Price) _then)
+class __$$PriceImplCopyWithImpl<$Res>
+    extends _$PriceCopyWithImpl<$Res, _$PriceImpl>
+    implements _$$PriceImplCopyWith<$Res> {
+  __$$PriceImplCopyWithImpl(
+      _$PriceImpl _value, $Res Function(_$PriceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,7 +95,7 @@ class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
     Object? amount = null,
     Object? currencyCode = null,
   }) {
-    return _then(_$_Price(
+    return _then(_$PriceImpl(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -106,15 +110,16 @@ class __$$_PriceCopyWithImpl<$Res> extends _$PriceCopyWithImpl<$Res, _$_Price>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Price extends _Price {
-  _$_Price(
+class _$PriceImpl extends _Price {
+  _$PriceImpl(
       {@JsonKey(fromJson: JsonHelper.amountFromJson) required this.amount,
       required this.currencyCode})
       : super._();
 
-  factory _$_Price.fromJson(Map<String, dynamic> json) =>
-      _$$_PriceFromJson(json);
+  factory _$PriceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PriceImplFromJson(json);
 
+// ignore: invalid_annotation_target
   @override
   @JsonKey(fromJson: JsonHelper.amountFromJson)
   final double amount;
@@ -130,7 +135,7 @@ class _$_Price extends _Price {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Price &&
+            other is _$PriceImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode));
@@ -143,12 +148,12 @@ class _$_Price extends _Price {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PriceCopyWith<_$_Price> get copyWith =>
-      __$$_PriceCopyWithImpl<_$_Price>(this, _$identity);
+  _$$PriceImplCopyWith<_$PriceImpl> get copyWith =>
+      __$$PriceImplCopyWithImpl<_$PriceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PriceToJson(
+    return _$$PriceImplToJson(
       this,
     );
   }
@@ -157,19 +162,19 @@ class _$_Price extends _Price {
 abstract class _Price extends Price {
   factory _Price(
       {@JsonKey(fromJson: JsonHelper.amountFromJson)
-          required final double amount,
-      required final String currencyCode}) = _$_Price;
+      required final double amount,
+      required final String currencyCode}) = _$PriceImpl;
   _Price._() : super._();
 
-  factory _Price.fromJson(Map<String, dynamic> json) = _$_Price.fromJson;
+  factory _Price.fromJson(Map<String, dynamic> json) = _$PriceImpl.fromJson;
 
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: JsonHelper.amountFromJson)
   double get amount;
   @override
   String get currencyCode;
   @override
   @JsonKey(ignore: true)
-  _$$_PriceCopyWith<_$_Price> get copyWith =>
+  _$$PriceImplCopyWith<_$PriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'product_variant.dart';
 
@@ -219,11 +219,11 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
 }
 
 /// @nodoc
-abstract class _$$_ProductVariantCopyWith<$Res>
+abstract class _$$ProductVariantImplCopyWith<$Res>
     implements $ProductVariantCopyWith<$Res> {
-  factory _$$_ProductVariantCopyWith(
-          _$_ProductVariant value, $Res Function(_$_ProductVariant) then) =
-      __$$_ProductVariantCopyWithImpl<$Res>;
+  factory _$$ProductVariantImplCopyWith(_$ProductVariantImpl value,
+          $Res Function(_$ProductVariantImpl) then) =
+      __$$ProductVariantImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -255,11 +255,11 @@ abstract class _$$_ProductVariantCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductVariantCopyWithImpl<$Res>
-    extends _$ProductVariantCopyWithImpl<$Res, _$_ProductVariant>
-    implements _$$_ProductVariantCopyWith<$Res> {
-  __$$_ProductVariantCopyWithImpl(
-      _$_ProductVariant _value, $Res Function(_$_ProductVariant) _then)
+class __$$ProductVariantImplCopyWithImpl<$Res>
+    extends _$ProductVariantCopyWithImpl<$Res, _$ProductVariantImpl>
+    implements _$$ProductVariantImplCopyWith<$Res> {
+  __$$ProductVariantImplCopyWithImpl(
+      _$ProductVariantImpl _value, $Res Function(_$ProductVariantImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -280,7 +280,7 @@ class __$$_ProductVariantCopyWithImpl<$Res>
     Object? compareAtPrice = freezed,
     Object? image = freezed,
   }) {
-    return _then(_$_ProductVariant(
+    return _then(_$ProductVariantImpl(
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -343,8 +343,8 @@ class __$$_ProductVariantCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductVariant extends _ProductVariant {
-  _$_ProductVariant(
+class _$ProductVariantImpl extends _ProductVariant {
+  _$ProductVariantImpl(
       {required this.price,
       required this.title,
       required this.weight,
@@ -362,8 +362,8 @@ class _$_ProductVariant extends _ProductVariant {
       : _selectedOptions = selectedOptions,
         super._();
 
-  factory _$_ProductVariant.fromJson(Map<String, dynamic> json) =>
-      _$$_ProductVariantFromJson(json);
+  factory _$ProductVariantImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductVariantImplFromJson(json);
 
   @override
   final Price price;
@@ -392,6 +392,7 @@ class _$_ProductVariant extends _ProductVariant {
   List<SelectedOption>? get selectedOptions {
     final value = _selectedOptions;
     if (value == null) return null;
+    if (_selectedOptions is EqualUnmodifiableListView) return _selectedOptions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -410,7 +411,7 @@ class _$_ProductVariant extends _ProductVariant {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductVariant &&
+            other is _$ProductVariantImpl &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.weight, weight) || other.weight == weight) &&
@@ -457,12 +458,13 @@ class _$_ProductVariant extends _ProductVariant {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductVariantCopyWith<_$_ProductVariant> get copyWith =>
-      __$$_ProductVariantCopyWithImpl<_$_ProductVariant>(this, _$identity);
+  _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
+      __$$ProductVariantImplCopyWithImpl<_$ProductVariantImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductVariantToJson(
+    return _$$ProductVariantImplToJson(
       this,
     );
   }
@@ -483,11 +485,11 @@ abstract class _ProductVariant extends ProductVariant {
       final UnitPriceMeasurement? unitPriceMeasurement,
       final List<SelectedOption>? selectedOptions,
       final Price? compareAtPrice,
-      final ShopifyImage? image}) = _$_ProductVariant;
+      final ShopifyImage? image}) = _$ProductVariantImpl;
   _ProductVariant._() : super._();
 
   factory _ProductVariant.fromJson(Map<String, dynamic> json) =
-      _$_ProductVariant.fromJson;
+      _$ProductVariantImpl.fromJson;
 
   @override
   Price get price;
@@ -519,6 +521,6 @@ abstract class _ProductVariant extends ProductVariant {
   ShopifyImage? get image;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductVariantCopyWith<_$_ProductVariant> get copyWith =>
+  _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

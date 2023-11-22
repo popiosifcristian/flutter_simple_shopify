@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'product_variant_checkout.dart';
 
@@ -164,11 +164,12 @@ class _$ProductVariantCheckoutCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ProductVariantCheckoutCopyWith<$Res>
+abstract class _$$ProductVariantCheckoutImplCopyWith<$Res>
     implements $ProductVariantCheckoutCopyWith<$Res> {
-  factory _$$_ProductVariantCheckoutCopyWith(_$_ProductVariantCheckout value,
-          $Res Function(_$_ProductVariantCheckout) then) =
-      __$$_ProductVariantCheckoutCopyWithImpl<$Res>;
+  factory _$$ProductVariantCheckoutImplCopyWith(
+          _$ProductVariantCheckoutImpl value,
+          $Res Function(_$ProductVariantCheckoutImpl) then) =
+      __$$ProductVariantCheckoutImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -192,12 +193,13 @@ abstract class _$$_ProductVariantCheckoutCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductVariantCheckoutCopyWithImpl<$Res>
+class __$$ProductVariantCheckoutImplCopyWithImpl<$Res>
     extends _$ProductVariantCheckoutCopyWithImpl<$Res,
-        _$_ProductVariantCheckout>
-    implements _$$_ProductVariantCheckoutCopyWith<$Res> {
-  __$$_ProductVariantCheckoutCopyWithImpl(_$_ProductVariantCheckout _value,
-      $Res Function(_$_ProductVariantCheckout) _then)
+        _$ProductVariantCheckoutImpl>
+    implements _$$ProductVariantCheckoutImplCopyWith<$Res> {
+  __$$ProductVariantCheckoutImplCopyWithImpl(
+      _$ProductVariantCheckoutImpl _value,
+      $Res Function(_$ProductVariantCheckoutImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -214,7 +216,7 @@ class __$$_ProductVariantCheckoutCopyWithImpl<$Res>
     Object? weight = freezed,
     Object? weightUnit = freezed,
   }) {
-    return _then(_$_ProductVariantCheckout(
+    return _then(_$ProductVariantCheckoutImpl(
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -261,8 +263,8 @@ class __$$_ProductVariantCheckoutCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductVariantCheckout extends _ProductVariantCheckout {
-  _$_ProductVariantCheckout(
+class _$ProductVariantCheckoutImpl extends _ProductVariantCheckout {
+  _$ProductVariantCheckoutImpl(
       {required this.price,
       required this.title,
       required this.availableForSale,
@@ -275,8 +277,8 @@ class _$_ProductVariantCheckout extends _ProductVariantCheckout {
       this.weightUnit})
       : super._();
 
-  factory _$_ProductVariantCheckout.fromJson(Map<String, dynamic> json) =>
-      _$$_ProductVariantCheckoutFromJson(json);
+  factory _$ProductVariantCheckoutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductVariantCheckoutImplFromJson(json);
 
   @override
   final Price price;
@@ -308,7 +310,7 @@ class _$_ProductVariantCheckout extends _ProductVariantCheckout {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductVariantCheckout &&
+            other is _$ProductVariantCheckoutImpl &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.availableForSale, availableForSale) ||
@@ -333,13 +335,13 @@ class _$_ProductVariantCheckout extends _ProductVariantCheckout {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductVariantCheckoutCopyWith<_$_ProductVariantCheckout> get copyWith =>
-      __$$_ProductVariantCheckoutCopyWithImpl<_$_ProductVariantCheckout>(
-          this, _$identity);
+  _$$ProductVariantCheckoutImplCopyWith<_$ProductVariantCheckoutImpl>
+      get copyWith => __$$ProductVariantCheckoutImplCopyWithImpl<
+          _$ProductVariantCheckoutImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductVariantCheckoutToJson(
+    return _$$ProductVariantCheckoutImplToJson(
       this,
     );
   }
@@ -356,11 +358,11 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
       final ShopifyImage? image,
       final Price? compareAtPrice,
       final double? weight,
-      final String? weightUnit}) = _$_ProductVariantCheckout;
+      final String? weightUnit}) = _$ProductVariantCheckoutImpl;
   _ProductVariantCheckout._() : super._();
 
   factory _ProductVariantCheckout.fromJson(Map<String, dynamic> json) =
-      _$_ProductVariantCheckout.fromJson;
+      _$ProductVariantCheckoutImpl.fromJson;
 
   @override
   Price get price;
@@ -384,6 +386,6 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
   String? get weightUnit;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductVariantCheckoutCopyWith<_$_ProductVariantCheckout> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProductVariantCheckoutImplCopyWith<_$ProductVariantCheckoutImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

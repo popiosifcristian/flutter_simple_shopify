@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'order.dart';
 
@@ -255,9 +255,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
 }
 
 /// @nodoc
-abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
-  factory _$$_OrderCopyWith(_$_Order value, $Res Function(_$_Order) then) =
-      __$$_OrderCopyWithImpl<$Res>;
+abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
+  factory _$$OrderImplCopyWith(
+          _$OrderImpl value, $Res Function(_$OrderImpl) then) =
+      __$$OrderImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -298,9 +299,11 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
-    implements _$$_OrderCopyWith<$Res> {
-  __$$_OrderCopyWithImpl(_$_Order _value, $Res Function(_$_Order) _then)
+class __$$OrderImplCopyWithImpl<$Res>
+    extends _$OrderCopyWithImpl<$Res, _$OrderImpl>
+    implements _$$OrderImplCopyWith<$Res> {
+  __$$OrderImplCopyWithImpl(
+      _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -326,7 +329,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
     Object? cursor = freezed,
     Object? canceledAt = freezed,
   }) {
-    return _then(_$_Order(
+    return _then(_$OrderImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -409,8 +412,8 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$_Order>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Order extends _Order {
-  _$_Order(
+class _$OrderImpl extends _Order {
+  _$OrderImpl(
       {required this.id,
       required this.email,
       required this.currencyCode,
@@ -432,8 +435,8 @@ class _$_Order extends _Order {
       this.canceledAt})
       : super._();
 
-  factory _$_Order.fromJson(Map<String, dynamic> json) =>
-      _$$_OrderFromJson(json);
+  factory _$OrderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrderImplFromJson(json);
 
   @override
   final String id;
@@ -483,7 +486,7 @@ class _$_Order extends _Order {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Order &&
+            other is _$OrderImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.currencyCode, currencyCode) ||
@@ -547,12 +550,12 @@ class _$_Order extends _Order {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OrderCopyWith<_$_Order> get copyWith =>
-      __$$_OrderCopyWithImpl<_$_Order>(this, _$identity);
+  _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
+      __$$OrderImplCopyWithImpl<_$OrderImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OrderToJson(
+    return _$$OrderImplToJson(
       this,
     );
   }
@@ -578,10 +581,10 @@ abstract class _Order extends Order {
       final Price? totalRefunded,
       final String? phone,
       final String? cursor,
-      final String? canceledAt}) = _$_Order;
+      final String? canceledAt}) = _$OrderImpl;
   _Order._() : super._();
 
-  factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
+  factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
 
   @override
   String get id;
@@ -623,6 +626,6 @@ abstract class _Order extends Order {
   String? get canceledAt;
   @override
   @JsonKey(ignore: true)
-  _$$_OrderCopyWith<_$_Order> get copyWith =>
+  _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

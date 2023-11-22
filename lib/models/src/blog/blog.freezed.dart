@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'blog.dart';
 
@@ -103,9 +103,10 @@ class _$BlogCopyWithImpl<$Res, $Val extends Blog>
 }
 
 /// @nodoc
-abstract class _$$_BlogCopyWith<$Res> implements $BlogCopyWith<$Res> {
-  factory _$$_BlogCopyWith(_$_Blog value, $Res Function(_$_Blog) then) =
-      __$$_BlogCopyWithImpl<$Res>;
+abstract class _$$BlogImplCopyWith<$Res> implements $BlogCopyWith<$Res> {
+  factory _$$BlogImplCopyWith(
+          _$BlogImpl value, $Res Function(_$BlogImpl) then) =
+      __$$BlogImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -120,9 +121,10 @@ abstract class _$$_BlogCopyWith<$Res> implements $BlogCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res, _$_Blog>
-    implements _$$_BlogCopyWith<$Res> {
-  __$$_BlogCopyWithImpl(_$_Blog _value, $Res Function(_$_Blog) _then)
+class __$$BlogImplCopyWithImpl<$Res>
+    extends _$BlogCopyWithImpl<$Res, _$BlogImpl>
+    implements _$$BlogImplCopyWith<$Res> {
+  __$$BlogImplCopyWithImpl(_$BlogImpl _value, $Res Function(_$BlogImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -134,7 +136,7 @@ class __$$_BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res, _$_Blog>
     Object? url = freezed,
     Object? articles = freezed,
   }) {
-    return _then(_$_Blog(
+    return _then(_$BlogImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -161,11 +163,12 @@ class __$$_BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res, _$_Blog>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Blog extends _Blog {
-  _$_Blog({this.id, this.handle, this.title, this.url, this.articles})
+class _$BlogImpl extends _Blog {
+  _$BlogImpl({this.id, this.handle, this.title, this.url, this.articles})
       : super._();
 
-  factory _$_Blog.fromJson(Map<String, dynamic> json) => _$$_BlogFromJson(json);
+  factory _$BlogImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BlogImplFromJson(json);
 
   @override
   final String? id;
@@ -187,7 +190,7 @@ class _$_Blog extends _Blog {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Blog &&
+            other is _$BlogImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.handle, handle) || other.handle == handle) &&
             (identical(other.title, title) || other.title == title) &&
@@ -204,12 +207,12 @@ class _$_Blog extends _Blog {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BlogCopyWith<_$_Blog> get copyWith =>
-      __$$_BlogCopyWithImpl<_$_Blog>(this, _$identity);
+  _$$BlogImplCopyWith<_$BlogImpl> get copyWith =>
+      __$$BlogImplCopyWithImpl<_$BlogImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlogToJson(
+    return _$$BlogImplToJson(
       this,
     );
   }
@@ -221,10 +224,10 @@ abstract class _Blog extends Blog {
       final String? handle,
       final String? title,
       final String? url,
-      final Articles? articles}) = _$_Blog;
+      final Articles? articles}) = _$BlogImpl;
   _Blog._() : super._();
 
-  factory _Blog.fromJson(Map<String, dynamic> json) = _$_Blog.fromJson;
+  factory _Blog.fromJson(Map<String, dynamic> json) = _$BlogImpl.fromJson;
 
   @override
   String? get id;
@@ -238,5 +241,6 @@ abstract class _Blog extends Blog {
   Articles? get articles;
   @override
   @JsonKey(ignore: true)
-  _$$_BlogCopyWith<_$_Blog> get copyWith => throw _privateConstructorUsedError;
+  _$$BlogImplCopyWith<_$BlogImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'checkout.dart';
 
@@ -33,7 +33,7 @@ mixin _$Checkout {
   Price get subtotalPrice => throw _privateConstructorUsedError;
   bool get requiresShipping => throw _privateConstructorUsedError;
   List<AppliedGiftCards> get appliedGiftCards =>
-      throw _privateConstructorUsedError;
+      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
   @JsonKey(fromJson: JsonHelper.lineItems)
   List<LineItem> get lineItems => throw _privateConstructorUsedError;
   Order? get order => throw _privateConstructorUsedError;
@@ -300,10 +300,11 @@ class _$CheckoutCopyWithImpl<$Res, $Val extends Checkout>
 }
 
 /// @nodoc
-abstract class _$$_CheckoutCopyWith<$Res> implements $CheckoutCopyWith<$Res> {
-  factory _$$_CheckoutCopyWith(
-          _$_Checkout value, $Res Function(_$_Checkout) then) =
-      __$$_CheckoutCopyWithImpl<$Res>;
+abstract class _$$CheckoutImplCopyWith<$Res>
+    implements $CheckoutCopyWith<$Res> {
+  factory _$$CheckoutImplCopyWith(
+          _$CheckoutImpl value, $Res Function(_$CheckoutImpl) then) =
+      __$$CheckoutImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -348,11 +349,11 @@ abstract class _$$_CheckoutCopyWith<$Res> implements $CheckoutCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CheckoutCopyWithImpl<$Res>
-    extends _$CheckoutCopyWithImpl<$Res, _$_Checkout>
-    implements _$$_CheckoutCopyWith<$Res> {
-  __$$_CheckoutCopyWithImpl(
-      _$_Checkout _value, $Res Function(_$_Checkout) _then)
+class __$$CheckoutImplCopyWithImpl<$Res>
+    extends _$CheckoutCopyWithImpl<$Res, _$CheckoutImpl>
+    implements _$$CheckoutImplCopyWith<$Res> {
+  __$$CheckoutImplCopyWithImpl(
+      _$CheckoutImpl _value, $Res Function(_$CheckoutImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -382,7 +383,7 @@ class __$$_CheckoutCopyWithImpl<$Res>
     Object? webUrl = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$_Checkout(
+    return _then(_$CheckoutImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -481,8 +482,8 @@ class __$$_CheckoutCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Checkout extends _Checkout {
-  _$_Checkout(
+class _$CheckoutImpl extends _Checkout {
+  _$CheckoutImpl(
       {required this.id,
       required this.ready,
       required this.availableShippingRates,
@@ -496,7 +497,7 @@ class _$_Checkout extends _Checkout {
       required this.requiresShipping,
       required final List<AppliedGiftCards> appliedGiftCards,
       @JsonKey(fromJson: JsonHelper.lineItems)
-          required final List<LineItem> lineItems,
+      required final List<LineItem> lineItems,
       this.order,
       this.orderStatusUrl,
       this.shopifyPaymentsAccountId,
@@ -511,8 +512,8 @@ class _$_Checkout extends _Checkout {
         _lineItems = lineItems,
         super._();
 
-  factory _$_Checkout.fromJson(Map<String, dynamic> json) =>
-      _$$_CheckoutFromJson(json);
+  factory _$CheckoutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CheckoutImplFromJson(json);
 
   @override
   final String id;
@@ -539,14 +540,19 @@ class _$_Checkout extends _Checkout {
   final List<AppliedGiftCards> _appliedGiftCards;
   @override
   List<AppliedGiftCards> get appliedGiftCards {
+    if (_appliedGiftCards is EqualUnmodifiableListView)
+      return _appliedGiftCards;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_appliedGiftCards);
   }
 
+// ignore: invalid_annotation_target
   final List<LineItem> _lineItems;
+// ignore: invalid_annotation_target
   @override
   @JsonKey(fromJson: JsonHelper.lineItems)
   List<LineItem> get lineItems {
+    if (_lineItems is EqualUnmodifiableListView) return _lineItems;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_lineItems);
   }
@@ -581,7 +587,7 @@ class _$_Checkout extends _Checkout {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Checkout &&
+            other is _$CheckoutImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.ready, ready) || other.ready == ready) &&
             (identical(other.availableShippingRates, availableShippingRates) ||
@@ -657,12 +663,12 @@ class _$_Checkout extends _Checkout {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CheckoutCopyWith<_$_Checkout> get copyWith =>
-      __$$_CheckoutCopyWithImpl<_$_Checkout>(this, _$identity);
+  _$$CheckoutImplCopyWith<_$CheckoutImpl> get copyWith =>
+      __$$CheckoutImplCopyWithImpl<_$CheckoutImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckoutToJson(
+    return _$$CheckoutImplToJson(
       this,
     );
   }
@@ -683,7 +689,7 @@ abstract class _Checkout extends Checkout {
       required final bool requiresShipping,
       required final List<AppliedGiftCards> appliedGiftCards,
       @JsonKey(fromJson: JsonHelper.lineItems)
-          required final List<LineItem> lineItems,
+      required final List<LineItem> lineItems,
       final Order? order,
       final String? orderStatusUrl,
       final String? shopifyPaymentsAccountId,
@@ -693,10 +699,11 @@ abstract class _Checkout extends Checkout {
       final String? completedAt,
       final String? note,
       final String? webUrl,
-      final String? updatedAt}) = _$_Checkout;
+      final String? updatedAt}) = _$CheckoutImpl;
   _Checkout._() : super._();
 
-  factory _Checkout.fromJson(Map<String, dynamic> json) = _$_Checkout.fromJson;
+  factory _Checkout.fromJson(Map<String, dynamic> json) =
+      _$CheckoutImpl.fromJson;
 
   @override
   String get id;
@@ -722,7 +729,7 @@ abstract class _Checkout extends Checkout {
   bool get requiresShipping;
   @override
   List<AppliedGiftCards> get appliedGiftCards;
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: JsonHelper.lineItems)
   List<LineItem> get lineItems;
   @override
@@ -747,6 +754,6 @@ abstract class _Checkout extends Checkout {
   String? get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_CheckoutCopyWith<_$_Checkout> get copyWith =>
+  _$$CheckoutImplCopyWith<_$CheckoutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

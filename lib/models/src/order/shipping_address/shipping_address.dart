@@ -6,13 +6,13 @@ part 'shipping_address.g.dart';
 @freezed
 class ShippingAddress with _$ShippingAddress {
   factory ShippingAddress({
-    required String name,
     required String firstName,
     required String id,
     required String lastName,
     required String address1,
     required String city,
     required String country,
+    String? name,
     String? address2,
     String? company,
     String? countryCodeV2,

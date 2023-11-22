@@ -6,7 +6,8 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
+_$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
+    _$ProductImpl(
       title: json['title'] as String,
       id: json['id'] as String,
       availableForSale: json['availableForSale'] as bool,
@@ -39,22 +40,22 @@ _$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
       handle: json['handle'] as String?,
     );
 
-Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'id': instance.id,
       'availableForSale': instance.availableForSale,
       'createdAt': instance.createdAt,
-      'productVariants': instance.productVariants?.map((e) => e.toJson()).toList(),
+      'productVariants': instance.productVariants,
       'productType': instance.productType,
       'publishedAt': instance.publishedAt,
       'tags': instance.tags,
       'updatedAt': instance.updatedAt,
-      'images': instance.images?.map((e) => e.toJson()).toList(),
-      'option': instance.option?.map((e) => e.toJson()).toList(),
+      'images': instance.images,
+      'option': instance.option,
       'vendor': instance.vendor,
-      'metafields': instance.metafields?.map((e) => e.toJson()).toList(),
-      'collectionList': instance.collectionList?.map((e) => e.toJson()).toList(),
+      'metafields': instance.metafields,
+      'collectionList': instance.collectionList,
       'cursor': instance.cursor,
       'onlineStoreUrl': instance.onlineStoreUrl,
       'description': instance.description,

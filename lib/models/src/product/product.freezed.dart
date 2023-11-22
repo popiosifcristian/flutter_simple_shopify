@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'product.dart';
 
@@ -189,10 +189,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 }
 
 /// @nodoc
-abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$_ProductCopyWith(
-          _$_Product value, $Res Function(_$_Product) then) =
-      __$$_ProductCopyWithImpl<$Res>;
+abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$ProductImplCopyWith(
+          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
+      __$$ProductImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -218,10 +218,11 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ProductCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$_Product>
-    implements _$$_ProductCopyWith<$Res> {
-  __$$_ProductCopyWithImpl(_$_Product _value, $Res Function(_$_Product) _then)
+class __$$ProductImplCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
+    implements _$$ProductImplCopyWith<$Res> {
+  __$$ProductImplCopyWithImpl(
+      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -247,7 +248,7 @@ class __$$_ProductCopyWithImpl<$Res>
     Object? descriptionHtml = freezed,
     Object? handle = freezed,
   }) {
-    return _then(_$_Product(
+    return _then(_$ProductImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -330,8 +331,8 @@ class __$$_ProductCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Product extends _Product {
-  _$_Product(
+class _$ProductImpl extends _Product {
+  _$ProductImpl(
       {required this.title,
       required this.id,
       required this.availableForSale,
@@ -359,8 +360,8 @@ class _$_Product extends _Product {
         _collectionList = collectionList,
         super._();
 
-  factory _$_Product.fromJson(Map<String, dynamic> json) =>
-      _$$_ProductFromJson(json);
+  factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductImplFromJson(json);
 
   @override
   final String title;
@@ -373,6 +374,7 @@ class _$_Product extends _Product {
   final List<ProductVariant> _productVariants;
   @override
   List<ProductVariant> get productVariants {
+    if (_productVariants is EqualUnmodifiableListView) return _productVariants;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_productVariants);
   }
@@ -384,6 +386,7 @@ class _$_Product extends _Product {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -393,6 +396,7 @@ class _$_Product extends _Product {
   final List<ShopifyImage> _images;
   @override
   List<ShopifyImage> get images {
+    if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_images);
   }
@@ -400,6 +404,7 @@ class _$_Product extends _Product {
   final List<Option> _option;
   @override
   List<Option> get option {
+    if (_option is EqualUnmodifiableListView) return _option;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_option);
   }
@@ -409,6 +414,7 @@ class _$_Product extends _Product {
   final List<Metafield> _metafields;
   @override
   List<Metafield> get metafields {
+    if (_metafields is EqualUnmodifiableListView) return _metafields;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_metafields);
   }
@@ -418,6 +424,7 @@ class _$_Product extends _Product {
   List<AssociatedCollections>? get collectionList {
     final value = _collectionList;
     if (value == null) return null;
+    if (_collectionList is EqualUnmodifiableListView) return _collectionList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -442,7 +449,7 @@ class _$_Product extends _Product {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Product &&
+            other is _$ProductImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.availableForSale, availableForSale) ||
@@ -503,12 +510,12 @@ class _$_Product extends _Product {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductCopyWith<_$_Product> get copyWith =>
-      __$$_ProductCopyWithImpl<_$_Product>(this, _$identity);
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
+      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductToJson(
+    return _$$ProductImplToJson(
       this,
     );
   }
@@ -534,10 +541,10 @@ abstract class _Product extends Product {
       final String? onlineStoreUrl,
       final String? description,
       final String? descriptionHtml,
-      final String? handle}) = _$_Product;
+      final String? handle}) = _$ProductImpl;
   _Product._() : super._();
 
-  factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
+  factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
 
   @override
   String get title;
@@ -579,6 +586,6 @@ abstract class _Product extends Product {
   String? get handle;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductCopyWith<_$_Product> get copyWith =>
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

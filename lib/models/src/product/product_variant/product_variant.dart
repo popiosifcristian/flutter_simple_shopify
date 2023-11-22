@@ -10,6 +10,7 @@ part 'product_variant.g.dart';
 @freezed
 class ProductVariant with _$ProductVariant {
   const ProductVariant._();
+
   factory ProductVariant({
     required Price price,
     required String title,
@@ -42,7 +43,7 @@ class ProductVariant with _$ProductVariant {
       weight: nodeJson['weight'],
       weightUnit: nodeJson['weightUnit'],
       availableForSale: nodeJson['availableForSale'],
-      sku: nodeJson['sku'],
+      sku: nodeJson['sku'] ?? '',
       requiresShipping: nodeJson['requiresShipping'],
       id: nodeJson['id'],
       quantityAvailable: nodeJson['quantityAvailable'],
