@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:graphql/client.dart';
 
 class ShopifyConfig {
@@ -39,7 +37,6 @@ class ShopifyConfig {
     _storefrontApiVersion = storefrontApiVersion;
     _cacheStore = cacheStore;
     final uri = 'https://$_storeUrl/api/$_storefrontApiVersion/graphql.json';
-    log('ShopifyConfig#setConfig: $uri');
     _graphQLClient = GraphQLClient(
       link: HttpLink(
         uri,
