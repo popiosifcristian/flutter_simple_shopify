@@ -17,5 +17,5 @@ Map<String, dynamic> _$$ShippingRatesImplToJson(_$ShippingRatesImpl instance) =>
     <String, dynamic>{
       'handle': instance.handle,
       'title': instance.title,
-      'price': instance.price,
+      'price': instance.price.toJson(),
     };

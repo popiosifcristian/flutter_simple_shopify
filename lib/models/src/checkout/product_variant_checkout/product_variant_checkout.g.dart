@@ -28,14 +28,14 @@ _$ProductVariantCheckoutImpl _$$ProductVariantCheckoutImplFromJson(
 Map<String, dynamic> _$$ProductVariantCheckoutImplToJson(
         _$ProductVariantCheckoutImpl instance) =>
     <String, dynamic>{
-      'price': instance.price,
+      'price': instance.price.toJson(),
       'title': instance.title,
       'availableForSale': instance.availableForSale,
       'sku': instance.sku,
       'requiresShipping': instance.requiresShipping,
       'id': instance.id,
-      'image': instance.image,
-      'compareAtPrice': instance.compareAtPrice,
+      'image': instance.image?.toJson(),
+      'compareAtPrice': instance.compareAtPrice?.toJson(),
       'weight': instance.weight,
       'weightUnit': instance.weightUnit,
     };

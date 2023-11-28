@@ -17,7 +17,7 @@ _$AppliedGiftCardsImpl _$$AppliedGiftCardsImplFromJson(
 Map<String, dynamic> _$$AppliedGiftCardsImplToJson(
         _$AppliedGiftCardsImpl instance) =>
     <String, dynamic>{
-      'amountUsed': instance.amountUsed,
-      'balance': instance.balance,
+      'amountUsed': instance.amountUsed.toJson(),
+      'balance': instance.balance.toJson(),
       'id': instance.id,
     };

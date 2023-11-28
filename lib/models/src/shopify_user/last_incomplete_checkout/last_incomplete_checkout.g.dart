@@ -34,7 +34,7 @@ Map<String, dynamic> _$$LastIncompleteCheckoutImplToJson(
       'id': instance.id,
       'currencyCode': instance.currencyCode,
       'webUrl': instance.webUrl,
-      'totalPrice': instance.totalPrice,
-      'lineItemsSubtotalPrice': instance.lineItemsSubtotalPrice,
-      'lineItems': instance.lineItems,
+      'totalPrice': instance.totalPrice?.toJson(),
+      'lineItemsSubtotalPrice': instance.lineItemsSubtotalPrice?.toJson(),
+      'lineItems': instance.lineItems?.map((e) => e.toJson()).toList(),
     };

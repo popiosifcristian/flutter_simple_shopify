@@ -22,5 +22,5 @@ Map<String, dynamic> _$$BlogImplToJson(_$BlogImpl instance) =>
       'handle': instance.handle,
       'title': instance.title,
       'url': instance.url,
-      'articles': instance.articles,
+      'articles': instance.articles?.toJson(),
     };
