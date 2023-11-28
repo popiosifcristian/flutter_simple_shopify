@@ -17,8 +17,6 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
       name: json['name'] as String,
       orderNumber: json['orderNumber'] as int,
       processedAt: json['processedAt'] as String,
-      shippingAddress: ShippingAddress.fromJson(
-          json['shippingAddress'] as Map<String, dynamic>),
       statusUrl: json['statusUrl'] as String,
       subtotalPrice:
           Price.fromJson(json['subtotalPrice'] as Map<String, dynamic>),
@@ -26,6 +24,10 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
       totalShippingPrice:
           Price.fromJson(json['totalShippingPrice'] as Map<String, dynamic>),
       totalTax: Price.fromJson(json['totalTax'] as Map<String, dynamic>),
+      shippingAddress: json['shippingAddress'] == null
+          ? null
+          : ShippingAddress.fromJson(
+              json['shippingAddress'] as Map<String, dynamic>),
       totalRefunded: json['totalRefunded'] == null
           ? null
           : Price.fromJson(json['totalRefunded'] as Map<String, dynamic>),
@@ -45,12 +47,12 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'name': instance.name,
       'orderNumber': instance.orderNumber,
       'processedAt': instance.processedAt,
-      'shippingAddress': instance.shippingAddress.toJson(),
       'statusUrl': instance.statusUrl,
       'subtotalPrice': instance.subtotalPrice.toJson(),
       'totalPrice': instance.totalPrice.toJson(),
       'totalShippingPrice': instance.totalShippingPrice.toJson(),
       'totalTax': instance.totalTax.toJson(),
+      'shippingAddress': instance.shippingAddress?.toJson(),
       'totalRefunded': instance.totalRefunded?.toJson(),
       'phone': instance.phone,
       'cursor': instance.cursor,

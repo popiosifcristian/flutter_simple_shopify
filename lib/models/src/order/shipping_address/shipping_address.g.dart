@@ -9,12 +9,12 @@ part of 'shipping_address.dart';
 _$ShippingAddressImpl _$$ShippingAddressImplFromJson(
         Map<String, dynamic> json) =>
     _$ShippingAddressImpl(
-      firstName: json['firstName'] as String,
-      id: json['id'] as String,
-      lastName: json['lastName'] as String,
       address1: json['address1'] as String,
       city: json['city'] as String,
       country: json['country'] as String,
+      id: json['id'] as String?,
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
       name: json['name'] as String?,
       address2: json['address2'] as String?,
       company: json['company'] as String?,
@@ -30,12 +30,12 @@ _$ShippingAddressImpl _$$ShippingAddressImplFromJson(
 Map<String, dynamic> _$$ShippingAddressImplToJson(
         _$ShippingAddressImpl instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'id': instance.id,
-      'lastName': instance.lastName,
       'address1': instance.address1,
       'city': instance.city,
       'country': instance.country,
+      'id': instance.id,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
       'name': instance.name,
       'address2': instance.address2,
       'company': instance.company,

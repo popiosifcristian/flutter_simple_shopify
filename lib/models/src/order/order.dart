@@ -21,12 +21,12 @@ class Order with _$Order {
     required String name,
     required int orderNumber,
     required String processedAt,
-    required ShippingAddress shippingAddress,
     required String statusUrl,
     required Price subtotalPrice,
     required Price totalPrice,
     required Price totalShippingPrice,
     required Price totalTax,
+    ShippingAddress? shippingAddress,
     Price? totalRefunded,
     String? phone,
     String? cursor,
@@ -47,8 +47,10 @@ class Order with _$Order {
         orderNumber: (json['node'] ?? const {})['orderNumber'],
         phone: (json['node'] ?? const {})['phone'],
         processedAt: (json['node'] ?? const {})['processedAt'],
-        shippingAddress: ShippingAddress.fromJson(
-            (json['node'] ?? const {})['shippingAddress'] ?? const {}),
+        shippingAddress: (json['node'] ?? const {})['shippingAddress'] != null
+            ? ShippingAddress.fromJson(
+                (json['node'] ?? const {})['shippingAddress'] ?? const {})
+            : null,
         statusUrl: (json['node'] ?? const {})['statusUrl'],
         subtotalPrice: Price.fromJson(
             (json['node'] ?? const {})['subtotalPrice'] ?? const {}),

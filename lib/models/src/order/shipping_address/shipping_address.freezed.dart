@@ -20,12 +20,12 @@ ShippingAddress _$ShippingAddressFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShippingAddress {
-  String get firstName => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
   String get address1 => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get firstName => throw _privateConstructorUsedError;
+  String? get lastName => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get address2 => throw _privateConstructorUsedError;
   String? get company => throw _privateConstructorUsedError;
@@ -50,12 +50,12 @@ abstract class $ShippingAddressCopyWith<$Res> {
       _$ShippingAddressCopyWithImpl<$Res, ShippingAddress>;
   @useResult
   $Res call(
-      {String firstName,
-      String id,
-      String lastName,
-      String address1,
+      {String address1,
       String city,
       String country,
+      String? id,
+      String? firstName,
+      String? lastName,
       String? name,
       String? address2,
       String? company,
@@ -81,12 +81,12 @@ class _$ShippingAddressCopyWithImpl<$Res, $Val extends ShippingAddress>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? id = null,
-    Object? lastName = null,
     Object? address1 = null,
     Object? city = null,
     Object? country = null,
+    Object? id = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? name = freezed,
     Object? address2 = freezed,
     Object? company = freezed,
@@ -99,18 +99,6 @@ class _$ShippingAddressCopyWithImpl<$Res, $Val extends ShippingAddress>
     Object? zip = null,
   }) {
     return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
       address1: null == address1
           ? _value.address1
           : address1 // ignore: cast_nullable_to_non_nullable
@@ -123,6 +111,18 @@ class _$ShippingAddressCopyWithImpl<$Res, $Val extends ShippingAddress>
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -176,12 +176,12 @@ abstract class _$$ShippingAddressImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String firstName,
-      String id,
-      String lastName,
-      String address1,
+      {String address1,
       String city,
       String country,
+      String? id,
+      String? firstName,
+      String? lastName,
       String? name,
       String? address2,
       String? company,
@@ -205,12 +205,12 @@ class __$$ShippingAddressImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? id = null,
-    Object? lastName = null,
     Object? address1 = null,
     Object? city = null,
     Object? country = null,
+    Object? id = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
     Object? name = freezed,
     Object? address2 = freezed,
     Object? company = freezed,
@@ -223,18 +223,6 @@ class __$$ShippingAddressImplCopyWithImpl<$Res>
     Object? zip = null,
   }) {
     return _then(_$ShippingAddressImpl(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
       address1: null == address1
           ? _value.address1
           : address1 // ignore: cast_nullable_to_non_nullable
@@ -247,6 +235,18 @@ class __$$ShippingAddressImplCopyWithImpl<$Res>
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: freezed == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: freezed == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -295,12 +295,12 @@ class __$$ShippingAddressImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ShippingAddressImpl implements _ShippingAddress {
   _$ShippingAddressImpl(
-      {required this.firstName,
-      required this.id,
-      required this.lastName,
-      required this.address1,
+      {required this.address1,
       required this.city,
       required this.country,
+      this.id,
+      this.firstName,
+      this.lastName,
       this.name,
       this.address2,
       this.company,
@@ -316,17 +316,17 @@ class _$ShippingAddressImpl implements _ShippingAddress {
       _$$ShippingAddressImplFromJson(json);
 
   @override
-  final String firstName;
-  @override
-  final String id;
-  @override
-  final String lastName;
-  @override
   final String address1;
   @override
   final String city;
   @override
   final String country;
+  @override
+  final String? id;
+  @override
+  final String? firstName;
+  @override
+  final String? lastName;
   @override
   final String? name;
   @override
@@ -350,7 +350,7 @@ class _$ShippingAddressImpl implements _ShippingAddress {
 
   @override
   String toString() {
-    return 'ShippingAddress(firstName: $firstName, id: $id, lastName: $lastName, address1: $address1, city: $city, country: $country, name: $name, address2: $address2, company: $company, countryCodeV2: $countryCodeV2, latitude: $latitude, longitude: $longitude, phone: $phone, province: $province, provinceCode: $provinceCode, zip: $zip)';
+    return 'ShippingAddress(address1: $address1, city: $city, country: $country, id: $id, firstName: $firstName, lastName: $lastName, name: $name, address2: $address2, company: $company, countryCodeV2: $countryCodeV2, latitude: $latitude, longitude: $longitude, phone: $phone, province: $province, provinceCode: $provinceCode, zip: $zip)';
   }
 
   @override
@@ -358,15 +358,15 @@ class _$ShippingAddressImpl implements _ShippingAddress {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ShippingAddressImpl &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
             (identical(other.address1, address1) ||
                 other.address1 == address1) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.country, country) || other.country == country) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.address2, address2) ||
                 other.address2 == address2) &&
@@ -389,12 +389,12 @@ class _$ShippingAddressImpl implements _ShippingAddress {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      firstName,
-      id,
-      lastName,
       address1,
       city,
       country,
+      id,
+      firstName,
+      lastName,
       name,
       address2,
       company,
@@ -423,12 +423,12 @@ class _$ShippingAddressImpl implements _ShippingAddress {
 
 abstract class _ShippingAddress implements ShippingAddress {
   factory _ShippingAddress(
-      {required final String firstName,
-      required final String id,
-      required final String lastName,
-      required final String address1,
+      {required final String address1,
       required final String city,
       required final String country,
+      final String? id,
+      final String? firstName,
+      final String? lastName,
       final String? name,
       final String? address2,
       final String? company,
@@ -444,17 +444,17 @@ abstract class _ShippingAddress implements ShippingAddress {
       _$ShippingAddressImpl.fromJson;
 
   @override
-  String get firstName;
-  @override
-  String get id;
-  @override
-  String get lastName;
-  @override
   String get address1;
   @override
   String get city;
   @override
   String get country;
+  @override
+  String? get id;
+  @override
+  String? get firstName;
+  @override
+  String? get lastName;
   @override
   String? get name;
   @override
