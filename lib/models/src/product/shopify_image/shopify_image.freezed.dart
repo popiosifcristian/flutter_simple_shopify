@@ -20,8 +20,9 @@ ShopifyImage _$ShopifyImageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShopifyImage {
-  String get originalSrc => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
+  String? get originalSrc => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   String? get altText => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +37,7 @@ abstract class $ShopifyImageCopyWith<$Res> {
           ShopifyImage value, $Res Function(ShopifyImage) then) =
       _$ShopifyImageCopyWithImpl<$Res, ShopifyImage>;
   @useResult
-  $Res call({String originalSrc, String id, String? altText});
+  $Res call({String id, String? originalSrc, String? url, String? altText});
 }
 
 /// @nodoc
@@ -52,19 +53,24 @@ class _$ShopifyImageCopyWithImpl<$Res, $Val extends ShopifyImage>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? originalSrc = null,
     Object? id = null,
+    Object? originalSrc = freezed,
+    Object? url = freezed,
     Object? altText = freezed,
   }) {
     return _then(_value.copyWith(
-      originalSrc: null == originalSrc
-          ? _value.originalSrc
-          : originalSrc // ignore: cast_nullable_to_non_nullable
-              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      originalSrc: freezed == originalSrc
+          ? _value.originalSrc
+          : originalSrc // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
       altText: freezed == altText
           ? _value.altText
           : altText // ignore: cast_nullable_to_non_nullable
@@ -81,7 +87,7 @@ abstract class _$$ShopifyImageImplCopyWith<$Res>
       __$$ShopifyImageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String originalSrc, String id, String? altText});
+  $Res call({String id, String? originalSrc, String? url, String? altText});
 }
 
 /// @nodoc
@@ -95,19 +101,24 @@ class __$$ShopifyImageImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? originalSrc = null,
     Object? id = null,
+    Object? originalSrc = freezed,
+    Object? url = freezed,
     Object? altText = freezed,
   }) {
     return _then(_$ShopifyImageImpl(
-      originalSrc: null == originalSrc
-          ? _value.originalSrc
-          : originalSrc // ignore: cast_nullable_to_non_nullable
-              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      originalSrc: freezed == originalSrc
+          ? _value.originalSrc
+          : originalSrc // ignore: cast_nullable_to_non_nullable
+              as String?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
       altText: freezed == altText
           ? _value.altText
           : altText // ignore: cast_nullable_to_non_nullable
@@ -120,22 +131,24 @@ class __$$ShopifyImageImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ShopifyImageImpl extends _ShopifyImage {
   _$ShopifyImageImpl(
-      {required this.originalSrc, required this.id, this.altText})
+      {required this.id, this.originalSrc, this.url, this.altText})
       : super._();
 
   factory _$ShopifyImageImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShopifyImageImplFromJson(json);
 
   @override
-  final String originalSrc;
-  @override
   final String id;
+  @override
+  final String? originalSrc;
+  @override
+  final String? url;
   @override
   final String? altText;
 
   @override
   String toString() {
-    return 'ShopifyImage(originalSrc: $originalSrc, id: $id, altText: $altText)';
+    return 'ShopifyImage(id: $id, originalSrc: $originalSrc, url: $url, altText: $altText)';
   }
 
   @override
@@ -143,15 +156,16 @@ class _$ShopifyImageImpl extends _ShopifyImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ShopifyImageImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.originalSrc, originalSrc) ||
                 other.originalSrc == originalSrc) &&
-            (identical(other.id, id) || other.id == id) &&
+            (identical(other.url, url) || other.url == url) &&
             (identical(other.altText, altText) || other.altText == altText));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, originalSrc, id, altText);
+  int get hashCode => Object.hash(runtimeType, id, originalSrc, url, altText);
 
   @JsonKey(ignore: true)
   @override
@@ -169,8 +183,9 @@ class _$ShopifyImageImpl extends _ShopifyImage {
 
 abstract class _ShopifyImage extends ShopifyImage {
   factory _ShopifyImage(
-      {required final String originalSrc,
-      required final String id,
+      {required final String id,
+      final String? originalSrc,
+      final String? url,
       final String? altText}) = _$ShopifyImageImpl;
   _ShopifyImage._() : super._();
 
@@ -178,9 +193,11 @@ abstract class _ShopifyImage extends ShopifyImage {
       _$ShopifyImageImpl.fromJson;
 
   @override
-  String get originalSrc;
-  @override
   String get id;
+  @override
+  String? get originalSrc;
+  @override
+  String? get url;
   @override
   String? get altText;
   @override
