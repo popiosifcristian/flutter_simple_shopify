@@ -13,7 +13,7 @@ class ProductVariantCheckout with _$ProductVariantCheckout {
     required Price price,
     required String title,
     required bool availableForSale,
-    required String sku,
+    required String? sku,
     required bool requiresShipping,
     required String id,
     ShopifyImage? image,

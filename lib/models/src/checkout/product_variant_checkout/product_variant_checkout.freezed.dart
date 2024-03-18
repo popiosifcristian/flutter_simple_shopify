@@ -24,7 +24,7 @@ mixin _$ProductVariantCheckout {
   Price get price => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   bool get availableForSale => throw _privateConstructorUsedError;
-  String get sku => throw _privateConstructorUsedError;
+  String? get sku => throw _privateConstructorUsedError;
   bool get requiresShipping => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   ShopifyImage? get image => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $ProductVariantCheckoutCopyWith<$Res> {
       {Price price,
       String title,
       bool availableForSale,
-      String sku,
+      String? sku,
       bool requiresShipping,
       String id,
       ShopifyImage? image,
@@ -78,7 +78,7 @@ class _$ProductVariantCheckoutCopyWithImpl<$Res,
     Object? price = null,
     Object? title = null,
     Object? availableForSale = null,
-    Object? sku = null,
+    Object? sku = freezed,
     Object? requiresShipping = null,
     Object? id = null,
     Object? image = freezed,
@@ -99,10 +99,10 @@ class _$ProductVariantCheckoutCopyWithImpl<$Res,
           ? _value.availableForSale
           : availableForSale // ignore: cast_nullable_to_non_nullable
               as bool,
-      sku: null == sku
+      sku: freezed == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       requiresShipping: null == requiresShipping
           ? _value.requiresShipping
           : requiresShipping // ignore: cast_nullable_to_non_nullable
@@ -176,7 +176,7 @@ abstract class _$$ProductVariantCheckoutImplCopyWith<$Res>
       {Price price,
       String title,
       bool availableForSale,
-      String sku,
+      String? sku,
       bool requiresShipping,
       String id,
       ShopifyImage? image,
@@ -208,7 +208,7 @@ class __$$ProductVariantCheckoutImplCopyWithImpl<$Res>
     Object? price = null,
     Object? title = null,
     Object? availableForSale = null,
-    Object? sku = null,
+    Object? sku = freezed,
     Object? requiresShipping = null,
     Object? id = null,
     Object? image = freezed,
@@ -229,10 +229,10 @@ class __$$ProductVariantCheckoutImplCopyWithImpl<$Res>
           ? _value.availableForSale
           : availableForSale // ignore: cast_nullable_to_non_nullable
               as bool,
-      sku: null == sku
+      sku: freezed == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       requiresShipping: null == requiresShipping
           ? _value.requiresShipping
           : requiresShipping // ignore: cast_nullable_to_non_nullable
@@ -287,7 +287,7 @@ class _$ProductVariantCheckoutImpl extends _ProductVariantCheckout {
   @override
   final bool availableForSale;
   @override
-  final String sku;
+  final String? sku;
   @override
   final bool requiresShipping;
   @override
@@ -352,7 +352,7 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
       {required final Price price,
       required final String title,
       required final bool availableForSale,
-      required final String sku,
+      required final String? sku,
       required final bool requiresShipping,
       required final String id,
       final ShopifyImage? image,
@@ -371,7 +371,7 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
   @override
   bool get availableForSale;
   @override
-  String get sku;
+  String? get sku;
   @override
   bool get requiresShipping;
   @override
