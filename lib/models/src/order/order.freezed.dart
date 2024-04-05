@@ -38,7 +38,7 @@ mixin _$Order {
   Price? get totalRefunded => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
-  String? get canceledAt => throw _privateConstructorUsedError;
+  String? get cancelledAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,7 +69,7 @@ abstract class $OrderCopyWith<$Res> {
       Price? totalRefunded,
       String? phone,
       String? cursor,
-      String? canceledAt});
+      String? cancelledAt});
 
   $LineItemsOrderCopyWith<$Res> get lineItems;
   $PriceCopyWith<$Res> get subtotalPrice;
@@ -111,7 +111,7 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? totalRefunded = freezed,
     Object? phone = freezed,
     Object? cursor = freezed,
-    Object? canceledAt = freezed,
+    Object? cancelledAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -186,9 +186,9 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      canceledAt: freezed == canceledAt
-          ? _value.canceledAt
-          : canceledAt // ignore: cast_nullable_to_non_nullable
+      cancelledAt: freezed == cancelledAt
+          ? _value.cancelledAt
+          : cancelledAt // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -284,7 +284,7 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
       Price? totalRefunded,
       String? phone,
       String? cursor,
-      String? canceledAt});
+      String? cancelledAt});
 
   @override
   $LineItemsOrderCopyWith<$Res> get lineItems;
@@ -331,7 +331,7 @@ class __$$OrderImplCopyWithImpl<$Res>
     Object? totalRefunded = freezed,
     Object? phone = freezed,
     Object? cursor = freezed,
-    Object? canceledAt = freezed,
+    Object? cancelledAt = freezed,
   }) {
     return _then(_$OrderImpl(
       id: null == id
@@ -406,9 +406,9 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
               as String?,
-      canceledAt: freezed == canceledAt
-          ? _value.canceledAt
-          : canceledAt // ignore: cast_nullable_to_non_nullable
+      cancelledAt: freezed == cancelledAt
+          ? _value.cancelledAt
+          : cancelledAt // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -436,7 +436,7 @@ class _$OrderImpl extends _Order {
       this.totalRefunded,
       this.phone,
       this.cursor,
-      this.canceledAt})
+      this.cancelledAt})
       : super._();
 
   factory _$OrderImpl.fromJson(Map<String, dynamic> json) =>
@@ -479,11 +479,11 @@ class _$OrderImpl extends _Order {
   @override
   final String? cursor;
   @override
-  final String? canceledAt;
+  final String? cancelledAt;
 
   @override
   String toString() {
-    return 'Order(id: $id, email: $email, currencyCode: $currencyCode, customerUrl: $customerUrl, fulfillmentStatus: $fulfillmentStatus, lineItems: $lineItems, name: $name, orderNumber: $orderNumber, processedAt: $processedAt, statusUrl: $statusUrl, subtotalPrice: $subtotalPrice, totalPrice: $totalPrice, totalShippingPrice: $totalShippingPrice, totalTax: $totalTax, shippingAddress: $shippingAddress, totalRefunded: $totalRefunded, phone: $phone, cursor: $cursor, canceledAt: $canceledAt)';
+    return 'Order(id: $id, email: $email, currencyCode: $currencyCode, customerUrl: $customerUrl, fulfillmentStatus: $fulfillmentStatus, lineItems: $lineItems, name: $name, orderNumber: $orderNumber, processedAt: $processedAt, statusUrl: $statusUrl, subtotalPrice: $subtotalPrice, totalPrice: $totalPrice, totalShippingPrice: $totalShippingPrice, totalTax: $totalTax, shippingAddress: $shippingAddress, totalRefunded: $totalRefunded, phone: $phone, cursor: $cursor, cancelledAt: $cancelledAt)';
   }
 
   @override
@@ -522,8 +522,8 @@ class _$OrderImpl extends _Order {
                 other.totalRefunded == totalRefunded) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.cursor, cursor) || other.cursor == cursor) &&
-            (identical(other.canceledAt, canceledAt) ||
-                other.canceledAt == canceledAt));
+            (identical(other.cancelledAt, cancelledAt) ||
+                other.cancelledAt == cancelledAt));
   }
 
   @JsonKey(ignore: true)
@@ -548,7 +548,7 @@ class _$OrderImpl extends _Order {
         totalRefunded,
         phone,
         cursor,
-        canceledAt
+        cancelledAt
       ]);
 
   @JsonKey(ignore: true)
@@ -585,7 +585,7 @@ abstract class _Order extends Order {
       final Price? totalRefunded,
       final String? phone,
       final String? cursor,
-      final String? canceledAt}) = _$OrderImpl;
+      final String? cancelledAt}) = _$OrderImpl;
   _Order._() : super._();
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
@@ -627,7 +627,7 @@ abstract class _Order extends Order {
   @override
   String? get cursor;
   @override
-  String? get canceledAt;
+  String? get cancelledAt;
   @override
   @JsonKey(ignore: true)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>

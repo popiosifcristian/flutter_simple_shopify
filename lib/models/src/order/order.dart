@@ -30,14 +30,14 @@ class Order with _$Order {
     Price? totalRefunded,
     String? phone,
     String? cursor,
-    String? canceledAt,
+    String? cancelledAt,
   }) = _Order;
 
   static Order fromGraphJson(Map<String, dynamic> json) {
     return Order(
         id: (json['node'] ?? const {})['id'],
         email: (json['node'] ?? const {})['email'],
-        canceledAt: (json['node'] ?? const {})['canceledAt'],
+        cancelledAt: (json['node'] ?? const {})['cancelledAt'],
         currencyCode: (json['node'] ?? const {})['currencyCode'],
         customerUrl: (json['node'] ?? const {})['customerUrl'],
         fulfillmentStatus: (json['node'] ?? const {})['fulfillmentStatus'],

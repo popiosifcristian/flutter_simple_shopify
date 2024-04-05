@@ -33,7 +33,7 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
           : Price.fromJson(json['totalRefunded'] as Map<String, dynamic>),
       phone: json['phone'] as String?,
       cursor: json['cursor'] as String?,
-      canceledAt: json['canceledAt'] as String?,
+      cancelledAt: json['cancelledAt'] as String?,
     );
 
 Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
@@ -56,5 +56,5 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'totalRefunded': instance.totalRefunded?.toJson(),
       'phone': instance.phone,
       'cursor': instance.cursor,
-      'canceledAt': instance.canceledAt,
+      'cancelledAt': instance.cancelledAt,
     };
