@@ -21,11 +21,13 @@ class Order with _$Order {
     required String processedAt,
     required MoneyBag currentTotalDiscountsSet,
     required MoneyBag currentTotalPriceSet,
+    required MoneyBag currentSubtotalPriceSet,
     String? email,
     ShopifyUser? customer,
     ShippingAddress? shippingAddress,
     String? phone,
     String? cancelledAt,
+    String? app,
     String? cursor,
   }) = _Order;
 
@@ -43,6 +45,8 @@ class Order with _$Order {
             (json['node'] ?? const {})['currentTotalDiscountsSet']),
         currentTotalPriceSet: MoneyBag.fromJson(
             (json['node'] ?? const {})['currentTotalPriceSet']),
+        currentSubtotalPriceSet: MoneyBag.fromJson(
+            (json['node'] ?? const {})['currentSubtotalPriceSet']),
         email: (json['node'] ?? const {})['email'],
         customer: (json['node'] ?? const {})['customer'] != null
             ? ShopifyUser.fromJson((json['node'] ?? const {})['customer'])
