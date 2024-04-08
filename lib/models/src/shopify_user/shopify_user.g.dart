@@ -8,9 +8,9 @@ part of 'shopify_user.dart';
 
 _$ShopifyUserImpl _$$ShopifyUserImplFromJson(Map<String, dynamic> json) =>
     _$ShopifyUserImpl(
-      address: json['address'] == null
+      addresses: json['addresses'] == null
           ? null
-          : Addresses.fromJson(json['address'] as Map<String, dynamic>),
+          : Addresses.fromJson(json['addresses'] as Map<String, dynamic>),
       createdAt: json['createdAt'] as String?,
       displayName: json['displayName'] as String?,
       email: json['email'] as String?,
@@ -27,7 +27,7 @@ _$ShopifyUserImpl _$$ShopifyUserImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ShopifyUserImplToJson(_$ShopifyUserImpl instance) =>
     <String, dynamic>{
-      'address': instance.address?.toJson(),
+      'addresses': instance.addresses?.toJson(),
       'createdAt': instance.createdAt,
       'displayName': instance.displayName,
       'email': instance.email,

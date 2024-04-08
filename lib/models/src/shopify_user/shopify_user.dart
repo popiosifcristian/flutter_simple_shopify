@@ -9,7 +9,7 @@ part 'shopify_user.g.dart';
 @freezed
 class ShopifyUser with _$ShopifyUser {
   factory ShopifyUser({
-    Addresses? address,
+    Addresses? addresses,
     String? createdAt,
     String? displayName,
     String? email,
@@ -23,7 +23,7 @@ class ShopifyUser with _$ShopifyUser {
 
   static ShopifyUser fromGraphJson(Map<String, dynamic> json) {
     return ShopifyUser(
-      address: Addresses.fromGraphJson(json['addresses'] ?? const {}),
+      addresses: Addresses.fromGraphJson(json['addresses'] ?? const {}),
       createdAt: json['createdAt'],
       displayName: json['displayName'],
       email: json['email'],

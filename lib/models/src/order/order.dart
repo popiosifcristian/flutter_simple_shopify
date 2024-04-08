@@ -1,4 +1,5 @@
-import 'package:flutter_simple_shopify/models/src/product/price/price.dart';
+import 'package:flutter_simple_shopify/flutter_simple_shopify.dart';
+import 'package:flutter_simple_shopify/models/src/money/money_bag.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'line_items_order/line_items_order.dart';
@@ -13,55 +14,45 @@ class Order with _$Order {
 
   factory Order({
     required String id,
-    required String email,
     required String currencyCode,
-    required String customerUrl,
-    required String fulfillmentStatus,
+    required String displayFulfillmentStatus,
     required LineItemsOrder lineItems,
     required String name,
-    required int orderNumber,
     required String processedAt,
-    required String statusUrl,
-    required Price subtotalPrice,
-    required Price totalPrice,
-    required Price totalShippingPrice,
-    required Price totalTax,
+    required MoneyBag currentTotalDiscountsSet,
+    required MoneyBag currentTotalPriceSet,
+    String? email,
+    ShopifyUser? customer,
     ShippingAddress? shippingAddress,
-    Price? totalRefunded,
     String? phone,
-    String? cursor,
     String? cancelledAt,
+    String? cursor,
   }) = _Order;
 
   static Order fromGraphJson(Map<String, dynamic> json) {
     return Order(
         id: (json['node'] ?? const {})['id'],
-        email: (json['node'] ?? const {})['email'],
-        cancelledAt: (json['node'] ?? const {})['cancelledAt'],
         currencyCode: (json['node'] ?? const {})['currencyCode'],
-        customerUrl: (json['node'] ?? const {})['customerUrl'],
-        fulfillmentStatus: (json['node'] ?? const {})['fulfillmentStatus'],
+        displayFulfillmentStatus:
+            (json['node'] ?? const {})['displayFulfillmentStatus'],
         lineItems: LineItemsOrder.fromGraphJson(
             (json['node'] ?? const {})['lineItems'] ?? const {}),
         name: (json['node'] ?? const {})['name'],
-        orderNumber: (json['node'] ?? const {})['orderNumber'],
-        phone: (json['node'] ?? const {})['phone'],
         processedAt: (json['node'] ?? const {})['processedAt'],
+        currentTotalDiscountsSet: MoneyBag.fromJson(
+            (json['node'] ?? const {})['currentTotalDiscountsSet']),
+        currentTotalPriceSet: MoneyBag.fromJson(
+            (json['node'] ?? const {})['currentTotalPriceSet']),
+        email: (json['node'] ?? const {})['email'],
+        customer: (json['node'] ?? const {})['customer'] != null
+            ? ShopifyUser.fromJson((json['node'] ?? const {})['customer'])
+            : null,
         shippingAddress: (json['node'] ?? const {})['shippingAddress'] != null
             ? ShippingAddress.fromJson(
                 (json['node'] ?? const {})['shippingAddress'] ?? const {})
             : null,
-        statusUrl: (json['node'] ?? const {})['statusUrl'],
-        subtotalPrice: Price.fromJson(
-            (json['node'] ?? const {})['subtotalPrice'] ?? const {}),
-        totalPrice: Price.fromJson(
-            (json['node'] ?? const {})['totalPrice'] ?? const {}),
-        totalRefunded: Price.fromJson(
-            (json['node'] ?? const {})['totalRefunded'] ?? const {}),
-        totalShippingPrice: Price.fromJson(
-            (json['node'] ?? const {})['totalShippingPrice'] ?? const {}),
-        totalTax:
-            Price.fromJson((json['node'] ?? const {})['totalTax'] ?? const {}),
+        phone: (json['node'] ?? const {})['phone'],
+        cancelledAt: (json['node'] ?? const {})['cancelledAt'],
         cursor: json['cursor']);
   }
 

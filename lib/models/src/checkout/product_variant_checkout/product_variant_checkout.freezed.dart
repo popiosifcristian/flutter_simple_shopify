@@ -29,8 +29,6 @@ mixin _$ProductVariantCheckout {
   String get id => throw _privateConstructorUsedError;
   ShopifyImage? get image => throw _privateConstructorUsedError;
   Price? get compareAtPrice => throw _privateConstructorUsedError;
-  double? get weight => throw _privateConstructorUsedError;
-  String? get weightUnit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,9 +50,7 @@ abstract class $ProductVariantCheckoutCopyWith<$Res> {
       bool requiresShipping,
       String id,
       ShopifyImage? image,
-      Price? compareAtPrice,
-      double? weight,
-      String? weightUnit});
+      Price? compareAtPrice});
 
   $PriceCopyWith<$Res> get price;
   $ShopifyImageCopyWith<$Res>? get image;
@@ -83,8 +79,6 @@ class _$ProductVariantCheckoutCopyWithImpl<$Res,
     Object? id = null,
     Object? image = freezed,
     Object? compareAtPrice = freezed,
-    Object? weight = freezed,
-    Object? weightUnit = freezed,
   }) {
     return _then(_value.copyWith(
       price: null == price
@@ -119,14 +113,6 @@ class _$ProductVariantCheckoutCopyWithImpl<$Res,
           ? _value.compareAtPrice
           : compareAtPrice // ignore: cast_nullable_to_non_nullable
               as Price?,
-      weight: freezed == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weightUnit: freezed == weightUnit
-          ? _value.weightUnit
-          : weightUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 
@@ -180,9 +166,7 @@ abstract class _$$ProductVariantCheckoutImplCopyWith<$Res>
       bool requiresShipping,
       String id,
       ShopifyImage? image,
-      Price? compareAtPrice,
-      double? weight,
-      String? weightUnit});
+      Price? compareAtPrice});
 
   @override
   $PriceCopyWith<$Res> get price;
@@ -213,8 +197,6 @@ class __$$ProductVariantCheckoutImplCopyWithImpl<$Res>
     Object? id = null,
     Object? image = freezed,
     Object? compareAtPrice = freezed,
-    Object? weight = freezed,
-    Object? weightUnit = freezed,
   }) {
     return _then(_$ProductVariantCheckoutImpl(
       price: null == price
@@ -249,14 +231,6 @@ class __$$ProductVariantCheckoutImplCopyWithImpl<$Res>
           ? _value.compareAtPrice
           : compareAtPrice // ignore: cast_nullable_to_non_nullable
               as Price?,
-      weight: freezed == weight
-          ? _value.weight
-          : weight // ignore: cast_nullable_to_non_nullable
-              as double?,
-      weightUnit: freezed == weightUnit
-          ? _value.weightUnit
-          : weightUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -272,9 +246,7 @@ class _$ProductVariantCheckoutImpl extends _ProductVariantCheckout {
       required this.requiresShipping,
       required this.id,
       this.image,
-      this.compareAtPrice,
-      this.weight,
-      this.weightUnit})
+      this.compareAtPrice})
       : super._();
 
   factory _$ProductVariantCheckoutImpl.fromJson(Map<String, dynamic> json) =>
@@ -296,14 +268,10 @@ class _$ProductVariantCheckoutImpl extends _ProductVariantCheckout {
   final ShopifyImage? image;
   @override
   final Price? compareAtPrice;
-  @override
-  final double? weight;
-  @override
-  final String? weightUnit;
 
   @override
   String toString() {
-    return 'ProductVariantCheckout(price: $price, title: $title, availableForSale: $availableForSale, sku: $sku, requiresShipping: $requiresShipping, id: $id, image: $image, compareAtPrice: $compareAtPrice, weight: $weight, weightUnit: $weightUnit)';
+    return 'ProductVariantCheckout(price: $price, title: $title, availableForSale: $availableForSale, sku: $sku, requiresShipping: $requiresShipping, id: $id, image: $image, compareAtPrice: $compareAtPrice)';
   }
 
   @override
@@ -321,16 +289,13 @@ class _$ProductVariantCheckoutImpl extends _ProductVariantCheckout {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.compareAtPrice, compareAtPrice) ||
-                other.compareAtPrice == compareAtPrice) &&
-            (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.weightUnit, weightUnit) ||
-                other.weightUnit == weightUnit));
+                other.compareAtPrice == compareAtPrice));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, price, title, availableForSale,
-      sku, requiresShipping, id, image, compareAtPrice, weight, weightUnit);
+      sku, requiresShipping, id, image, compareAtPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -356,9 +321,7 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
       required final bool requiresShipping,
       required final String id,
       final ShopifyImage? image,
-      final Price? compareAtPrice,
-      final double? weight,
-      final String? weightUnit}) = _$ProductVariantCheckoutImpl;
+      final Price? compareAtPrice}) = _$ProductVariantCheckoutImpl;
   _ProductVariantCheckout._() : super._();
 
   factory _ProductVariantCheckout.fromJson(Map<String, dynamic> json) =
@@ -380,10 +343,6 @@ abstract class _ProductVariantCheckout extends ProductVariantCheckout {
   ShopifyImage? get image;
   @override
   Price? get compareAtPrice;
-  @override
-  double? get weight;
-  @override
-  String? get weightUnit;
   @override
   @JsonKey(ignore: true)
   _$$ProductVariantCheckoutImplCopyWith<_$ProductVariantCheckoutImpl>

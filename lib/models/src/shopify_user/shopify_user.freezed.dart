@@ -20,7 +20,7 @@ ShopifyUser _$ShopifyUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShopifyUser {
-  Addresses? get address => throw _privateConstructorUsedError;
+  Addresses? get addresses => throw _privateConstructorUsedError;
   String? get createdAt => throw _privateConstructorUsedError;
   String? get displayName => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $ShopifyUserCopyWith<$Res> {
       _$ShopifyUserCopyWithImpl<$Res, ShopifyUser>;
   @useResult
   $Res call(
-      {Addresses? address,
+      {Addresses? addresses,
       String? createdAt,
       String? displayName,
       String? email,
@@ -56,7 +56,7 @@ abstract class $ShopifyUserCopyWith<$Res> {
       List<String>? tags,
       LastIncompleteCheckout? lastIncompleteCheckout});
 
-  $AddressesCopyWith<$Res>? get address;
+  $AddressesCopyWith<$Res>? get addresses;
   $LastIncompleteCheckoutCopyWith<$Res>? get lastIncompleteCheckout;
 }
 
@@ -73,7 +73,7 @@ class _$ShopifyUserCopyWithImpl<$Res, $Val extends ShopifyUser>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
+    Object? addresses = freezed,
     Object? createdAt = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
@@ -85,9 +85,9 @@ class _$ShopifyUserCopyWithImpl<$Res, $Val extends ShopifyUser>
     Object? lastIncompleteCheckout = freezed,
   }) {
     return _then(_value.copyWith(
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
+      addresses: freezed == addresses
+          ? _value.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
               as Addresses?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -130,13 +130,13 @@ class _$ShopifyUserCopyWithImpl<$Res, $Val extends ShopifyUser>
 
   @override
   @pragma('vm:prefer-inline')
-  $AddressesCopyWith<$Res>? get address {
-    if (_value.address == null) {
+  $AddressesCopyWith<$Res>? get addresses {
+    if (_value.addresses == null) {
       return null;
     }
 
-    return $AddressesCopyWith<$Res>(_value.address!, (value) {
-      return _then(_value.copyWith(address: value) as $Val);
+    return $AddressesCopyWith<$Res>(_value.addresses!, (value) {
+      return _then(_value.copyWith(addresses: value) as $Val);
     });
   }
 
@@ -163,7 +163,7 @@ abstract class _$$ShopifyUserImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Addresses? address,
+      {Addresses? addresses,
       String? createdAt,
       String? displayName,
       String? email,
@@ -175,7 +175,7 @@ abstract class _$$ShopifyUserImplCopyWith<$Res>
       LastIncompleteCheckout? lastIncompleteCheckout});
 
   @override
-  $AddressesCopyWith<$Res>? get address;
+  $AddressesCopyWith<$Res>? get addresses;
   @override
   $LastIncompleteCheckoutCopyWith<$Res>? get lastIncompleteCheckout;
 }
@@ -191,7 +191,7 @@ class __$$ShopifyUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
+    Object? addresses = freezed,
     Object? createdAt = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
@@ -203,9 +203,9 @@ class __$$ShopifyUserImplCopyWithImpl<$Res>
     Object? lastIncompleteCheckout = freezed,
   }) {
     return _then(_$ShopifyUserImpl(
-      address: freezed == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
+      addresses: freezed == addresses
+          ? _value.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
               as Addresses?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -251,7 +251,7 @@ class __$$ShopifyUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ShopifyUserImpl implements _ShopifyUser {
   _$ShopifyUserImpl(
-      {this.address,
+      {this.addresses,
       this.createdAt,
       this.displayName,
       this.email,
@@ -267,7 +267,7 @@ class _$ShopifyUserImpl implements _ShopifyUser {
       _$$ShopifyUserImplFromJson(json);
 
   @override
-  final Addresses? address;
+  final Addresses? addresses;
   @override
   final String? createdAt;
   @override
@@ -297,7 +297,7 @@ class _$ShopifyUserImpl implements _ShopifyUser {
 
   @override
   String toString() {
-    return 'ShopifyUser(address: $address, createdAt: $createdAt, displayName: $displayName, email: $email, firstName: $firstName, id: $id, lastName: $lastName, phone: $phone, tags: $tags, lastIncompleteCheckout: $lastIncompleteCheckout)';
+    return 'ShopifyUser(addresses: $addresses, createdAt: $createdAt, displayName: $displayName, email: $email, firstName: $firstName, id: $id, lastName: $lastName, phone: $phone, tags: $tags, lastIncompleteCheckout: $lastIncompleteCheckout)';
   }
 
   @override
@@ -305,7 +305,8 @@ class _$ShopifyUserImpl implements _ShopifyUser {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ShopifyUserImpl &&
-            (identical(other.address, address) || other.address == address) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.displayName, displayName) ||
@@ -326,7 +327,7 @@ class _$ShopifyUserImpl implements _ShopifyUser {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      address,
+      addresses,
       createdAt,
       displayName,
       email,
@@ -353,7 +354,7 @@ class _$ShopifyUserImpl implements _ShopifyUser {
 
 abstract class _ShopifyUser implements ShopifyUser {
   factory _ShopifyUser(
-          {final Addresses? address,
+          {final Addresses? addresses,
           final String? createdAt,
           final String? displayName,
           final String? email,
@@ -369,7 +370,7 @@ abstract class _ShopifyUser implements ShopifyUser {
       _$ShopifyUserImpl.fromJson;
 
   @override
-  Addresses? get address;
+  Addresses? get addresses;
   @override
   String? get createdAt;
   @override

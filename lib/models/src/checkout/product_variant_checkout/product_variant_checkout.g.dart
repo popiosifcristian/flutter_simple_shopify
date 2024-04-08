@@ -21,8 +21,6 @@ _$ProductVariantCheckoutImpl _$$ProductVariantCheckoutImplFromJson(
       compareAtPrice: json['compareAtPrice'] == null
           ? null
           : Price.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
-      weight: (json['weight'] as num?)?.toDouble(),
-      weightUnit: json['weightUnit'] as String?,
     );
 
 Map<String, dynamic> _$$ProductVariantCheckoutImplToJson(
@@ -36,6 +34,4 @@ Map<String, dynamic> _$$ProductVariantCheckoutImplToJson(
       'id': instance.id,
       'image': instance.image?.toJson(),
       'compareAtPrice': instance.compareAtPrice?.toJson(),
-      'weight': instance.weight,
-      'weightUnit': instance.weightUnit,
     };
