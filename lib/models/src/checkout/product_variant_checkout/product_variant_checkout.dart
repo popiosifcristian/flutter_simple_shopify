@@ -18,6 +18,8 @@ class ProductVariantCheckout with _$ProductVariantCheckout {
     required String id,
     ShopifyImage? image,
     Price? compareAtPrice,
+    double? weight,
+    String? weightUnit,
   }) = _ProductVariantCheckout;
 
   factory ProductVariantCheckout.fromJson(Map<String, dynamic> json) =>

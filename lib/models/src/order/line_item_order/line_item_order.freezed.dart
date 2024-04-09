@@ -21,8 +21,8 @@ LineItemOrder _$LineItemOrderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$LineItemOrder {
   int get currentQuantity => throw _privateConstructorUsedError;
-  MoneyBag get totalDiscountSet => throw _privateConstructorUsedError;
-  MoneyBag get originalTotalSet => throw _privateConstructorUsedError;
+  Price get discountedTotalPrice => throw _privateConstructorUsedError;
+  Price get originalTotalPrice => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<DiscountAllocations> get discountAllocations =>
@@ -43,15 +43,15 @@ abstract class $LineItemOrderCopyWith<$Res> {
   @useResult
   $Res call(
       {int currentQuantity,
-      MoneyBag totalDiscountSet,
-      MoneyBag originalTotalSet,
+      Price discountedTotalPrice,
+      Price originalTotalPrice,
       int quantity,
       String title,
       List<DiscountAllocations> discountAllocations,
       ProductVariantCheckout? variant});
 
-  $MoneyBagCopyWith<$Res> get totalDiscountSet;
-  $MoneyBagCopyWith<$Res> get originalTotalSet;
+  $PriceCopyWith<$Res> get discountedTotalPrice;
+  $PriceCopyWith<$Res> get originalTotalPrice;
   $ProductVariantCheckoutCopyWith<$Res>? get variant;
 }
 
@@ -69,8 +69,8 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
   @override
   $Res call({
     Object? currentQuantity = null,
-    Object? totalDiscountSet = null,
-    Object? originalTotalSet = null,
+    Object? discountedTotalPrice = null,
+    Object? originalTotalPrice = null,
     Object? quantity = null,
     Object? title = null,
     Object? discountAllocations = null,
@@ -81,14 +81,14 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
           ? _value.currentQuantity
           : currentQuantity // ignore: cast_nullable_to_non_nullable
               as int,
-      totalDiscountSet: null == totalDiscountSet
-          ? _value.totalDiscountSet
-          : totalDiscountSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      originalTotalSet: null == originalTotalSet
-          ? _value.originalTotalSet
-          : originalTotalSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
+      discountedTotalPrice: null == discountedTotalPrice
+          ? _value.discountedTotalPrice
+          : discountedTotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      originalTotalPrice: null == originalTotalPrice
+          ? _value.originalTotalPrice
+          : originalTotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -110,17 +110,17 @@ class _$LineItemOrderCopyWithImpl<$Res, $Val extends LineItemOrder>
 
   @override
   @pragma('vm:prefer-inline')
-  $MoneyBagCopyWith<$Res> get totalDiscountSet {
-    return $MoneyBagCopyWith<$Res>(_value.totalDiscountSet, (value) {
-      return _then(_value.copyWith(totalDiscountSet: value) as $Val);
+  $PriceCopyWith<$Res> get discountedTotalPrice {
+    return $PriceCopyWith<$Res>(_value.discountedTotalPrice, (value) {
+      return _then(_value.copyWith(discountedTotalPrice: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MoneyBagCopyWith<$Res> get originalTotalSet {
-    return $MoneyBagCopyWith<$Res>(_value.originalTotalSet, (value) {
-      return _then(_value.copyWith(originalTotalSet: value) as $Val);
+  $PriceCopyWith<$Res> get originalTotalPrice {
+    return $PriceCopyWith<$Res>(_value.originalTotalPrice, (value) {
+      return _then(_value.copyWith(originalTotalPrice: value) as $Val);
     });
   }
 
@@ -147,17 +147,17 @@ abstract class _$$LineItemOrderImplCopyWith<$Res>
   @useResult
   $Res call(
       {int currentQuantity,
-      MoneyBag totalDiscountSet,
-      MoneyBag originalTotalSet,
+      Price discountedTotalPrice,
+      Price originalTotalPrice,
       int quantity,
       String title,
       List<DiscountAllocations> discountAllocations,
       ProductVariantCheckout? variant});
 
   @override
-  $MoneyBagCopyWith<$Res> get totalDiscountSet;
+  $PriceCopyWith<$Res> get discountedTotalPrice;
   @override
-  $MoneyBagCopyWith<$Res> get originalTotalSet;
+  $PriceCopyWith<$Res> get originalTotalPrice;
   @override
   $ProductVariantCheckoutCopyWith<$Res>? get variant;
 }
@@ -174,8 +174,8 @@ class __$$LineItemOrderImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentQuantity = null,
-    Object? totalDiscountSet = null,
-    Object? originalTotalSet = null,
+    Object? discountedTotalPrice = null,
+    Object? originalTotalPrice = null,
     Object? quantity = null,
     Object? title = null,
     Object? discountAllocations = null,
@@ -186,14 +186,14 @@ class __$$LineItemOrderImplCopyWithImpl<$Res>
           ? _value.currentQuantity
           : currentQuantity // ignore: cast_nullable_to_non_nullable
               as int,
-      totalDiscountSet: null == totalDiscountSet
-          ? _value.totalDiscountSet
-          : totalDiscountSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      originalTotalSet: null == originalTotalSet
-          ? _value.originalTotalSet
-          : originalTotalSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
+      discountedTotalPrice: null == discountedTotalPrice
+          ? _value.discountedTotalPrice
+          : discountedTotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      originalTotalPrice: null == originalTotalPrice
+          ? _value.originalTotalPrice
+          : originalTotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
       quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
@@ -219,8 +219,8 @@ class __$$LineItemOrderImplCopyWithImpl<$Res>
 class _$LineItemOrderImpl extends _LineItemOrder {
   _$LineItemOrderImpl(
       {required this.currentQuantity,
-      required this.totalDiscountSet,
-      required this.originalTotalSet,
+      required this.discountedTotalPrice,
+      required this.originalTotalPrice,
       required this.quantity,
       required this.title,
       final List<DiscountAllocations> discountAllocations = const [],
@@ -234,9 +234,9 @@ class _$LineItemOrderImpl extends _LineItemOrder {
   @override
   final int currentQuantity;
   @override
-  final MoneyBag totalDiscountSet;
+  final Price discountedTotalPrice;
   @override
-  final MoneyBag originalTotalSet;
+  final Price originalTotalPrice;
   @override
   final int quantity;
   @override
@@ -257,7 +257,7 @@ class _$LineItemOrderImpl extends _LineItemOrder {
 
   @override
   String toString() {
-    return 'LineItemOrder(currentQuantity: $currentQuantity, totalDiscountSet: $totalDiscountSet, originalTotalSet: $originalTotalSet, quantity: $quantity, title: $title, discountAllocations: $discountAllocations, variant: $variant)';
+    return 'LineItemOrder(currentQuantity: $currentQuantity, discountedTotalPrice: $discountedTotalPrice, originalTotalPrice: $originalTotalPrice, quantity: $quantity, title: $title, discountAllocations: $discountAllocations, variant: $variant)';
   }
 
   @override
@@ -267,10 +267,10 @@ class _$LineItemOrderImpl extends _LineItemOrder {
             other is _$LineItemOrderImpl &&
             (identical(other.currentQuantity, currentQuantity) ||
                 other.currentQuantity == currentQuantity) &&
-            (identical(other.totalDiscountSet, totalDiscountSet) ||
-                other.totalDiscountSet == totalDiscountSet) &&
-            (identical(other.originalTotalSet, originalTotalSet) ||
-                other.originalTotalSet == originalTotalSet) &&
+            (identical(other.discountedTotalPrice, discountedTotalPrice) ||
+                other.discountedTotalPrice == discountedTotalPrice) &&
+            (identical(other.originalTotalPrice, originalTotalPrice) ||
+                other.originalTotalPrice == originalTotalPrice) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
             (identical(other.title, title) || other.title == title) &&
@@ -284,8 +284,8 @@ class _$LineItemOrderImpl extends _LineItemOrder {
   int get hashCode => Object.hash(
       runtimeType,
       currentQuantity,
-      totalDiscountSet,
-      originalTotalSet,
+      discountedTotalPrice,
+      originalTotalPrice,
       quantity,
       title,
       const DeepCollectionEquality().hash(_discountAllocations),
@@ -308,8 +308,8 @@ class _$LineItemOrderImpl extends _LineItemOrder {
 abstract class _LineItemOrder extends LineItemOrder {
   factory _LineItemOrder(
       {required final int currentQuantity,
-      required final MoneyBag totalDiscountSet,
-      required final MoneyBag originalTotalSet,
+      required final Price discountedTotalPrice,
+      required final Price originalTotalPrice,
       required final int quantity,
       required final String title,
       final List<DiscountAllocations> discountAllocations,
@@ -322,9 +322,9 @@ abstract class _LineItemOrder extends LineItemOrder {
   @override
   int get currentQuantity;
   @override
-  MoneyBag get totalDiscountSet;
+  Price get discountedTotalPrice;
   @override
-  MoneyBag get originalTotalSet;
+  Price get originalTotalPrice;
   @override
   int get quantity;
   @override

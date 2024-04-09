@@ -21,19 +21,24 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Order {
   String get id => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
   String get currencyCode => throw _privateConstructorUsedError;
-  String get displayFulfillmentStatus => throw _privateConstructorUsedError;
+  String get customerUrl => throw _privateConstructorUsedError;
+  String get fulfillmentStatus => throw _privateConstructorUsedError;
   LineItemsOrder get lineItems => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  int get orderNumber => throw _privateConstructorUsedError;
   String get processedAt => throw _privateConstructorUsedError;
-  MoneyBag get currentTotalDiscountsSet => throw _privateConstructorUsedError;
-  MoneyBag get currentTotalPriceSet => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  ShopifyUser? get customer => throw _privateConstructorUsedError;
+  String get statusUrl => throw _privateConstructorUsedError;
+  Price get subtotalPrice => throw _privateConstructorUsedError;
+  Price get totalPrice => throw _privateConstructorUsedError;
+  Price get totalShippingPrice => throw _privateConstructorUsedError;
+  Price get totalTax => throw _privateConstructorUsedError;
   ShippingAddress? get shippingAddress => throw _privateConstructorUsedError;
+  Price? get totalRefunded => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
-  String? get cancelledAt => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
+  String? get cancelledAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,25 +52,32 @@ abstract class $OrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String email,
       String currencyCode,
-      String displayFulfillmentStatus,
+      String customerUrl,
+      String fulfillmentStatus,
       LineItemsOrder lineItems,
       String name,
+      int orderNumber,
       String processedAt,
-      MoneyBag currentTotalDiscountsSet,
-      MoneyBag currentTotalPriceSet,
-      String? email,
-      ShopifyUser? customer,
+      String statusUrl,
+      Price subtotalPrice,
+      Price totalPrice,
+      Price totalShippingPrice,
+      Price totalTax,
       ShippingAddress? shippingAddress,
+      Price? totalRefunded,
       String? phone,
-      String? cancelledAt,
-      String? cursor});
+      String? cursor,
+      String? cancelledAt});
 
   $LineItemsOrderCopyWith<$Res> get lineItems;
-  $MoneyBagCopyWith<$Res> get currentTotalDiscountsSet;
-  $MoneyBagCopyWith<$Res> get currentTotalPriceSet;
-  $ShopifyUserCopyWith<$Res>? get customer;
+  $PriceCopyWith<$Res> get subtotalPrice;
+  $PriceCopyWith<$Res> get totalPrice;
+  $PriceCopyWith<$Res> get totalShippingPrice;
+  $PriceCopyWith<$Res> get totalTax;
   $ShippingAddressCopyWith<$Res>? get shippingAddress;
+  $PriceCopyWith<$Res>? get totalRefunded;
 }
 
 /// @nodoc
@@ -82,32 +94,45 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   @override
   $Res call({
     Object? id = null,
+    Object? email = null,
     Object? currencyCode = null,
-    Object? displayFulfillmentStatus = null,
+    Object? customerUrl = null,
+    Object? fulfillmentStatus = null,
     Object? lineItems = null,
     Object? name = null,
+    Object? orderNumber = null,
     Object? processedAt = null,
-    Object? currentTotalDiscountsSet = null,
-    Object? currentTotalPriceSet = null,
-    Object? email = freezed,
-    Object? customer = freezed,
+    Object? statusUrl = null,
+    Object? subtotalPrice = null,
+    Object? totalPrice = null,
+    Object? totalShippingPrice = null,
+    Object? totalTax = null,
     Object? shippingAddress = freezed,
+    Object? totalRefunded = freezed,
     Object? phone = freezed,
-    Object? cancelledAt = freezed,
     Object? cursor = freezed,
+    Object? cancelledAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
       currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      displayFulfillmentStatus: null == displayFulfillmentStatus
-          ? _value.displayFulfillmentStatus
-          : displayFulfillmentStatus // ignore: cast_nullable_to_non_nullable
+      customerUrl: null == customerUrl
+          ? _value.customerUrl
+          : customerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      fulfillmentStatus: null == fulfillmentStatus
+          ? _value.fulfillmentStatus
+          : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value.lineItems
@@ -117,41 +142,53 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      orderNumber: null == orderNumber
+          ? _value.orderNumber
+          : orderNumber // ignore: cast_nullable_to_non_nullable
+              as int,
       processedAt: null == processedAt
           ? _value.processedAt
           : processedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      currentTotalDiscountsSet: null == currentTotalDiscountsSet
-          ? _value.currentTotalDiscountsSet
-          : currentTotalDiscountsSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      currentTotalPriceSet: null == currentTotalPriceSet
-          ? _value.currentTotalPriceSet
-          : currentTotalPriceSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer: freezed == customer
-          ? _value.customer
-          : customer // ignore: cast_nullable_to_non_nullable
-              as ShopifyUser?,
+      statusUrl: null == statusUrl
+          ? _value.statusUrl
+          : statusUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      subtotalPrice: null == subtotalPrice
+          ? _value.subtotalPrice
+          : subtotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalPrice: null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalShippingPrice: null == totalShippingPrice
+          ? _value.totalShippingPrice
+          : totalShippingPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalTax: null == totalTax
+          ? _value.totalTax
+          : totalTax // ignore: cast_nullable_to_non_nullable
+              as Price,
       shippingAddress: freezed == shippingAddress
           ? _value.shippingAddress
           : shippingAddress // ignore: cast_nullable_to_non_nullable
               as ShippingAddress?,
+      totalRefunded: freezed == totalRefunded
+          ? _value.totalRefunded
+          : totalRefunded // ignore: cast_nullable_to_non_nullable
+              as Price?,
       phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      cancelledAt: freezed == cancelledAt
-          ? _value.cancelledAt
-          : cancelledAt // ignore: cast_nullable_to_non_nullable
-              as String?,
       cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cancelledAt: freezed == cancelledAt
+          ? _value.cancelledAt
+          : cancelledAt // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -166,29 +203,33 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
 
   @override
   @pragma('vm:prefer-inline')
-  $MoneyBagCopyWith<$Res> get currentTotalDiscountsSet {
-    return $MoneyBagCopyWith<$Res>(_value.currentTotalDiscountsSet, (value) {
-      return _then(_value.copyWith(currentTotalDiscountsSet: value) as $Val);
+  $PriceCopyWith<$Res> get subtotalPrice {
+    return $PriceCopyWith<$Res>(_value.subtotalPrice, (value) {
+      return _then(_value.copyWith(subtotalPrice: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MoneyBagCopyWith<$Res> get currentTotalPriceSet {
-    return $MoneyBagCopyWith<$Res>(_value.currentTotalPriceSet, (value) {
-      return _then(_value.copyWith(currentTotalPriceSet: value) as $Val);
+  $PriceCopyWith<$Res> get totalPrice {
+    return $PriceCopyWith<$Res>(_value.totalPrice, (value) {
+      return _then(_value.copyWith(totalPrice: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ShopifyUserCopyWith<$Res>? get customer {
-    if (_value.customer == null) {
-      return null;
-    }
+  $PriceCopyWith<$Res> get totalShippingPrice {
+    return $PriceCopyWith<$Res>(_value.totalShippingPrice, (value) {
+      return _then(_value.copyWith(totalShippingPrice: value) as $Val);
+    });
+  }
 
-    return $ShopifyUserCopyWith<$Res>(_value.customer!, (value) {
-      return _then(_value.copyWith(customer: value) as $Val);
+  @override
+  @pragma('vm:prefer-inline')
+  $PriceCopyWith<$Res> get totalTax {
+    return $PriceCopyWith<$Res>(_value.totalTax, (value) {
+      return _then(_value.copyWith(totalTax: value) as $Val);
     });
   }
 
@@ -203,6 +244,18 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
       return _then(_value.copyWith(shippingAddress: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PriceCopyWith<$Res>? get totalRefunded {
+    if (_value.totalRefunded == null) {
+      return null;
+    }
+
+    return $PriceCopyWith<$Res>(_value.totalRefunded!, (value) {
+      return _then(_value.copyWith(totalRefunded: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -214,30 +267,39 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String email,
       String currencyCode,
-      String displayFulfillmentStatus,
+      String customerUrl,
+      String fulfillmentStatus,
       LineItemsOrder lineItems,
       String name,
+      int orderNumber,
       String processedAt,
-      MoneyBag currentTotalDiscountsSet,
-      MoneyBag currentTotalPriceSet,
-      String? email,
-      ShopifyUser? customer,
+      String statusUrl,
+      Price subtotalPrice,
+      Price totalPrice,
+      Price totalShippingPrice,
+      Price totalTax,
       ShippingAddress? shippingAddress,
+      Price? totalRefunded,
       String? phone,
-      String? cancelledAt,
-      String? cursor});
+      String? cursor,
+      String? cancelledAt});
 
   @override
   $LineItemsOrderCopyWith<$Res> get lineItems;
   @override
-  $MoneyBagCopyWith<$Res> get currentTotalDiscountsSet;
+  $PriceCopyWith<$Res> get subtotalPrice;
   @override
-  $MoneyBagCopyWith<$Res> get currentTotalPriceSet;
+  $PriceCopyWith<$Res> get totalPrice;
   @override
-  $ShopifyUserCopyWith<$Res>? get customer;
+  $PriceCopyWith<$Res> get totalShippingPrice;
+  @override
+  $PriceCopyWith<$Res> get totalTax;
   @override
   $ShippingAddressCopyWith<$Res>? get shippingAddress;
+  @override
+  $PriceCopyWith<$Res>? get totalRefunded;
 }
 
 /// @nodoc
@@ -252,32 +314,45 @@ class __$$OrderImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? email = null,
     Object? currencyCode = null,
-    Object? displayFulfillmentStatus = null,
+    Object? customerUrl = null,
+    Object? fulfillmentStatus = null,
     Object? lineItems = null,
     Object? name = null,
+    Object? orderNumber = null,
     Object? processedAt = null,
-    Object? currentTotalDiscountsSet = null,
-    Object? currentTotalPriceSet = null,
-    Object? email = freezed,
-    Object? customer = freezed,
+    Object? statusUrl = null,
+    Object? subtotalPrice = null,
+    Object? totalPrice = null,
+    Object? totalShippingPrice = null,
+    Object? totalTax = null,
     Object? shippingAddress = freezed,
+    Object? totalRefunded = freezed,
     Object? phone = freezed,
-    Object? cancelledAt = freezed,
     Object? cursor = freezed,
+    Object? cancelledAt = freezed,
   }) {
     return _then(_$OrderImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
       currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
               as String,
-      displayFulfillmentStatus: null == displayFulfillmentStatus
-          ? _value.displayFulfillmentStatus
-          : displayFulfillmentStatus // ignore: cast_nullable_to_non_nullable
+      customerUrl: null == customerUrl
+          ? _value.customerUrl
+          : customerUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      fulfillmentStatus: null == fulfillmentStatus
+          ? _value.fulfillmentStatus
+          : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
               as String,
       lineItems: null == lineItems
           ? _value.lineItems
@@ -287,41 +362,53 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      orderNumber: null == orderNumber
+          ? _value.orderNumber
+          : orderNumber // ignore: cast_nullable_to_non_nullable
+              as int,
       processedAt: null == processedAt
           ? _value.processedAt
           : processedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      currentTotalDiscountsSet: null == currentTotalDiscountsSet
-          ? _value.currentTotalDiscountsSet
-          : currentTotalDiscountsSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      currentTotalPriceSet: null == currentTotalPriceSet
-          ? _value.currentTotalPriceSet
-          : currentTotalPriceSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer: freezed == customer
-          ? _value.customer
-          : customer // ignore: cast_nullable_to_non_nullable
-              as ShopifyUser?,
+      statusUrl: null == statusUrl
+          ? _value.statusUrl
+          : statusUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      subtotalPrice: null == subtotalPrice
+          ? _value.subtotalPrice
+          : subtotalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalPrice: null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalShippingPrice: null == totalShippingPrice
+          ? _value.totalShippingPrice
+          : totalShippingPrice // ignore: cast_nullable_to_non_nullable
+              as Price,
+      totalTax: null == totalTax
+          ? _value.totalTax
+          : totalTax // ignore: cast_nullable_to_non_nullable
+              as Price,
       shippingAddress: freezed == shippingAddress
           ? _value.shippingAddress
           : shippingAddress // ignore: cast_nullable_to_non_nullable
               as ShippingAddress?,
+      totalRefunded: freezed == totalRefunded
+          ? _value.totalRefunded
+          : totalRefunded // ignore: cast_nullable_to_non_nullable
+              as Price?,
       phone: freezed == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      cancelledAt: freezed == cancelledAt
-          ? _value.cancelledAt
-          : cancelledAt // ignore: cast_nullable_to_non_nullable
-              as String?,
       cursor: freezed == cursor
           ? _value.cursor
           : cursor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cancelledAt: freezed == cancelledAt
+          ? _value.cancelledAt
+          : cancelledAt // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -332,19 +419,24 @@ class __$$OrderImplCopyWithImpl<$Res>
 class _$OrderImpl extends _Order {
   _$OrderImpl(
       {required this.id,
+      required this.email,
       required this.currencyCode,
-      required this.displayFulfillmentStatus,
+      required this.customerUrl,
+      required this.fulfillmentStatus,
       required this.lineItems,
       required this.name,
+      required this.orderNumber,
       required this.processedAt,
-      required this.currentTotalDiscountsSet,
-      required this.currentTotalPriceSet,
-      this.email,
-      this.customer,
+      required this.statusUrl,
+      required this.subtotalPrice,
+      required this.totalPrice,
+      required this.totalShippingPrice,
+      required this.totalTax,
       this.shippingAddress,
+      this.totalRefunded,
       this.phone,
-      this.cancelledAt,
-      this.cursor})
+      this.cursor,
+      this.cancelledAt})
       : super._();
 
   factory _$OrderImpl.fromJson(Map<String, dynamic> json) =>
@@ -353,35 +445,45 @@ class _$OrderImpl extends _Order {
   @override
   final String id;
   @override
+  final String email;
+  @override
   final String currencyCode;
   @override
-  final String displayFulfillmentStatus;
+  final String customerUrl;
+  @override
+  final String fulfillmentStatus;
   @override
   final LineItemsOrder lineItems;
   @override
   final String name;
   @override
+  final int orderNumber;
+  @override
   final String processedAt;
   @override
-  final MoneyBag currentTotalDiscountsSet;
+  final String statusUrl;
   @override
-  final MoneyBag currentTotalPriceSet;
+  final Price subtotalPrice;
   @override
-  final String? email;
+  final Price totalPrice;
   @override
-  final ShopifyUser? customer;
+  final Price totalShippingPrice;
+  @override
+  final Price totalTax;
   @override
   final ShippingAddress? shippingAddress;
   @override
+  final Price? totalRefunded;
+  @override
   final String? phone;
   @override
-  final String? cancelledAt;
-  @override
   final String? cursor;
+  @override
+  final String? cancelledAt;
 
   @override
   String toString() {
-    return 'Order(id: $id, currencyCode: $currencyCode, displayFulfillmentStatus: $displayFulfillmentStatus, lineItems: $lineItems, name: $name, processedAt: $processedAt, currentTotalDiscountsSet: $currentTotalDiscountsSet, currentTotalPriceSet: $currentTotalPriceSet, email: $email, customer: $customer, shippingAddress: $shippingAddress, phone: $phone, cancelledAt: $cancelledAt, cursor: $cursor)';
+    return 'Order(id: $id, email: $email, currencyCode: $currencyCode, customerUrl: $customerUrl, fulfillmentStatus: $fulfillmentStatus, lineItems: $lineItems, name: $name, orderNumber: $orderNumber, processedAt: $processedAt, statusUrl: $statusUrl, subtotalPrice: $subtotalPrice, totalPrice: $totalPrice, totalShippingPrice: $totalShippingPrice, totalTax: $totalTax, shippingAddress: $shippingAddress, totalRefunded: $totalRefunded, phone: $phone, cursor: $cursor, cancelledAt: $cancelledAt)';
   }
 
   @override
@@ -390,50 +492,64 @@ class _$OrderImpl extends _Order {
         (other.runtimeType == runtimeType &&
             other is _$OrderImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.currencyCode, currencyCode) ||
                 other.currencyCode == currencyCode) &&
-            (identical(
-                    other.displayFulfillmentStatus, displayFulfillmentStatus) ||
-                other.displayFulfillmentStatus == displayFulfillmentStatus) &&
+            (identical(other.customerUrl, customerUrl) ||
+                other.customerUrl == customerUrl) &&
+            (identical(other.fulfillmentStatus, fulfillmentStatus) ||
+                other.fulfillmentStatus == fulfillmentStatus) &&
             (identical(other.lineItems, lineItems) ||
                 other.lineItems == lineItems) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.orderNumber, orderNumber) ||
+                other.orderNumber == orderNumber) &&
             (identical(other.processedAt, processedAt) ||
                 other.processedAt == processedAt) &&
-            (identical(
-                    other.currentTotalDiscountsSet, currentTotalDiscountsSet) ||
-                other.currentTotalDiscountsSet == currentTotalDiscountsSet) &&
-            (identical(other.currentTotalPriceSet, currentTotalPriceSet) ||
-                other.currentTotalPriceSet == currentTotalPriceSet) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.customer, customer) ||
-                other.customer == customer) &&
+            (identical(other.statusUrl, statusUrl) ||
+                other.statusUrl == statusUrl) &&
+            (identical(other.subtotalPrice, subtotalPrice) ||
+                other.subtotalPrice == subtotalPrice) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice) &&
+            (identical(other.totalShippingPrice, totalShippingPrice) ||
+                other.totalShippingPrice == totalShippingPrice) &&
+            (identical(other.totalTax, totalTax) ||
+                other.totalTax == totalTax) &&
             (identical(other.shippingAddress, shippingAddress) ||
                 other.shippingAddress == shippingAddress) &&
+            (identical(other.totalRefunded, totalRefunded) ||
+                other.totalRefunded == totalRefunded) &&
             (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.cursor, cursor) || other.cursor == cursor) &&
             (identical(other.cancelledAt, cancelledAt) ||
-                other.cancelledAt == cancelledAt) &&
-            (identical(other.cursor, cursor) || other.cursor == cursor));
+                other.cancelledAt == cancelledAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      currencyCode,
-      displayFulfillmentStatus,
-      lineItems,
-      name,
-      processedAt,
-      currentTotalDiscountsSet,
-      currentTotalPriceSet,
-      email,
-      customer,
-      shippingAddress,
-      phone,
-      cancelledAt,
-      cursor);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        email,
+        currencyCode,
+        customerUrl,
+        fulfillmentStatus,
+        lineItems,
+        name,
+        orderNumber,
+        processedAt,
+        statusUrl,
+        subtotalPrice,
+        totalPrice,
+        totalShippingPrice,
+        totalTax,
+        shippingAddress,
+        totalRefunded,
+        phone,
+        cursor,
+        cancelledAt
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -452,19 +568,24 @@ class _$OrderImpl extends _Order {
 abstract class _Order extends Order {
   factory _Order(
       {required final String id,
+      required final String email,
       required final String currencyCode,
-      required final String displayFulfillmentStatus,
+      required final String customerUrl,
+      required final String fulfillmentStatus,
       required final LineItemsOrder lineItems,
       required final String name,
+      required final int orderNumber,
       required final String processedAt,
-      required final MoneyBag currentTotalDiscountsSet,
-      required final MoneyBag currentTotalPriceSet,
-      final String? email,
-      final ShopifyUser? customer,
+      required final String statusUrl,
+      required final Price subtotalPrice,
+      required final Price totalPrice,
+      required final Price totalShippingPrice,
+      required final Price totalTax,
       final ShippingAddress? shippingAddress,
+      final Price? totalRefunded,
       final String? phone,
-      final String? cancelledAt,
-      final String? cursor}) = _$OrderImpl;
+      final String? cursor,
+      final String? cancelledAt}) = _$OrderImpl;
   _Order._() : super._();
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
@@ -472,31 +593,41 @@ abstract class _Order extends Order {
   @override
   String get id;
   @override
+  String get email;
+  @override
   String get currencyCode;
   @override
-  String get displayFulfillmentStatus;
+  String get customerUrl;
+  @override
+  String get fulfillmentStatus;
   @override
   LineItemsOrder get lineItems;
   @override
   String get name;
   @override
+  int get orderNumber;
+  @override
   String get processedAt;
   @override
-  MoneyBag get currentTotalDiscountsSet;
+  String get statusUrl;
   @override
-  MoneyBag get currentTotalPriceSet;
+  Price get subtotalPrice;
   @override
-  String? get email;
+  Price get totalPrice;
   @override
-  ShopifyUser? get customer;
+  Price get totalShippingPrice;
+  @override
+  Price get totalTax;
   @override
   ShippingAddress? get shippingAddress;
   @override
+  Price? get totalRefunded;
+  @override
   String? get phone;
   @override
-  String? get cancelledAt;
-  @override
   String? get cursor;
+  @override
+  String? get cancelledAt;
   @override
   @JsonKey(ignore: true)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>

@@ -9,10 +9,10 @@ part of 'line_item_order.dart';
 _$LineItemOrderImpl _$$LineItemOrderImplFromJson(Map<String, dynamic> json) =>
     _$LineItemOrderImpl(
       currentQuantity: json['currentQuantity'] as int,
-      totalDiscountSet:
-          MoneyBag.fromJson(json['totalDiscountSet'] as Map<String, dynamic>),
-      originalTotalSet:
-          MoneyBag.fromJson(json['originalTotalSet'] as Map<String, dynamic>),
+      discountedTotalPrice:
+          Price.fromJson(json['discountedTotalPrice'] as Map<String, dynamic>),
+      originalTotalPrice:
+          Price.fromJson(json['originalTotalPrice'] as Map<String, dynamic>),
       quantity: json['quantity'] as int,
       title: json['title'] as String,
       discountAllocations: (json['discountAllocations'] as List<dynamic>?)
@@ -29,8 +29,8 @@ _$LineItemOrderImpl _$$LineItemOrderImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$LineItemOrderImplToJson(_$LineItemOrderImpl instance) =>
     <String, dynamic>{
       'currentQuantity': instance.currentQuantity,
-      'totalDiscountSet': instance.totalDiscountSet.toJson(),
-      'originalTotalSet': instance.originalTotalSet.toJson(),
+      'discountedTotalPrice': instance.discountedTotalPrice.toJson(),
+      'originalTotalPrice': instance.originalTotalPrice.toJson(),
       'quantity': instance.quantity,
       'title': instance.title,
       'discountAllocations':
