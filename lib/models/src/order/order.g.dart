@@ -18,8 +18,6 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
           json['currentTotalDiscountsSet'] as Map<String, dynamic>),
       currentTotalPriceSet: MoneyBag.fromJson(
           json['currentTotalPriceSet'] as Map<String, dynamic>),
-      currentSubtotalPriceSet: MoneyBag.fromJson(
-          json['currentSubtotalPriceSet'] as Map<String, dynamic>),
       email: json['email'] as String?,
       customer: json['customer'] == null
           ? null
@@ -30,7 +28,6 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
               json['shippingAddress'] as Map<String, dynamic>),
       phone: json['phone'] as String?,
       cancelledAt: json['cancelledAt'] as String?,
-      app: json['app'] as String?,
       cursor: json['cursor'] as String?,
     );
 
@@ -44,12 +41,10 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
       'processedAt': instance.processedAt,
       'currentTotalDiscountsSet': instance.currentTotalDiscountsSet.toJson(),
       'currentTotalPriceSet': instance.currentTotalPriceSet.toJson(),
-      'currentSubtotalPriceSet': instance.currentSubtotalPriceSet.toJson(),
       'email': instance.email,
       'customer': instance.customer?.toJson(),
       'shippingAddress': instance.shippingAddress?.toJson(),
       'phone': instance.phone,
       'cancelledAt': instance.cancelledAt,
-      'app': instance.app,
       'cursor': instance.cursor,
     };

@@ -28,13 +28,11 @@ mixin _$Order {
   String get processedAt => throw _privateConstructorUsedError;
   MoneyBag get currentTotalDiscountsSet => throw _privateConstructorUsedError;
   MoneyBag get currentTotalPriceSet => throw _privateConstructorUsedError;
-  MoneyBag get currentSubtotalPriceSet => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   ShopifyUser? get customer => throw _privateConstructorUsedError;
   ShippingAddress? get shippingAddress => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
   String? get cancelledAt => throw _privateConstructorUsedError;
-  String? get app => throw _privateConstructorUsedError;
   String? get cursor => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,19 +54,16 @@ abstract class $OrderCopyWith<$Res> {
       String processedAt,
       MoneyBag currentTotalDiscountsSet,
       MoneyBag currentTotalPriceSet,
-      MoneyBag currentSubtotalPriceSet,
       String? email,
       ShopifyUser? customer,
       ShippingAddress? shippingAddress,
       String? phone,
       String? cancelledAt,
-      String? app,
       String? cursor});
 
   $LineItemsOrderCopyWith<$Res> get lineItems;
   $MoneyBagCopyWith<$Res> get currentTotalDiscountsSet;
   $MoneyBagCopyWith<$Res> get currentTotalPriceSet;
-  $MoneyBagCopyWith<$Res> get currentSubtotalPriceSet;
   $ShopifyUserCopyWith<$Res>? get customer;
   $ShippingAddressCopyWith<$Res>? get shippingAddress;
 }
@@ -94,13 +89,11 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? processedAt = null,
     Object? currentTotalDiscountsSet = null,
     Object? currentTotalPriceSet = null,
-    Object? currentSubtotalPriceSet = null,
     Object? email = freezed,
     Object? customer = freezed,
     Object? shippingAddress = freezed,
     Object? phone = freezed,
     Object? cancelledAt = freezed,
-    Object? app = freezed,
     Object? cursor = freezed,
   }) {
     return _then(_value.copyWith(
@@ -136,10 +129,6 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.currentTotalPriceSet
           : currentTotalPriceSet // ignore: cast_nullable_to_non_nullable
               as MoneyBag,
-      currentSubtotalPriceSet: null == currentSubtotalPriceSet
-          ? _value.currentSubtotalPriceSet
-          : currentSubtotalPriceSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -159,10 +148,6 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
       cancelledAt: freezed == cancelledAt
           ? _value.cancelledAt
           : cancelledAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      app: freezed == app
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
               as String?,
       cursor: freezed == cursor
           ? _value.cursor
@@ -192,14 +177,6 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   $MoneyBagCopyWith<$Res> get currentTotalPriceSet {
     return $MoneyBagCopyWith<$Res>(_value.currentTotalPriceSet, (value) {
       return _then(_value.copyWith(currentTotalPriceSet: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $MoneyBagCopyWith<$Res> get currentSubtotalPriceSet {
-    return $MoneyBagCopyWith<$Res>(_value.currentSubtotalPriceSet, (value) {
-      return _then(_value.copyWith(currentSubtotalPriceSet: value) as $Val);
     });
   }
 
@@ -244,13 +221,11 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
       String processedAt,
       MoneyBag currentTotalDiscountsSet,
       MoneyBag currentTotalPriceSet,
-      MoneyBag currentSubtotalPriceSet,
       String? email,
       ShopifyUser? customer,
       ShippingAddress? shippingAddress,
       String? phone,
       String? cancelledAt,
-      String? app,
       String? cursor});
 
   @override
@@ -259,8 +234,6 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
   $MoneyBagCopyWith<$Res> get currentTotalDiscountsSet;
   @override
   $MoneyBagCopyWith<$Res> get currentTotalPriceSet;
-  @override
-  $MoneyBagCopyWith<$Res> get currentSubtotalPriceSet;
   @override
   $ShopifyUserCopyWith<$Res>? get customer;
   @override
@@ -286,13 +259,11 @@ class __$$OrderImplCopyWithImpl<$Res>
     Object? processedAt = null,
     Object? currentTotalDiscountsSet = null,
     Object? currentTotalPriceSet = null,
-    Object? currentSubtotalPriceSet = null,
     Object? email = freezed,
     Object? customer = freezed,
     Object? shippingAddress = freezed,
     Object? phone = freezed,
     Object? cancelledAt = freezed,
-    Object? app = freezed,
     Object? cursor = freezed,
   }) {
     return _then(_$OrderImpl(
@@ -328,10 +299,6 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value.currentTotalPriceSet
           : currentTotalPriceSet // ignore: cast_nullable_to_non_nullable
               as MoneyBag,
-      currentSubtotalPriceSet: null == currentSubtotalPriceSet
-          ? _value.currentSubtotalPriceSet
-          : currentSubtotalPriceSet // ignore: cast_nullable_to_non_nullable
-              as MoneyBag,
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -351,10 +318,6 @@ class __$$OrderImplCopyWithImpl<$Res>
       cancelledAt: freezed == cancelledAt
           ? _value.cancelledAt
           : cancelledAt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      app: freezed == app
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
               as String?,
       cursor: freezed == cursor
           ? _value.cursor
@@ -376,13 +339,11 @@ class _$OrderImpl extends _Order {
       required this.processedAt,
       required this.currentTotalDiscountsSet,
       required this.currentTotalPriceSet,
-      required this.currentSubtotalPriceSet,
       this.email,
       this.customer,
       this.shippingAddress,
       this.phone,
       this.cancelledAt,
-      this.app,
       this.cursor})
       : super._();
 
@@ -406,8 +367,6 @@ class _$OrderImpl extends _Order {
   @override
   final MoneyBag currentTotalPriceSet;
   @override
-  final MoneyBag currentSubtotalPriceSet;
-  @override
   final String? email;
   @override
   final ShopifyUser? customer;
@@ -418,13 +377,11 @@ class _$OrderImpl extends _Order {
   @override
   final String? cancelledAt;
   @override
-  final String? app;
-  @override
   final String? cursor;
 
   @override
   String toString() {
-    return 'Order(id: $id, currencyCode: $currencyCode, displayFulfillmentStatus: $displayFulfillmentStatus, lineItems: $lineItems, name: $name, processedAt: $processedAt, currentTotalDiscountsSet: $currentTotalDiscountsSet, currentTotalPriceSet: $currentTotalPriceSet, currentSubtotalPriceSet: $currentSubtotalPriceSet, email: $email, customer: $customer, shippingAddress: $shippingAddress, phone: $phone, cancelledAt: $cancelledAt, app: $app, cursor: $cursor)';
+    return 'Order(id: $id, currencyCode: $currencyCode, displayFulfillmentStatus: $displayFulfillmentStatus, lineItems: $lineItems, name: $name, processedAt: $processedAt, currentTotalDiscountsSet: $currentTotalDiscountsSet, currentTotalPriceSet: $currentTotalPriceSet, email: $email, customer: $customer, shippingAddress: $shippingAddress, phone: $phone, cancelledAt: $cancelledAt, cursor: $cursor)';
   }
 
   @override
@@ -448,9 +405,6 @@ class _$OrderImpl extends _Order {
                 other.currentTotalDiscountsSet == currentTotalDiscountsSet) &&
             (identical(other.currentTotalPriceSet, currentTotalPriceSet) ||
                 other.currentTotalPriceSet == currentTotalPriceSet) &&
-            (identical(
-                    other.currentSubtotalPriceSet, currentSubtotalPriceSet) ||
-                other.currentSubtotalPriceSet == currentSubtotalPriceSet) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.customer, customer) ||
                 other.customer == customer) &&
@@ -459,7 +413,6 @@ class _$OrderImpl extends _Order {
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.cancelledAt, cancelledAt) ||
                 other.cancelledAt == cancelledAt) &&
-            (identical(other.app, app) || other.app == app) &&
             (identical(other.cursor, cursor) || other.cursor == cursor));
   }
 
@@ -475,13 +428,11 @@ class _$OrderImpl extends _Order {
       processedAt,
       currentTotalDiscountsSet,
       currentTotalPriceSet,
-      currentSubtotalPriceSet,
       email,
       customer,
       shippingAddress,
       phone,
       cancelledAt,
-      app,
       cursor);
 
   @JsonKey(ignore: true)
@@ -508,13 +459,11 @@ abstract class _Order extends Order {
       required final String processedAt,
       required final MoneyBag currentTotalDiscountsSet,
       required final MoneyBag currentTotalPriceSet,
-      required final MoneyBag currentSubtotalPriceSet,
       final String? email,
       final ShopifyUser? customer,
       final ShippingAddress? shippingAddress,
       final String? phone,
       final String? cancelledAt,
-      final String? app,
       final String? cursor}) = _$OrderImpl;
   _Order._() : super._();
 
@@ -537,8 +486,6 @@ abstract class _Order extends Order {
   @override
   MoneyBag get currentTotalPriceSet;
   @override
-  MoneyBag get currentSubtotalPriceSet;
-  @override
   String? get email;
   @override
   ShopifyUser? get customer;
@@ -548,8 +495,6 @@ abstract class _Order extends Order {
   String? get phone;
   @override
   String? get cancelledAt;
-  @override
-  String? get app;
   @override
   String? get cursor;
   @override
